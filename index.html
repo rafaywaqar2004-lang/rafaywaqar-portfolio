@@ -528,70 +528,64 @@
     /* ====================================================
        EDUCATION
     ==================================================== */
-    #education { background: var(--cream); padding: 70px 0; }
+    #education {
+      background: var(--cream);
+      padding: 28px 0;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
 
     .edu-card {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      background: var(--white);
-      border: 1px solid var(--border-light);
-      border-top: 3px solid var(--gold);
-      padding: 2rem 2.5rem;
+      gap: 1.5rem;
+    }
+
+    .edu-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
     }
 
     .edu-university {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.7rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-bottom: 0.35rem;
       line-height: 1.2;
     }
 
     .edu-degree {
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-size: 0.78rem;
       color: var(--text-mid);
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.01em;
+      margin-top: 0.1rem;
     }
 
-    .edu-sep { color: var(--gold); margin: 0 0.35rem; }
+    .edu-sep { color: var(--gold); margin: 0 0.3rem; }
 
     .edu-detail {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-light);
-      letter-spacing: 0.04em;
-    }
-
-    .edu-courses {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.85rem;
-    }
-
-    .edu-course {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      background: var(--cream);
-      color: var(--text-mid);
-      border: 1px solid var(--border-light);
-      border-radius: 1px;
+      margin-top: 0.15rem;
+      letter-spacing: 0.02em;
     }
 
     .edu-years {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: var(--gold);
-      opacity: 0.5;
-      letter-spacing: -0.02em;
+      margin-left: auto;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
       white-space: nowrap;
       flex-shrink: 0;
     }
@@ -1475,26 +1469,14 @@
   <!-- =============== EDUCATION =============== -->
   <section id="education">
     <div class="container">
-      <a href="#education" class="eyebrow">Academic Background</a>
-      <h2 class="section-title">Education</h2>
-      <div class="rule"></div>
-
       <div class="edu-card">
-        <div class="edu-left">
+        <div class="edu-icon">UC</div>
+        <div>
           <div class="edu-university">University of California, Davis</div>
-          <div class="edu-degree">
-            B.A. Political Science <span class="edu-sep">·</span> Minor in Technology Management
-          </div>
+          <div class="edu-degree">B.A. Political Science <span class="edu-sep">·</span> Minor in Technology Management</div>
           <div class="edu-detail">Class of 2026 &nbsp;·&nbsp; Davis, California</div>
-          <div class="edu-courses">
-            <span class="edu-course">International Political Economy</span>
-            <span class="edu-course">Comparative Politics</span>
-            <span class="edu-course">Econometrics</span>
-            <span class="edu-course">Technology Policy</span>
-            <span class="edu-course">Research Methods</span>
-          </div>
         </div>
-        <div class="edu-years">2022–26</div>
+        <div class="edu-years">2022 – 2026</div>
       </div>
     </div>
   </section>
