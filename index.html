@@ -18,6 +18,37 @@
   <meta name="twitter:title"       content="Muhammad Rafay Waqar — Political Economy & Geopolitical Risk">
   <meta name="twitter:description" content="Policy analyst specialising in macroeconomic policy, political risk, and development across MENA and South Asia.">
 
+  <!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Rafay Waqar",
+    "jobTitle": "Political Economy & Geopolitical Risk Analyst",
+    "url": "https://rafaywaqar2004-lang.github.io/rafaywaqar-portfolio/",
+    "email": "rafaywaqar2004@gmail.com",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of California, Davis"
+    },
+    "knowsAbout": ["Geopolitical Risk Analysis", "Political Economy", "Macroeconomic Policy", "MENA Affairs", "South Asia", "Global Governance", "Political Risk Modelling", "International Development"],
+    "sameAs": [
+      "https://www.linkedin.com/in/muhammad-rafay-waqar-239443208",
+      "https://github.com/rafaywaqar2004-lang",
+      "https://mmuhammadwaqar.substack.com"
+    ]
+  }
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1b2a'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='11' font-weight='600' fill='%23c9a84c'>MRW</text></svg>">
 
@@ -1272,6 +1303,20 @@
     }
 
     /* ====================================================
+       SCROLL ANIMATIONS
+    ==================================================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ====================================================
        FOOTER
     ==================================================== */
     footer {
@@ -1955,7 +2000,7 @@
 
   <!-- =============== FOOTER =============== -->
   <footer>
-    <p>&copy; 2025 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
+    <p>&copy; 2026 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
   </footer>
 
   <!-- =============== SCRIPTS =============== -->
@@ -1999,6 +2044,26 @@
     });
 
     sections.forEach(s => io.observe(s));
+
+    // Scroll fade-up animations
+    const fadeTargets = document.querySelectorAll(
+      '.tl-item, .r-card, .w-entry, .skill-cat, .c-card, .edu-card, .sidebar-card, .about-body p, .section-title, .writing-note, .writing-btns, .github-link, .avail-bar'
+    );
+    fadeTargets.forEach((el, i) => {
+      el.classList.add('fade-up');
+      el.style.transitionDelay = `${(i % 5) * 0.07}s`;
+    });
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    fadeTargets.forEach(el => fadeObserver.observe(el));
   </script>
 
 </body>
