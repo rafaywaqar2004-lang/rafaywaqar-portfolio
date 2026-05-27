@@ -916,11 +916,23 @@
     .w-entry {
       display: grid;
       grid-template-columns: 170px 1fr 60px;
-      align-items: baseline;
+      align-items: start;
       gap: 1.75rem;
-      padding: 1.2rem 0;
+      padding: 1.35rem 0;
       border-bottom: 1px solid var(--border-light);
       transition: background 0.15s;
+    }
+
+    .w-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.28rem;
+    }
+
+    .w-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.65;
     }
 
     .w-entry:first-child { border-top: 1px solid var(--border-light); }
@@ -932,6 +944,7 @@
       text-transform: uppercase;
       color: var(--gold);
       line-height: 1.4;
+      padding-top: 0.25rem;
     }
 
     .w-title {
@@ -1755,55 +1768,73 @@
 
         <div class="w-entry">
           <span class="w-pub">The News International</span>
-          <a href="https://www.thenews.pk/print/1415881-governing-ai" target="_blank" rel="noopener noreferrer" class="w-title">
-            "Governing AI"
-            <span class="w-title-arrow">↗</span>
-          </a>
+          <div class="w-body">
+            <a href="https://www.thenews.pk/print/1415881-governing-ai" target="_blank" rel="noopener noreferrer" class="w-title">
+              "Governing AI"
+              <span class="w-title-arrow">↗</span>
+            </a>
+            <p class="w-desc">Examines global frameworks for AI regulation and the governance gaps that risk leaving developing nations behind in the race to set international norms.</p>
+          </div>
           <span class="w-year">2025</span>
         </div>
 
         <div class="w-entry">
           <span class="w-pub">The News International</span>
-          <a href="https://www.thenews.com.pk/print/1280799-economic-agenda" target="_blank" rel="noopener noreferrer" class="w-title">
-            "Economic Agenda"
-            <span class="w-title-arrow">↗</span>
-          </a>
+          <div class="w-body">
+            <a href="https://www.thenews.com.pk/print/1280799-economic-agenda" target="_blank" rel="noopener noreferrer" class="w-title">
+              "Economic Agenda"
+              <span class="w-title-arrow">↗</span>
+            </a>
+            <p class="w-desc">Analyses Pakistan's macroeconomic reform priorities and the structural constraints shaping its government's economic programme amid IMF conditionality.</p>
+          </div>
           <span class="w-year">2024</span>
         </div>
 
         <div class="w-entry">
           <span class="w-pub">The News International</span>
-          <a href="https://www.thenews.com.pk/print/987812-global-food-security" target="_blank" rel="noopener noreferrer" class="w-title">
-            "Ukraine: Global Food Security"
-            <span class="w-title-arrow">↗</span>
-          </a>
+          <div class="w-body">
+            <a href="https://www.thenews.com.pk/print/987812-global-food-security" target="_blank" rel="noopener noreferrer" class="w-title">
+              "Ukraine: Global Food Security"
+              <span class="w-title-arrow">↗</span>
+            </a>
+            <p class="w-desc">Explores how the Russia-Ukraine war disrupted global grain supply chains and deepened food insecurity across MENA and Sub-Saharan Africa.</p>
+          </div>
           <span class="w-year">2022</span>
         </div>
 
         <div class="w-entry">
           <span class="w-pub">The Express Tribune</span>
-          <a href="https://tribune.com.pk/story/2462270/genocides-unseen-epidemics" target="_blank" rel="noopener noreferrer" class="w-title">
-            "Genocides' Unseen Epidemics"
-            <span class="w-title-arrow">↗</span>
-          </a>
+          <div class="w-body">
+            <a href="https://tribune.com.pk/story/2462270/genocides-unseen-epidemics" target="_blank" rel="noopener noreferrer" class="w-title">
+              "Genocides' Unseen Epidemics"
+              <span class="w-title-arrow">↗</span>
+            </a>
+            <p class="w-desc">Documents the public health crises that accompany mass atrocities, arguing that disease and famine are instruments of genocide as much as direct violence.</p>
+          </div>
           <span class="w-year">2022</span>
         </div>
 
         <div class="w-entry">
           <span class="w-pub">SouthAsia Magazine</span>
-          <a href="https://southasia.com.pk/2022/09/30/political-challenge/" target="_blank" rel="noopener noreferrer" class="w-title">
-            "The Political Challenge Facing Uyghur Muslims"
-            <span class="w-title-arrow">↗</span>
-          </a>
+          <div class="w-body">
+            <a href="https://southasia.com.pk/2022/09/30/political-challenge/" target="_blank" rel="noopener noreferrer" class="w-title">
+              "The Political Challenge Facing Uyghur Muslims"
+              <span class="w-title-arrow">↗</span>
+            </a>
+            <p class="w-desc">Investigates China's policies in Xinjiang and the geopolitical constraints that have shaped the muted response of Muslim-majority states on the international stage.</p>
+          </div>
           <span class="w-year">2022</span>
         </div>
 
         <div class="w-entry">
           <span class="w-pub">The News International</span>
-          <a href="https://www.thenews.com.pk/magazine/you/1040266-tracing-origins-of-sufism" target="_blank" rel="noopener noreferrer" class="w-title">
-            "Tracing Origins of Sufism"
-            <span class="w-title-arrow">↗</span>
-          </a>
+          <div class="w-body">
+            <a href="https://www.thenews.com.pk/magazine/you/1040266-tracing-origins-of-sufism" target="_blank" rel="noopener noreferrer" class="w-title">
+              "Tracing Origins of Sufism"
+              <span class="w-title-arrow">↗</span>
+            </a>
+            <p class="w-desc">Traces Sufism's historical roots and its enduring role as a spiritual and social force across South Asia and the broader Muslim world.</p>
+          </div>
           <span class="w-year">2021</span>
         </div>
 
