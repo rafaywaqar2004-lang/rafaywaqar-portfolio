@@ -312,6 +312,35 @@
       padding: 140px 2rem 3.5rem;
     }
 
+    .hero-avail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.28rem 0.75rem;
+      border: 1px solid rgba(104, 178, 154, 0.3);
+      border-radius: 50px;
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(104, 178, 154, 0.9);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-avail-dot {
+      width: 6px;
+      height: 6px;
+      background: #68b29a;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse-dot 2.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(104, 178, 154, 0.45); }
+      50%       { box-shadow: 0 0 0 5px rgba(104, 178, 154, 0); }
+    }
+
     .hero-name {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(3.6rem, 9.5vw, 7.5rem);
@@ -1430,6 +1459,11 @@
   <!-- =============== HERO =============== -->
   <section id="hero">
     <div class="hero-inner">
+      <div class="hero-avail">
+        <span class="hero-avail-dot"></span>
+        Open to opportunities
+      </div>
+
       <h1 class="hero-name">
         Muhammad<br>Rafay <em>Waqar</em>
       </h1>
