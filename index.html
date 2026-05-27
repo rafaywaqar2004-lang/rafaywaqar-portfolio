@@ -922,6 +922,12 @@
       margin-bottom: 2rem;
     }
 
+    .writing-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
     .btn-substack {
       background: #ff6719;
       color: #fff;
@@ -931,6 +937,30 @@
     .btn-substack:hover {
       background: #e55c12;
       border-color: #e55c12;
+      transform: translateY(-1px);
+    }
+
+    .btn-tribune {
+      background: #b5121b;
+      color: #fff;
+      border-color: #b5121b;
+    }
+
+    .btn-tribune:hover {
+      background: #991018;
+      border-color: #991018;
+      transform: translateY(-1px);
+    }
+
+    .btn-thenews {
+      background: #1a6b3c;
+      color: #fff;
+      border-color: #1a6b3c;
+    }
+
+    .btn-thenews:hover {
+      background: #155730;
+      border-color: #155730;
       transform: translateY(-1px);
     }
 
@@ -1675,6 +1705,15 @@
         </div>
 
         <div class="w-entry">
+          <span class="w-pub">SouthAsia Magazine</span>
+          <a href="https://southasia.com.pk/2022/09/30/political-challenge/" target="_blank" rel="noopener noreferrer" class="w-title">
+            "Political Challenge"
+            <span class="w-title-arrow">↗</span>
+          </a>
+          <span class="w-year">2022</span>
+        </div>
+
+        <div class="w-entry">
           <span class="w-pub">The News International</span>
           <a href="https://www.thenews.com.pk/magazine/you/1040266-tracing-origins-of-sufism" target="_blank" rel="noopener noreferrer" class="w-title">
             "Tracing Origins of Sufism"
@@ -1689,12 +1728,28 @@
         Published 12+ op-eds in The News International, The Express Tribune, and Dawn on political economy, international affairs, and social policy (2018–present).
       </div>
 
-      <a href="https://mmuhammadwaqar.substack.com/archive" target="_blank" rel="noopener noreferrer" class="btn btn-substack">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
-          <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
-        </svg>
-        Subscribe on Substack
-      </a>
+      <div class="writing-btns">
+        <a href="https://mmuhammadwaqar.substack.com/archive" target="_blank" rel="noopener noreferrer" class="btn btn-substack">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
+            <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+          </svg>
+          Substack
+        </a>
+        <a href="https://www.thenews.com.pk/writer/muhammad-rafay-waqar" target="_blank" rel="noopener noreferrer" class="btn btn-thenews">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+            <path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/>
+          </svg>
+          The News International
+        </a>
+        <a href="https://tribune.com.pk/author/12588/muhammad-rafay-waqar" target="_blank" rel="noopener noreferrer" class="btn btn-tribune">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+            <path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/>
+          </svg>
+          Express Tribune
+        </a>
+      </div>
     </div>
   </section>
 
