@@ -835,6 +835,12 @@
       border: 1px solid rgba(60, 110, 60, 0.2);
     }
 
+    .status-live {
+      background: rgba(46, 125, 50, 0.14);
+      color: #2e7d32;
+      border: 1px solid rgba(46, 125, 50, 0.35);
+    }
+
     .r-card-title {
       font-family: 'Times New Roman', Times, serif;
       font-size: 1.3rem;
@@ -1871,20 +1877,16 @@
   <script>
     const researchProjects = [
       {
-        id: 'project-pakistan',
-        title: `Pakistan Macroeconomic Vulnerability Dashboard`,
-        when: `Planned — 2028`,
-        status: `Planned`,
-        desc: `Original data analysis of Pakistan's debt sustainability, current account dynamics, and fiscal pressures using IMF and World Bank datasets. Python and Stata.`,
-        tags: [`Python`, `Pakistan`, `Sovereign Debt`, `IMF Data`]
-      },
-      {
-        id: 'project-mena-dashboard',
-        title: `MENA Geopolitical Risk & Sovereign Debt Dashboard`,
-        when: `Planned — Q3 2028`,
-        status: `Planned`,
-        desc: `Interactive dashboard integrating political stability scores, governance indicators, conflict intensity, and sovereign debt distress signals across 18 MENA and South Asian countries. Country-level risk profiles with a green/amber/red debt stress scoring system, comparative rankings, and multi-year trend lines. Built in Python with Plotly and Streamlit.`,
-        tags: [`Python`, `MENA`, `South Asia`, `Sovereign Debt`, `Political Risk`, `ACLED`, `World Bank WGI`]
+        id: 'project-sovereign-risk',
+        title: `Sovereign Risk Scorecard: MENA & South Asia`,
+        when: `2026`,
+        status: `Live`,
+        desc: `A composite sovereign risk score for 15 MENA and South Asia economies, built on live IMF/World Bank data across 7 factors spanning economic (debt, current account, reserves, growth, inflation) and governance (political stability, government effectiveness) pillars. Includes a per-country radar breakdown, historical trend charts back to 2015, and auto-generated narrative analysis of each country's key risk drivers. Handles missing data (e.g. Iran, where sanctions limit reporting) by rescaling weights rather than hiding the gap.`,
+        tags: [`Python`, `Pandas`, `Streamlit`, `MENA`, `South Asia`, `Sovereign Debt`, `Political Risk`, `World Bank WGI`],
+        links: [
+          { label: `Live App`, url: `https://overeign-risk-index-ql7q7cx9xkcherlpesydmn.streamlit.app` },
+          { label: `GitHub`, url: `https://github.com/rafaywaqar2004-lang/overeign-risk-index` }
+        ]
       },
       {
         id: 'project-gulf-dashboard',
@@ -2026,6 +2028,9 @@
           <div class="r-tags">
             ${p.tags.map(t => `<span class="r-tag">${t}</span>`).join('')}
           </div>
+          ${p.links ? `<div style="display:flex;gap:1.25rem;margin-top:0.9rem;">
+            ${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;">${l.label} ↗</a>`).join('')}
+          </div>` : ''}
         </div>
       `).join('');
     }
