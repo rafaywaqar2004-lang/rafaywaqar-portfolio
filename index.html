@@ -1894,6 +1894,34 @@
         links: [
           { label: `Live App`, url: `https://menasa-risk-monitor.onrender.com` },
           { label: `GitHub`, url: `https://github.com/rafaywaqar2004-lang/overeign-risk-index` }
+        ],
+        companions: [
+          { label: `Sovereign Debt & Political Instability`, id: `project-sovereignty` },
+          { label: `MENA Geopolitical Risk Brief Series`, id: `project-mena` }
+        ]
+      },
+      {
+        id: 'project-sovereignty',
+        title: `Policy Brief — Sovereign Debt and Political Instability`,
+        when: `September 2026`,
+        status: `Live`,
+        companionOf: { label: `MENASA Risk Monitor`, id: `project-sovereign-risk` },
+        desc: `Examining feedback loops between fiscal crises and governance breakdown across Pakistan, Sri Lanka, and Bangladesh, companion to the MENASA Risk Monitor.`,
+        tags: [`Policy Brief`, `South Asia`, `Governance`],
+        links: [
+          { label: `Read the Brief`, url: `https://claude.ai/code/artifact/8908bad9-96cc-48e4-8aa1-752d37f7968d` }
+        ]
+      },
+      {
+        id: 'project-mena',
+        title: `MENA Geopolitical Risk Brief Series`,
+        when: `Issue No. 1 — September 2026`,
+        status: `Live`,
+        companionOf: { label: `MENASA Risk Monitor`, id: `project-sovereign-risk` },
+        desc: `Monthly structured risk briefs covering political economy dynamics across the Middle East and North Africa — regional snapshot, top risk movers, and spotlighted conflicts, companion to the MENASA Risk Monitor.`,
+        tags: [`MENA`, `Risk Analysis`, `Monthly Series`],
+        links: [
+          { label: `Read Issue No. 1`, url: `https://claude.ai/code/artifact/9203fd21-1872-464b-94cb-b72b3b9143a7` }
         ]
       },
       {
@@ -1906,6 +1934,9 @@
         links: [
           { label: `Live App`, url: `https://oaqjp-final-project-emb-ai-c8u6.onrender.com` },
           { label: `GitHub`, url: `https://github.com/rafaywaqar2004-lang/oaqjp-final-project-emb-ai` }
+        ],
+        companions: [
+          { label: `Gulf AI Ambitions and Geopolitical Risk`, id: `project-gulf-ai` }
         ]
       },
       {
@@ -1913,33 +1944,12 @@
         title: `Gulf AI Ambitions and Geopolitical Risk`,
         when: `September 2026`,
         status: `Live`,
+        companionOf: { label: `Gulf States Vision 2030 & AI Investment Tracker`, id: `project-gulf-dashboard` },
         subtitle: `Hedging in the US-China chip race: Saudi Arabia, the UAE, and the regional competition for AI supremacy`,
         desc: `A geopolitical risk assessment examining how Gulf states are navigating the US-China AI/chip competition — BLUF, 6 numbered Key Judgments with confidence levels, alternative-hypothesis analysis, and implications for Western strategic interests. Companion analytic brief to the Gulf AI & Tech-Bloc Alignment Tracker.`,
         tags: [`Gulf States`, `AI Governance`, `Geopolitical Risk`, `MENA`, `Saudi Vision 2030`, `UAE`, `US-China Tech Competition`],
         links: [
           { label: `Read the Brief`, url: `https://claude.ai/code/artifact/42522a4b-83ae-48ef-887f-caebdc87cf20` }
-        ]
-      },
-      {
-        id: 'project-mena',
-        title: `MENA Geopolitical Risk Brief Series`,
-        when: `Issue No. 1 — September 2026`,
-        status: `Live`,
-        desc: `Monthly structured risk briefs covering political economy dynamics across the Middle East and North Africa — regional snapshot, top risk movers, and spotlighted conflicts, companion to the MENASA Risk Monitor.`,
-        tags: [`MENA`, `Risk Analysis`, `Monthly Series`],
-        links: [
-          { label: `Read Issue No. 1`, url: `https://claude.ai/code/artifact/9203fd21-1872-464b-94cb-b72b3b9143a7` }
-        ]
-      },
-      {
-        id: 'project-sovereignty',
-        title: `Policy Brief — Sovereign Debt and Political Instability`,
-        when: `September 2026`,
-        status: `Live`,
-        desc: `Examining feedback loops between fiscal crises and governance breakdown across Pakistan, Sri Lanka, and Bangladesh, companion to the MENASA Risk Monitor.`,
-        tags: [`Policy Brief`, `South Asia`, `Governance`],
-        links: [
-          { label: `Read the Brief`, url: `https://claude.ai/code/artifact/8908bad9-96cc-48e4-8aa1-752d37f7968d` }
         ]
       }
     ];
@@ -2037,6 +2047,7 @@
       const container = document.querySelector('.research-cards');
       container.innerHTML = researchProjects.map(p => `
         <div class="r-card" id="${p.id}">
+          ${p.companionOf ? `<a href="#${p.companionOf.id}" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:0.6rem;">↳ Companion to ${p.companionOf.label}</a>` : ''}
           <div class="r-card-top">
             <div>
               <div class="r-card-title">${p.title}</div>
@@ -2051,6 +2062,10 @@
           </div>
           ${p.links ? `<div style="display:flex;gap:1.25rem;margin-top:0.9rem;">
             ${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;">${l.label} ↗</a>`).join('')}
+          </div>` : ''}
+          ${p.companions ? `<div style="margin-top:0.9rem;padding-top:0.75rem;border-top:1px dashed var(--border);font-size:0.72rem;color:var(--text-light);line-height:1.8;">
+            <strong style="color:var(--text-dark);">Companion analysis:</strong><br/>
+            ${p.companions.map(c => `<a href="#${c.id}" style="color:var(--gold);text-decoration:none;">${c.label} →</a>`).join('<br/>')}
           </div>` : ''}
         </div>
       `).join('');
