@@ -465,15 +465,112 @@
     }
 
     /* ====================================================
-       FLAGSHIP: MENASA SOVEREIGN RISK MONITOR
+       FEATURED (incl. MENASA SOVEREIGN RISK MONITOR)
     ==================================================== */
-    #flagship {
+    #featured {
       background: var(--navy);
       border-bottom: 1px solid rgba(201, 168, 76, 0.12);
     }
 
-    #flagship .section-title { color: var(--cream); }
-    #flagship .rule { background: rgba(201, 168, 76, 0.5); }
+    #featured .section-title { color: var(--cream); }
+    #featured .rule { background: rgba(201, 168, 76, 0.5); }
+
+    .featured-intro {
+      max-width: 640px;
+      font-size: 0.95rem;
+      color: rgba(247, 244, 238, 0.55);
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+
+    .featured-item-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.7rem;
+    }
+
+    .featured-item-label-sep { color: rgba(201, 168, 76, 0.4); }
+
+    .featured-primary-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 2.25rem;
+    }
+
+    .featured-secondary-heading {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 238, 0.35);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .featured-secondary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .featured-card {
+      background: rgba(247, 244, 238, 0.025);
+      border: 1px solid rgba(247, 244, 238, 0.09);
+      border-top: 3px solid var(--gold);
+      padding: 1.75rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.22s ease;
+    }
+
+    .featured-card:hover {
+      background: rgba(247, 244, 238, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .featured-card-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.005em;
+    }
+
+    .featured-card-desc {
+      font-size: 0.85rem;
+      color: rgba(247, 244, 238, 0.55);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .featured-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: rgba(247, 244, 238, 0.4);
+    }
+
+    .featured-card-arrow { color: var(--gold); font-weight: 600; }
+
+    @media (max-width: 720px) {
+      .featured-secondary-grid { grid-template-columns: 1fr; }
+    }
 
     .flagship-layout {
       display: grid;
@@ -1651,6 +1748,7 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">MRW<span>.</span></a>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#featured">Featured</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -1667,6 +1765,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <a href="#featured"   onclick="closeMenu()">Featured</a>
     <a href="#about"      onclick="closeMenu()">About</a>
     <a href="#education"  onclick="closeMenu()">Education</a>
     <a href="#experience" onclick="closeMenu()">Experience</a>
@@ -1708,7 +1807,7 @@
       </div>
 
       <div class="hero-cta">
-        <a href="#flagship" class="btn btn-gold">View Flagship Monitor</a>
+        <a href="#featured" class="btn btn-gold">View Flagship Monitor</a>
         <a href="#writing"  class="btn btn-ghost">Read Writing</a>
         <a href="#skills"   class="btn btn-ghost">Certifications &amp; Skills</a>
         <a href="./resume.pdf" download class="btn btn-ghost">Resume</a>
@@ -1717,65 +1816,98 @@
     </div>
   </section>
 
-  <!-- =============== FLAGSHIP: MENASA SOVEREIGN RISK MONITOR =============== -->
-  <section id="flagship">
+  <!-- =============== FEATURED =============== -->
+  <section id="featured">
     <div class="container">
-      <a href="#flagship" class="eyebrow">Flagship Research Tool</a>
-      <h2 class="section-title">MENASA Sovereign Risk Monitor</h2>
+      <a href="#featured" class="eyebrow">Featured</a>
+      <h2 class="section-title">Featured Work</h2>
       <div class="rule"></div>
+      <p class="featured-intro">The most recent work across live tools, analytical briefs, and published research.</p>
 
-      <div class="flagship-layout">
-        <div class="flagship-text">
-          <p class="flagship-summary">
-            MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators from IMF and World Bank sources into a transparent composite framework, helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook.
-          </p>
-          <p class="flagship-summary">
-            The monitor provides country rankings, risk-driver attribution, historical trends, scenario analysis, and crisis backtesting to support structured country-risk screening and deeper analyst review.
-          </p>
-          <p class="flagship-disclaimer">Designed as a research and monitoring tool; not investment advice.</p>
+      <!-- 01 — MENASA Sovereign Risk Monitor -->
+      <div class="featured-primary">
+        <div class="featured-item-label">01 <span class="featured-item-label-sep">—</span> Flagship Research Tool</div>
+        <h3 class="featured-primary-title">MENASA Sovereign Risk Monitor</h3>
 
-          <div class="flagship-metrics">
-            <div class="flagship-metric">
-              <div class="flagship-metric-num">34</div>
-              <div class="flagship-metric-label">Economies monitored</div>
+        <div class="flagship-layout">
+          <div class="flagship-text">
+            <p class="flagship-summary">
+              MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators from IMF and World Bank sources into a transparent composite framework, helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook.
+            </p>
+            <p class="flagship-summary">
+              The monitor provides country rankings, risk-driver attribution, historical trends, scenario analysis, and crisis backtesting to support structured country-risk screening and deeper analyst review.
+            </p>
+            <p class="flagship-disclaimer">Designed as a research and monitoring tool; not investment advice.</p>
+
+            <div class="flagship-metrics">
+              <div class="flagship-metric">
+                <div class="flagship-metric-num">34</div>
+                <div class="flagship-metric-label">Economies monitored</div>
+              </div>
+              <div class="flagship-metric">
+                <div class="flagship-metric-num">11</div>
+                <div class="flagship-metric-label">Macro &amp; governance indicators</div>
+              </div>
+              <div class="flagship-metric">
+                <div class="flagship-metric-num">2010–Present</div>
+                <div class="flagship-metric-label">Historical risk coverage</div>
+              </div>
+              <div class="flagship-metric">
+                <div class="flagship-metric-num">Automated</div>
+                <div class="flagship-metric-label">Data validation &amp; deployment</div>
+              </div>
             </div>
-            <div class="flagship-metric">
-              <div class="flagship-metric-num">11</div>
-              <div class="flagship-metric-label">Macro &amp; governance indicators</div>
-            </div>
-            <div class="flagship-metric">
-              <div class="flagship-metric-num">2010–Present</div>
-              <div class="flagship-metric-label">Historical risk coverage</div>
-            </div>
-            <div class="flagship-metric">
-              <div class="flagship-metric-num">Automated</div>
-              <div class="flagship-metric-label">Data validation &amp; deployment</div>
+
+            <div class="flagship-why-heading">Why It Matters</div>
+            <ul class="flagship-why-list">
+              <li>Identifies where sovereign and political-economic risk is rising.</li>
+              <li>Shows which factors drove each country's score change.</li>
+              <li>Allows structured scenario testing and historical crisis comparison.</li>
+            </ul>
+
+            <div class="flagship-cta">
+              <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Monitor</a>
+              <a href="./menasa-methodology.html" class="btn btn-ghost">Read Methodology</a>
+              <a href="https://github.com/rafaywaqar2004-lang/overeign-risk-index" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
             </div>
           </div>
 
-          <div class="flagship-why-heading">Why It Matters</div>
-          <ul class="flagship-why-list">
-            <li>Identifies where sovereign and political-economic risk is rising.</li>
-            <li>Shows which factors drove each country's score change.</li>
-            <li>Allows structured scenario testing and historical crisis comparison.</li>
-          </ul>
-
-          <div class="flagship-cta">
-            <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Monitor</a>
-            <a href="./menasa-methodology.html" class="btn btn-ghost">Read Methodology</a>
-            <a href="https://github.com/rafaywaqar2004-lang/overeign-risk-index" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+          <div class="flagship-media">
+            <img
+              src="./assets/menasa-risk-monitor-preview.png"
+              alt="Screenshot of the MENASA Sovereign Risk Monitor showing regional country-risk analysis"
+              class="flagship-img"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="flagship-img-fallback">Add MENASA dashboard screenshot here</div>
           </div>
         </div>
+      </div>
 
-        <div class="flagship-media">
-          <img
-            src="./assets/menasa-risk-monitor-preview.png"
-            alt="Screenshot of the MENASA Sovereign Risk Monitor showing regional country-risk analysis"
-            class="flagship-img"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          >
-          <div class="flagship-img-fallback">Add MENASA dashboard screenshot here</div>
-        </div>
+      <!-- 02 & 03 — Recent companion analysis -->
+      <div class="featured-secondary-heading">More Recent Work</div>
+      <div class="featured-secondary-grid">
+
+        <a href="https://claude.ai/code/artifact/42522a4b-83ae-48ef-887f-caebdc87cf20" target="_blank" rel="noopener noreferrer" class="featured-card">
+          <div class="featured-item-label">02 <span class="featured-item-label-sep">—</span> Analytical Brief</div>
+          <h3 class="featured-card-title">Gulf AI Ambitions and Geopolitical Risk</h3>
+          <p class="featured-card-desc">A geopolitical risk assessment examining how Gulf states are navigating the US-China AI and chip competition — key judgments, alternative-hypothesis analysis, and implications for Western strategic interests.</p>
+          <div class="featured-card-meta">
+            <span>September 2026</span>
+            <span class="featured-card-arrow">Read the Brief ↗</span>
+          </div>
+        </a>
+
+        <a href="https://claude.ai/code/artifact/9203fd21-1872-464b-94cb-b72b3b9143a7" target="_blank" rel="noopener noreferrer" class="featured-card">
+          <div class="featured-item-label">03 <span class="featured-item-label-sep">—</span> Risk Brief Series</div>
+          <h3 class="featured-card-title">MENA Geopolitical Risk Brief Series</h3>
+          <p class="featured-card-desc">Monthly structured risk briefs covering political economy dynamics across the Middle East and North Africa — regional snapshot, top risk movers, and spotlighted conflicts.</p>
+          <div class="featured-card-meta">
+            <span>Issue No. 1 — September 2026</span>
+            <span class="featured-card-arrow">Read Issue No. 1 ↗</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -2176,7 +2308,7 @@
         title: `MENASA Risk Monitor`,
         when: `2026`,
         status: `Live`,
-        flagship: true,
+        kindLabel: `Featured Above — Flagship Tool`,
         desc: `Live sovereign- and geopolitical-risk monitoring across 34 economies in MENA, South Asia, and the Horn of Africa. Uses 11 IMF and World Bank macroeconomic and governance indicators, with country-level risk attribution, scenario analysis, and historical crisis backtesting.`,
         tags: [`Python`, `Pandas`, `Streamlit`, `Plotly`, `MENA`, `South Asia`, `Horn of Africa`, `Sovereign Debt`, `Political Risk`, `World Bank WGI`, `GitHub Actions`, `Geo-Economics`, `Commodities`, `Model Validation`],
         links: [
@@ -2194,6 +2326,7 @@
         when: `September 2026`,
         status: `Live`,
         companionOf: { label: `MENASA Risk Monitor`, id: `project-sovereign-risk` },
+        kindLabel: `Policy Brief`,
         desc: `Examining feedback loops between fiscal crises and governance breakdown across Pakistan, Sri Lanka, and Bangladesh, companion to the MENASA Risk Monitor.`,
         tags: [`Policy Brief`, `South Asia`, `Governance`],
         links: [
@@ -2206,6 +2339,7 @@
         when: `Issue No. 1 — September 2026`,
         status: `Live`,
         companionOf: { label: `MENASA Risk Monitor`, id: `project-sovereign-risk` },
+        kindLabel: `Featured Above — Risk Brief Series`,
         desc: `Monthly structured risk briefs covering political economy dynamics across the Middle East and North Africa — regional snapshot, top risk movers, and spotlighted conflicts, companion to the MENASA Risk Monitor.`,
         tags: [`MENA`, `Risk Analysis`, `Monthly Series`],
         links: [
@@ -2217,6 +2351,7 @@
         title: `Gulf States Vision 2030 & AI Investment Tracker`,
         when: `2026`,
         status: `Live`,
+        kindLabel: `Live Dashboard`,
         desc: `Comparative interactive dashboard tracking all 6 Gulf states plus Pakistan and Turkey as comparators — a Net Alignment Score (US Integration Depth vs. China Exposure Depth) built from 6 factors: US export-control access, sovereign AI investment, compute/data-center capacity, Chinese tech penetration, AI governance maturity, and non-oil diversification. Exceeds its original 2-country scope. Pairs with the Gulf AI Ambitions risk brief as the quantitative data layer to the analytical narrative.`,
         tags: [`Python`, `Streamlit`, `Plotly`, `Gulf States`, `Saudi Arabia`, `UAE`, `Pakistan`, `Turkey`, `AI Investment`, `Export Controls`, `US-China Tech Competition`],
         links: [
@@ -2233,6 +2368,7 @@
         when: `September 2026`,
         status: `Live`,
         companionOf: { label: `Gulf States Vision 2030 & AI Investment Tracker`, id: `project-gulf-dashboard` },
+        kindLabel: `Featured Above — Analytical Brief`,
         subtitle: `Hedging in the US-China chip race: Saudi Arabia, the UAE, and the regional competition for AI supremacy`,
         desc: `A geopolitical risk assessment examining how Gulf states are navigating the US-China AI/chip competition — BLUF, 6 numbered Key Judgments with confidence levels, alternative-hypothesis analysis, and implications for Western strategic interests. Companion analytic brief to the Gulf AI & Tech-Bloc Alignment Tracker.`,
         tags: [`Gulf States`, `AI Governance`, `Geopolitical Risk`, `MENA`, `Saudi Vision 2030`, `UAE`, `US-China Tech Competition`],
@@ -2335,7 +2471,7 @@
       const container = document.querySelector('.research-cards');
       container.innerHTML = researchProjects.map(p => `
         <div class="r-card" id="${p.id}">
-          ${p.flagship ? `<div style="font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Flagship Tool — Featured Above</div>` : ''}
+          ${p.kindLabel ? `<div style="font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">${p.kindLabel}</div>` : ''}
           ${p.companionOf ? `<a href="#${p.companionOf.id}" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:0.6rem;">↳ Companion to ${p.companionOf.label}</a>` : ''}
           <div class="r-card-top">
             <div>
