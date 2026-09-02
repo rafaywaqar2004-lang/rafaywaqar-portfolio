@@ -263,6 +263,9 @@
     .m-table tr:last-child td { border-bottom: none; }
     .m-table tr:nth-child(even) td { background: var(--cream); }
 
+    .m-table--wrap th, .m-table--wrap td { white-space: normal; }
+    .m-table--wrap td:first-child { white-space: nowrap; font-weight: 600; color: var(--text-dark); }
+
     .m-meta {
       font-size: 0.85rem;
       color: var(--text-mid);
@@ -339,69 +342,133 @@
           <li>Historical coverage from 2010 to present</li>
           <li>Country-level monitoring and comparisons</li>
         </ul>
+        <p class="m-comment">Every score is a <strong>relative ranking within this 34-country sample</strong>, not an absolute, globally-benchmarked index. Each factor is min-max normalized against only the other 33 tracked MENASA economies for that year, not the full ~190-country UN membership. A "Lower Risk" score here means lower risk relative to this specific regional pool — it does not mean the country would also rank as low-risk against, say, Western Europe or East Asia. This matters when comparing scores or tiers to any country outside this 34-country set, including via the app's own credit-rating comparison, which draws on actual global agency ratings.</p>
       </section>
 
       <section class="m-section" id="framework">
         <h2 class="m-h2">3. Framework</h2>
-        <p class="m-p">The monitor combines 10 macroeconomic and governance indicators across two pillars — economic and governance — weighted equally at 10% by default, with weights adjustable live in the app's Scenario Explorer. The quantitative score is built primarily on the World Bank's public API (WDI and WGI). IMF World Economic Outlook data is used as an automatic fallback for debt-to-GDP figures on countries the World Bank does not report consistently. Indicators are normalized and combined into a composite framework designed to make cross-country comparison transparent and interpretable.</p>
+        <p class="m-p">Each country is scored 0–100 (100 = highest risk) on a weighted composite of 11 factors across two pillars, each pillar weighted equally at 50% by default — economic factors at roughly 8.3% each (1/12 of the composite), governance factors at 10% each — adjustable live in the app's Scenario Explorer. All 11 factors are pulled from the World Bank's public API (WDI = World Development Indicators, WGI = Worldwide Governance Indicators), the same underlying database the IMF, credit rating agencies, and academic researchers use as a baseline, refreshed weekly via an automated GitHub Actions pipeline.</p>
 
-        <!-- Replace these placeholder rows with the actual 10 MENASA indicators, source URLs, update frequency, transformations, and risk direction. The full factor/weight/source table lives in the app's own in-app Methodology tab. -->
+        <div class="m-table-wrap">
+          <table class="m-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Pillar</th>
+                <th>Weight</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Debt (% of GDP)</td><td>Economic</td><td>8.3%</td><td><a href="https://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS" target="_blank" rel="noopener noreferrer">World Bank WDI: GC.DOD.TOTL.GD.ZS ↗</a></td></tr>
+              <tr><td>Current Account (% of GDP)</td><td>Economic</td><td>8.3%</td><td><a href="https://data.worldbank.org/indicator/BN.CAB.XOKA.GD.ZS" target="_blank" rel="noopener noreferrer">World Bank WDI: BN.CAB.XOKA.GD.ZS ↗</a></td></tr>
+              <tr><td>Reserves (months of imports)</td><td>Economic</td><td>8.3%</td><td><a href="https://data.worldbank.org/indicator/FI.RES.TOTL.MO" target="_blank" rel="noopener noreferrer">World Bank WDI: FI.RES.TOTL.MO ↗</a></td></tr>
+              <tr><td>GDP Growth</td><td>Economic</td><td>8.3%</td><td><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG" target="_blank" rel="noopener noreferrer">World Bank WDI: NY.GDP.MKTP.KD.ZG ↗</a></td></tr>
+              <tr><td>Inflation</td><td>Economic</td><td>8.3%</td><td><a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG" target="_blank" rel="noopener noreferrer">World Bank WDI: FP.CPI.TOTL.ZG ↗</a></td></tr>
+              <tr><td>Currency Depreciation (YoY %, LCU/USD)</td><td>Economic</td><td>8.3%</td><td><a href="https://data.worldbank.org/indicator/PA.NUS.FCRF" target="_blank" rel="noopener noreferrer">World Bank WDI: PA.NUS.FCRF ↗</a></td></tr>
+              <tr><td>Political Stability</td><td>Governance</td><td>10%</td><td><a href="https://data.worldbank.org/indicator/PV.EST" target="_blank" rel="noopener noreferrer">World Bank WGI: PV.EST ↗</a></td></tr>
+              <tr><td>Government Effectiveness</td><td>Governance</td><td>10%</td><td><a href="https://data.worldbank.org/indicator/GE.EST" target="_blank" rel="noopener noreferrer">World Bank WGI: GE.EST ↗</a></td></tr>
+              <tr><td>Rule of Law</td><td>Governance</td><td>10%</td><td><a href="https://data.worldbank.org/indicator/RL.EST" target="_blank" rel="noopener noreferrer">World Bank WGI: RL.EST ↗</a></td></tr>
+              <tr><td>Regulatory Quality</td><td>Governance</td><td>10%</td><td><a href="https://data.worldbank.org/indicator/RQ.EST" target="_blank" rel="noopener noreferrer">World Bank WGI: RQ.EST ↗</a></td></tr>
+              <tr><td>Control of Corruption</td><td>Governance</td><td>10%</td><td><a href="https://data.worldbank.org/indicator/CC.EST" target="_blank" rel="noopener noreferrer">World Bank WGI: CC.EST ↗</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="m-p" style="margin-top:1rem;font-size:0.85rem;color:var(--text-light);">Each factor is normalized so that higher values always indicate higher risk contribution (e.g. higher debt, higher inflation, lower reserves, and weaker rule of law each push the score up). Currency Depreciation was added as an 11th factor after this project's own historical backtest (see Historical Validation below) surfaced that Egypt's 2022–23 currency crisis didn't move the prior 10-factor score at all — closing a real, documented gap rather than a cosmetic addition.</p>
+      </section>
+
+      <section class="m-section" id="context-indicators">
+        <h2 class="m-h2">4. Context-Only Indicators</h2>
+        <p class="m-p">Six additional indicators are shown as investment/trade context in every country's profile but are intentionally excluded from the risk score itself — investment direction is not unambiguously a risk signal.</p>
         <div class="m-table-wrap">
           <table class="m-table">
             <thead>
               <tr>
                 <th>Indicator</th>
-                <th>Pillar</th>
                 <th>Source</th>
-                <th>Update Frequency</th>
-                <th>Direction of Risk</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Indicator 1</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 2</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 3</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 4</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 5</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 6</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 7</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 8</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 9</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 10</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>FDI Net Inflows (% GDP)</td><td><a href="https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS" target="_blank" rel="noopener noreferrer">World Bank WDI: BX.KLT.DINV.WD.GD.ZS ↗</a></td></tr>
+              <tr><td>Exports of Goods &amp; Services (% GDP)</td><td><a href="https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS" target="_blank" rel="noopener noreferrer">World Bank WDI: NE.EXP.GNFS.ZS ↗</a></td></tr>
+              <tr><td>Imports of Goods &amp; Services (% GDP)</td><td><a href="https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS" target="_blank" rel="noopener noreferrer">World Bank WDI: NE.IMP.GNFS.ZS ↗</a></td></tr>
+              <tr><td>GDP (Current US$)</td><td><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD" target="_blank" rel="noopener noreferrer">World Bank WDI: NY.GDP.MKTP.CD ↗</a></td></tr>
+              <tr><td>GDP Per Capita (Current US$)</td><td><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank" rel="noopener noreferrer">World Bank WDI: NY.GDP.PCAP.CD ↗</a></td></tr>
+              <tr><td>Total Reserves (Current US$)</td><td><a href="https://data.worldbank.org/indicator/FI.RES.TOTL.CD" target="_blank" rel="noopener noreferrer">World Bank WDI: FI.RES.TOTL.CD ↗</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="m-p" style="margin-top:1rem;font-size:0.85rem;color:var(--text-light);">If a country is missing a factor, that factor is dropped and the remaining weights are rescaled proportionally — missing data is never silently treated as "safe."</p>
+      </section>
+
+      <section class="m-section" id="weighting-pca">
+        <h2 class="m-h2">5. Weighting and Validation</h2>
+        <p class="m-p">Pillar-balanced weighting (50% economic, 50% governance, equal within each pillar) is a deliberate starting point, not a claim that all 11 factors matter equally in reality. Two independent checks were run against this same historical data: a redundancy check (principal component analysis across all 11 factors, to test for multicollinearity) and a predictive-validity check (backtesting the composite's year-over-year direction against six real, documented crises — see Historical Validation below).</p>
+        <p class="m-p">The redundancy check ran on the 77 of 507 country-year observations in the underlying dataset that report all 11 factors simultaneously (a stricter complete-case approach, chosen over a pairwise-correlation matrix given how unevenly coverage varies factor to factor). The first principal component explains 41% of total variance, and it is dominated by the governance pillar — Rule of Law, Control of Corruption, Political Stability, and Government Effectiveness all load onto it in the same direction with similar strength (loadings of 0.38–0.45), while Regulatory Quality is comparatively less redundant. Concretely: Rule of Law correlates 0.84 with Control of Corruption and 0.81 with Political Stability, and Government Effectiveness correlates 0.76 with Control of Corruption — four of the five governance factors are substantially capturing the same underlying signal. The economic factors tell the opposite story: GDP Growth, Inflation, and Currency Depreciation load weakly on that dominant governance component and separate onto their own axis (a second component, 17% of variance, driven mostly by Current Account, Debt, Inflation, and Currency Depreciation moving together) — meaning Currency Depreciation is adding real, distinct signal rather than restating what governance already captures.</p>
+        <p class="m-p">This confirms real redundancy inside the governance pillar — closer to 2–3 independent dimensions than 5 — but the composite still uses equal weighting within each pillar deliberately: down-weighting the correlated factors based on this same historical sample would mean fitting the model to the data it was just validated against, the exact overfitting risk this check is meant to guard against. Reported as a finding, not yet acted on.</p>
+        <p class="m-comment">A further, market-implied validation step — correlating the score against CDS spreads or bond yields — was deliberately not attempted: true backtesting needs point-in-time data vintages (the score as it would have looked at the time, not recomputed with data revised since) that the World Bank's API doesn't expose, and reliable market pricing doesn't exist for most of these 34 economies. That stays an explicit, disclosed gap rather than a papered-over one.</p>
+      </section>
+
+      <section class="m-section" id="missing-data">
+        <h2 class="m-h2">6. Missing Data</h2>
+        <p class="m-p">Where country data are unavailable, the monitor documents the limitation and applies transparent handling rules rather than concealing missingness — a country's missing factor renders as a visible "not reported" marker on its radar chart rather than silently shrinking the shape, and no value is ever invented to fill a gap. If a country is missing a factor, that factor is dropped and the remaining weights are rescaled proportionally. Debt-to-GDP coverage is a known gap area: 17 of the 34 countries have no debt-to-GDP figure on file directly from the World Bank, so IMF World Economic Outlook data is used as an automatic fallback — even after that fallback, only 31 of 34 report it consistently. Iran's composite score is lower-confidence, with only 9 of the 11 factors available (Current Account and Reserves are both missing), likely due to sanctions limiting fiscal data reporting.</p>
+      </section>
+
+      <section class="m-section" id="historical-validation">
+        <h2 class="m-h2">7. Historical Validation</h2>
+        <p class="m-p">Six well-documented, unambiguous crises were checked against the project's own historical scores (2010–2024), with no cherry-picking of only the successes. This tests direction and timing only — did the score move in the right year, not whether the exact magnitude is calibrated.</p>
+        <ul class="m-list">
+          <li><strong>Syria — civil war escalation:</strong> +22.0 points in a single year (2011→2012), the sharpest same-year capture of any case tested.</li>
+          <li><strong>Sri Lanka — 2022 economic collapse &amp; default:</strong> +13.9 in 2022; the recovery is captured too, -16.2 in 2023 as the IMF program took hold.</li>
+          <li><strong>Afghanistan — 2021 Taliban takeover:</strong> +14.2 in the same calendar year — a same-year capture of a sudden political shock.</li>
+          <li><strong>Lebanon — 2019–2023 financial collapse:</strong> essentially flat in 2019 (the actual onset), then climbs every year 2020–2023 — a real, sustained, correctly-directional capture, but roughly a one-year lag.</li>
+          <li><strong>Pakistan — 2022–2023 balance-of-payments crisis:</strong> +3.4 in 2022 itself (after Currency Depreciation was added as a factor), then -2.9 in 2023 and -1.3 in 2024 as the IMF Stand-By Arrangement took hold.</li>
+          <li><strong>Egypt — 2022–2023 currency crisis:</strong> still a miss. Currency Depreciation was added specifically because this case didn't move the prior 10-factor score at all; it helps partially (Egypt's normalized currency-risk reading rises to 22.6 in 2022), but the composite still falls slightly both years — partly because Lebanon's currency depreciated over 800% the same year, which compresses every other country's currency-risk reading on the same relative 0–100 scale.</li>
+        </ul>
+        <p class="m-p">Overall: 4 of 6 cases captured in the same calendar year (Syria, Sri Lanka, Afghanistan, Pakistan), 1 captured correctly but roughly a year late (Lebanon), and 1 still substantially missed (Egypt) — an honest scorecard, not a claim of a perfect early-warning system.</p>
+      </section>
+
+      <section class="m-section" id="limitations">
+        <h2 class="m-h2">8. Limitations</h2>
+        <ul class="m-list">
+          <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
+          <li>Default weights (pillar-balanced, equal within each pillar) are a transparent starting point — not a backtested or econometrically validated model (see Weighting and Validation above for what was and wasn't tested).</li>
+          <li>Composite scores simplify complex country conditions and cannot capture all political or institutional nuance.</li>
+          <li>The composite score is annual and backward-looking — it will not reflect an event from the last few months until World Bank data catches up; see the app's Live Conflicts tab for the qualitative, currently-relevant complement.</li>
+          <li>All scores are relative rankings within this 34-country sample, not an absolute, globally-benchmarked index (see Coverage above).</li>
+          <li>Deeper qualitative fields — Financing Arrangements, Key Economic Partners, Trade/Sector Profiles, Major Economic Sanctions, and HDI — are deliberately scoped to 7 of the 34 countries (Turkey and the Horn of Africa group) with the strongest available public sourcing, rather than thinly covering all 34.</li>
+          <li>Historical context and conflict tracking are curated, hand-researched snapshots (fact-checked as of August 2026), not a live news feed.</li>
+          <li>Risk indicators can identify vulnerability but cannot determine the timing or certainty of specific events.</li>
+          <li>Built with AI assistance, under the author's direction — both the code and the qualitative research were drafted with an AI assistant and fact-checked against the named sources shown throughout.</li>
+          <li>The monitor is not investment advice.</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="sources">
+        <h2 class="m-h2">9. Additional Sources Used</h2>
+        <p class="m-p">The 11-factor risk score is built primarily on World Bank data, with IMF World Economic Outlook debt figures used as an automatic fallback. The qualitative layers — Historical Context, Live Conflicts, Key Economic Partners, Trade/Sector Profiles, and Credit Ratings — draw on a much broader set of reputable sources, reflecting how real political risk research actually works: no single database covers conflict dynamics, trade relationships, credit ratings, and fiscal data at once.</p>
+        <div class="m-table-wrap">
+          <table class="m-table m-table--wrap">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Examples Used</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>News &amp; wire services</td><td>Reuters, Bloomberg, Al Jazeera, Associated Press, Times of Israel, France24, Middle East Eye</td></tr>
+              <tr><td>Think tanks &amp; policy research</td><td>Brookings Institution, CFR Global Conflict Tracker, CSIS, Carnegie Endowment, Atlantic Council, International Crisis Group, Belfer Center, Chatham House, Stimson Center, Washington Institute, Soufan Center</td></tr>
+              <tr><td>Government &amp; multilateral bodies</td><td>IMF press releases and World Economic Outlook database, US Congress.gov (CRS reports), UK House of Commons Library, UN Security Council Report, UNHCR/OCHA</td></tr>
+              <tr><td>Encyclopedic reference</td><td>Wikipedia (starting point, cross-checked against primary sources), Britannica</td></tr>
+              <tr><td>Economic/trade data</td><td>CIA World Factbook, Observatory of Economic Complexity (OEC), UN Comtrade, EIA</td></tr>
+              <tr><td>Credit rating agencies</td><td>S&amp;P Global Ratings, Moody's Ratings, Fitch Ratings (via countryeconomy.com aggregation, cross-checked against individual agency press coverage)</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section class="m-section" id="weighting-pca">
-        <h2 class="m-h2">4. Weighting and PCA</h2>
-        <p class="m-p">Principal component analysis is used as a diagnostic check for factor redundancy and correlation structure. It should not be interpreted as proof that the framework predicts sovereign crises. The monitor is designed to support transparent analytical judgment rather than replace it with a single automated output.</p>
-      </section>
-
-      <section class="m-section" id="missing-data">
-        <h2 class="m-h2">5. Missing Data</h2>
-        <p class="m-p">Where country data are unavailable or constrained, the monitor documents the limitation and applies transparent handling rules rather than concealing missingness — a country's missing factors render as a visible "not reported" marker on the radar chart rather than silently shrinking the shape, and no value is invented to fill a gap. Debt-to-GDP coverage is a known gap area: the World Bank does not report it consistently for all 34 countries, so the IMF's World Economic Outlook is used as an automatic fallback. Iran's composite score is lower-confidence, with fewer of the 10 factors available, likely due to sanctions limiting fiscal data reporting. Users should interpret scores alongside data-availability notes and country-specific context.</p>
-      </section>
-
-      <section class="m-section" id="historical-validation">
-        <h2 class="m-h2">6. Historical Validation</h2>
-        <p class="m-p">The project includes historical comparison against documented regional crises to assess whether the composite framework moved in a direction consistent with observed deterioration. Results include same-year captures, lagged captures, and misses. This exercise is intended as a diagnostic assessment of monitoring usefulness, not a claim of deterministic prediction.</p>
-      </section>
-
-      <section class="m-section" id="limitations">
-        <h2 class="m-h2">7. Limitations</h2>
-        <ul class="m-list">
-          <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
-          <li>Default weights (10% per factor) are a transparent, reasonable starting point — not a backtested or econometrically validated model.</li>
-          <li>Composite scores simplify complex country conditions and cannot capture all political or institutional nuance.</li>
-          <li>Cross-country comparisons should be interpreted alongside qualitative research.</li>
-          <li>Risk indicators can identify vulnerability but cannot determine the timing or certainty of specific events.</li>
-          <li>The monitor is not investment advice.</li>
-        </ul>
-      </section>
-
       <section class="m-section" id="version">
-        <h2 class="m-h2">8. Version and Updates</h2>
+        <h2 class="m-h2">10. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> automated weekly refresh via GitHub Actions (every Monday) — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys<br>
           <strong>Last methodology review:</strong> September 2026<br>
