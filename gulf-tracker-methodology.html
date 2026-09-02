@@ -416,7 +416,7 @@
       </blockquote>
 
       <p class="m-hero-summary">
-        Gulf States Vision 2030 &amp; AI Investment Tracker (internally, the Gulf AI &amp; Tech-Bloc Alignment Tracker) is a comparative dashboard scoring 17 economies on a Net Alignment Score — US Integration Depth weighed against China Exposure Depth — built from 4 scored factors across two weighted axes, plus 2 more factors tracked as context. A Gulf state maximizing ties with both Washington and Beijing at once isn't "confused" — it's hedging, and that is exactly the pattern this tracker is built to surface rather than collapse into one misleadingly clean number. Designed as a research/portfolio project; not a forecasting tool, investment signal, or authoritative government assessment.
+        Gulf States Vision 2030 &amp; AI Investment Tracker (internally, the Gulf AI &amp; Tech-Bloc Alignment Tracker) is a comparative dashboard scoring 17 economies on a Net Alignment Score — US Integration Depth weighed against China Exposure Depth — built from 7 scored factors across two weighted axes, plus 2 more factors tracked as context. A Gulf state maximizing ties with both Washington and Beijing at once isn't "confused" — it's hedging, and that is exactly the pattern this tracker is built to surface rather than collapse into one misleadingly clean number. Designed as a research/portfolio project; not a forecasting tool, investment signal, or authoritative government assessment.
       </p>
 
       <div class="m-hero-stats">
@@ -442,7 +442,7 @@
       <ul class="m-hero-why-list">
         <li>Surfaces hedging behavior a single linear score would collapse — e.g. the UAE holding the region's most US-favorable chip-export status while still running Huawei radio equipment on live networks.</li>
         <li>Pairs the quantitative score with a sourced, chronological policy-event tracker and per-country deep-dive briefs.</li>
-        <li>Discloses exactly where the underlying data is thin (fixed-ceiling normalization, single-factor China axis, per-country confidence ratings) rather than presenting one clean number.</li>
+        <li>Discloses exactly where the underlying data is thin (fixed-ceiling normalization, thinner sourcing on the newer China digital-ties factor, per-country confidence ratings) rather than presenting one clean number.</li>
       </ul>
 
       <div class="m-btns">
@@ -490,7 +490,7 @@
         <p class="m-p">Each country is scored on two axes, not one blended number:</p>
         <ul class="m-list">
           <li><strong>US Integration Depth (0–100)</strong> — a weighted average of three factors: US export-control access tier (40%), disclosed AI infrastructure investment (30%), and disclosed/under-development compute capacity (30%). Export-control tier is weighted heaviest because it's the structural gatekeeper — a country's formal BIS status determines what capital and hardware commitments are even legally possible before the other two factors can move.</li>
-          <li><strong>China Exposure Depth (0–100)</strong> — currently a single factor: Chinese tech penetration, chiefly Huawei's telecom/cloud footprint. This is a disclosed, deliberate limitation (see Limitations below), not an oversight.</li>
+          <li><strong>China Exposure Depth (0–100)</strong> — a weighted average of two factors, 50% each: Chinese telecom-vendor penetration (chiefly Huawei/ZTE's RAN/5G footprint) and Chinese AI/cloud/digital-infrastructure ties (Chinese cloud regions, Chinese-origin AI-model deployments, BRI/CPEC-style financing of digital infrastructure). The two factors are related but distinct — in the curated data, Saudi Arabia's digital-ties score (4/5) exceeds its telecom score (3/5), while Iraq shows the opposite pattern (telecom 4/5 vs. digital ties 1/5) — which is exactly why the axis was split rather than left as the single Huawei-telecom factor it started as.</li>
         </ul>
         <p class="m-p">The two axes combine into one derived <strong>Net Alignment Score (0–100, 50 = neutral)</strong>:</p>
         <p class="m-comment">Net Alignment Score = 50 + (US Integration Depth − China Exposure Depth) / 2. Higher means more US-integrated relative to Chinese exposure; lower means more Chinese-exposed relative to US integration. 50 does not mean "inactive" — a country maxing out both axes and a country doing little on either can both land near 50, which is why the two sub-scores are always shown alongside the headline number, never in place of it.</p>
@@ -499,7 +499,7 @@
           <li><strong>AI governance maturity</strong> — existence of a national AI strategy, a dedicated regulator, and binding sectoral rules.</li>
           <li><strong>Non-oil economic diversification</strong> — a World Bank-derived proxy (100 minus oil rents as % of GDP), the same approximation used in IMF Article IV coverage of GCC economies, since no single World Bank indicator cleanly exposes "non-oil GDP share" across this country set.</li>
         </ul>
-        <p class="m-comment">Why 6 factors and not 8–10: the original project brief allowed 6–8. Research confirmed all 6 are sourceable for at least the region's two AI leaders, but data depth drops off sharply for the smaller Gulf states and the original comparators — a methodologically sound 6-factor index (4 scored, 2 context) beat padding to 8–10 with factors that would sit mostly N/A outside Saudi Arabia and the UAE.</p>
+        <p class="m-comment">Why 7 factors and not 8–10: the original project brief allowed 6–8. Research confirmed 6 of the brief's original factors are sourceable for at least the region's two AI leaders, but data depth drops off sharply for the smaller Gulf states and the original comparators. A 7th factor — Chinese AI/cloud/digital-infrastructure ties — was added in a dedicated research pass across all 17 countries once it had a data source meeting the same sourcing bar as the rest of the project (a specific, dated, cited rubric row per country). A methodologically sound 7-factor index (5 scored, 2 context) beat padding further to 8–10 with factors that would sit mostly N/A outside Saudi Arabia and the UAE.</p>
       </section>
 
       <section class="m-section" id="normalization">
@@ -510,7 +510,7 @@
 
       <section class="m-section" id="rubrics">
         <h2 class="m-h2">5. Ordinal Rubrics</h2>
-        <p class="m-p">The two curated 0–5 factors — US export-control access tier and Chinese tech penetration — are scored on a documented rubric rather than pulled from a single clean public number, because no such number exists at this granularity. These are analyst-desk judgment calls against a disclosed rubric, not disguised as a hard figure; the specific source and a confidence rating behind every country's score live in the project's curated data files.</p>
+        <p class="m-p">The three curated 0–5 factors — US export-control access tier, Chinese telecom penetration, and Chinese AI/cloud/digital ties — are scored on a documented rubric rather than pulled from a single clean public number, because no such number exists at this granularity. These are analyst-desk judgment calls against a disclosed rubric, not disguised as a hard figure; the specific source and a confidence rating behind every country's score live in the project's curated data files.</p>
         <div class="m-table-wrap">
           <table class="m-table m-table--wrap">
             <thead>
@@ -530,7 +530,7 @@
         <div class="m-table-wrap">
           <table class="m-table m-table--wrap">
             <thead>
-              <tr><th>Score</th><th>Chinese Tech Penetration</th></tr>
+              <tr><th>Score</th><th>Chinese Telecom Penetration</th></tr>
             </thead>
             <tbody>
               <tr><td>0</td><td>No significant Chinese ICT vendor presence</td></tr>
@@ -542,6 +542,22 @@
             </tbody>
           </table>
         </div>
+        <div class="m-table-wrap">
+          <table class="m-table m-table--wrap">
+            <thead>
+              <tr><th>Score</th><th>Chinese AI/Cloud/Digital Ties</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>0</td><td>No disclosed Chinese AI/cloud infrastructure presence or financing found</td></tr>
+              <tr><td>1</td><td>Minimal — an isolated MOU, marketing presence, or announcement, with no confirmed active deployment or financing</td></tr>
+              <tr><td>2</td><td>Moderate — an actively marketed/launched Chinese cloud service, but no AI-model deployment and no digital-infrastructure financing</td></tr>
+              <tr><td>3</td><td>Significant — confirmed active Chinese AI-model deployment OR confirmed Chinese financing of digital infrastructure (not both)</td></tr>
+              <tr><td>4</td><td>Deep — confirmed active Chinese AI-model/cloud deployment AND confirmed Chinese financing of digital infrastructure</td></tr>
+              <tr><td>5</td><td>Extensive — primary/state-level Chinese digital backbone plus multiple, distinct financing ties</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="m-comment">This factor was added in a dedicated research pass across all 17 countries specifically to close China Exposure Depth's original single-factor limitation. It deliberately measures something telecom penetration doesn't: AI-model deployment and cloud partnerships, which sit closer to the AI stack than legacy 5G/fiber vendor choice and can move independently of it.</p>
       </section>
 
       <section class="m-section" id="missing-data">
@@ -563,8 +579,9 @@
             </thead>
             <tbody>
               <tr><td>Non-oil diversification proxy, FDI net inflows</td><td>Live, automated (World Bank API)</td><td>Weekly, via GitHub Actions (Mondays)</td></tr>
-              <tr><td>Export-control tier, Chinese tech penetration, AI governance maturity</td><td>Manually curated, one row per country with source, confidence rating, and date</td><td>Ad hoc, as bilateral deals or policy events are disclosed</td></tr>
+              <tr><td>Export-control tier, Chinese telecom penetration, Chinese AI/cloud/digital ties, AI governance maturity</td><td>Manually curated, one row per country with source, confidence rating, and date</td><td>Ad hoc, as bilateral deals or policy events are disclosed</td></tr>
               <tr><td>AI investment deals, compute-capacity deals</td><td>Manually curated, one row per disclosed deal</td><td>Ad hoc</td></tr>
+              <tr><td>Non-oil GDP share (supplementary, where the live World Bank pull is unpopulated)</td><td>Manually researched from IMF Article IV releases and national statistics agencies, 8 of 17 countries</td><td>Ad hoc, one-time research pass</td></tr>
             </tbody>
           </table>
         </div>
@@ -573,19 +590,24 @@
 
       <section class="m-section" id="features">
         <h2 class="m-h2">8. Additional Features</h2>
-        <p class="m-p">Beyond the composite score, the dashboard pairs four layers designed to keep the alignment score grounded in checkable events rather than standing alone as an unexplained number:</p>
+        <p class="m-p">Beyond the composite score, the dashboard is 10 pages designed to keep the alignment score grounded in checkable events and transparent reasoning rather than standing alone as an unexplained number:</p>
         <ul class="m-list">
-          <li><strong>Policy-event tracker</strong> — a chronological, sourced feed of chip-policy events (the AI Diffusion Rule's issuance and rescission, the Chip Security Act, the late-2025 Saudi/UAE chip authorizations, smuggling indictments, the UAE's Country Group upgrade) with links to how each connects to the scoring model.</li>
-          <li><strong>Auto-generated country briefs</strong> — a Bottom-Line-Up-Front and Key Judgments per country, downloadable as PDF. These are templated from the underlying cited data, not free-generated by an LLM at runtime — deterministic, so the brief always matches the current data and every sentence traces back to a specific cited row.</li>
-          <li><strong>Scenario Lab</strong> — live reweighting of the US Integration Depth sub-weights and the US-vs-China axis balance, with 5 named presets each carrying a stated rationale (e.g. an "export-control-centric" preset weights BIS status at 70%, on the reasoning that a regulatory label may be stickier than capital commitments). Also includes a Normalization Sensitivity check (recomputes the ranking against alternative ceiling values) and a Rank Stability analysis (samples many weight configurations and reports how much each country's rank actually moves) — never a claim that any one configuration is the "correct" one.</li>
-          <li><strong>Overview map metric selector</strong> — switches the choropleth between Net Alignment, US Integration Depth, China Exposure Depth, disclosed AI investment, disclosed compute capacity, and AI governance maturity, each with its own color scale.</li>
+          <li><strong>Executive Key Findings</strong> — a Bottom Line / Key Judgment / Confidence / Why It Matters card at the top of the Overview, computed from the live data every time, plus an interactive map with optional AI/compute-hub and major-city marker layers.</li>
+          <li><strong>Policy-event tracker</strong> — a chronological, sourced feed of chip-policy events (the AI Diffusion Rule's issuance and rescission, the Chip Security Act, the late-2025 Saudi/UAE chip authorizations, smuggling indictments, the UAE's Country Group upgrade), filterable by country, date, and category, each tagged Loosening/Tightening and linked to how it connects to the scoring model.</li>
+          <li><strong>Country Deep Dive</strong> — a full per-country intelligence profile: current position, key judgments, a factor-level Key Drivers table, a trend section (honestly reporting "insufficient data" until enough dated snapshots accumulate), recent policy developments, qualified strategic implications for policymakers/investors/corporates, forward-looking Watch Next indicators, a data-quality summary, and a downloadable PDF brief covering all of it.</li>
+          <li><strong>Scenario Lab</strong> — live reweighting of the US Integration Depth and China Exposure Depth sub-weights and the US-vs-China axis balance, with 7 named presets each carrying a stated rationale. Also includes a Normalization Sensitivity check, a Rank Stability / robustness analysis, and a templated plain-language interpretation of each scenario's effect — never a claim that any one configuration is the "correct" one.</li>
+          <li><strong>Strategic Risk</strong> — a regional matrix rating every country on 4 risk dimensions traced to already-scored data (US policy exposure, China exposure, infrastructure execution risk, measurement confidence risk), plus per-country investor/corporate/policy transmission-channel implications.</li>
+          <li><strong>12-Month Outlook</strong> — a Base Case and Alternative Case per country, built from the tracker's own pending indicators, with every probability an explicit qualitative band (never a fabricated percentage) and every judgment labeled analyst judgment vs. model output.</li>
+          <li><strong>Economic Analysis</strong> — the tracker's one serious empirical finding: AI governance maturity is moderately-to-strongly associated with US export-control tier (Pearson r=0.68, full 17-country sample), reported as correlation rather than a fitted regression, with an explicit association-not-causation discussion.</li>
+          <li><strong>Sources &amp; Data</strong> — a research data catalog covering every dataset the tracker uses, with coverage, observation counts, and missingness computed live from the actual files, plus a CSV download button per dataset.</li>
         </ul>
       </section>
 
       <section class="m-section" id="limitations">
         <h2 class="m-h2">9. Limitations</h2>
         <ul class="m-list">
-          <li>China Exposure Depth is a single-factor axis, resting entirely on Chinese tech penetration (Huawei). A stronger version would add a second, independent China-tie factor if and when comparably well-sourced data becomes available.</li>
+          <li>China Exposure Depth's second factor (Chinese AI/cloud/digital ties) is a newer, thinner research pass than the telecom-penetration factor it complements — several rows rest on a single MOU or marketing announcement rather than a confirmed, audited deployment figure. Directionally sound, less battle-tested than the telecom factor it's averaged with.</li>
+          <li>Strategic Risk deliberately does not rate "semiconductor dependency" or "geopolitical volatility" per country — the first would just restate the existing US/China axes, the second would require a political judgment the curated data doesn't support without guessing.</li>
           <li>Confidence varies by country and factor: Qatar, Bahrain, Kuwait, and Oman's export-control tier remains Low confidence (a direct BIS source check was blocked; the working inference is documented but not independently verified), as is Turkey's. The 9 later-added regional countries inherit the same access gap, so their export-control-tier rows are marked Medium or Low confidence rather than silently upgraded.</li>
           <li>Two scores rest on individual judgment calls worth a reader's attention: Israel's export-control tier rests on a single outlet's characterization of a Dec 2025 declaration rather than a confirmed regulatory text change, and Egypt's China-exposure and export-control scores are the single most likely to move in the next research pass given an unresolved, live Huawei-vs-US-backed bid for its national AI data center.</li>
           <li>This is a fast-moving policy space — the two BIS decisions the export-control tier is built around (UAE, Saudi Arabia) are both less than a year old at time of writing, and the framework itself only stabilized after a May 2025 rule rescission. The export-control tier and the policy-event tracker are the two most time-sensitive parts of this project.</li>
@@ -623,7 +645,7 @@
       <section class="m-section" id="version">
         <h2 class="m-h2">11. Version and Updates</h2>
         <p class="m-meta">
-          <strong>Data pipeline:</strong> World Bank layer automated and refreshed weekly via GitHub Actions; export-control tier, Chinese tech penetration, AI governance maturity, and deal-level investment/compute figures are manually curated and sourced as new information is disclosed<br>
+          <strong>Data pipeline:</strong> World Bank layer automated and refreshed weekly via GitHub Actions; export-control tier, Chinese telecom penetration, Chinese AI/cloud/digital ties, AI governance maturity, and deal-level investment/compute figures are manually curated and sourced as new information is disclosed<br>
           <strong>Companion analysis:</strong> Gulf AI Ambitions and Geopolitical Risk (analytic brief, linked from the Research section)<br>
           <strong>Project owner:</strong> Muhammad Rafay Waqar
         </p>
