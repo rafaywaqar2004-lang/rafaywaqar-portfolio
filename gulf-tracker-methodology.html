@@ -345,6 +345,24 @@
     .m-table--wrap th, .m-table--wrap td { white-space: normal; }
     .m-table--wrap td:first-child { white-space: nowrap; font-weight: 600; color: var(--text-dark); }
 
+    .m-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .m-pill {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.32rem 0.8rem;
+      border-radius: 1px;
+      letter-spacing: 0.005em;
+    }
+
     .m-meta {
       font-size: 0.85rem;
       color: var(--text-mid);
@@ -578,8 +596,32 @@
         </ul>
       </section>
 
+      <section class="m-section" id="skills">
+        <h2 class="m-h2">10. Skills &amp; Technical Stack</h2>
+        <p class="m-p">Built end-to-end — data pipeline, two-axis scoring model, statistical sensitivity testing, and the interactive dashboard itself — covering the Gulf Cooperation Council states (Saudi Arabia, UAE, Qatar, Bahrain, Kuwait, Oman) plus 11 wider Middle East/South Asia comparators (Pakistan, Turkey, Israel, Egypt, Jordan, Iraq, Lebanon, Syria, Iran, Yemen, Afghanistan).</p>
+        <div class="m-pill-group">
+          <span class="m-pill">Python</span>
+          <span class="m-pill">Streamlit</span>
+          <span class="m-pill">Plotly</span>
+          <span class="m-pill">Fixed-Ceiling Log-Scale Normalization</span>
+          <span class="m-pill">Weighted Composite Scoring</span>
+          <span class="m-pill">GitHub Actions (CI/CD)</span>
+          <span class="m-pill">Automated Testing (pytest)</span>
+          <span class="m-pill">World Bank API</span>
+          <span class="m-pill">Custom Choropleth Rendering</span>
+          <span class="m-pill">PDF Generation (ReportLab)</span>
+          <span class="m-pill">Deterministic Templated Text Generation</span>
+          <span class="m-pill">Scenario &amp; Sensitivity Analysis</span>
+          <span class="m-pill">Rank-Stability Testing</span>
+          <span class="m-pill">Source Curation &amp; Confidence Rating</span>
+          <span class="m-pill">Geopolitical Risk Analysis</span>
+          <span class="m-pill">US-China Tech Competition Analysis</span>
+          <span class="m-pill">Export-Control Policy Analysis</span>
+        </div>
+      </section>
+
       <section class="m-section" id="version">
-        <h2 class="m-h2">10. Version and Updates</h2>
+        <h2 class="m-h2">11. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> World Bank layer automated and refreshed weekly via GitHub Actions; export-control tier, Chinese tech penetration, AI governance maturity, and deal-level investment/compute figures are manually curated and sourced as new information is disclosed<br>
           <strong>Companion analysis:</strong> Gulf AI Ambitions and Geopolitical Risk (analytic brief, linked from the Research section)<br>

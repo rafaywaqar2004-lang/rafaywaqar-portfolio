@@ -335,6 +335,24 @@
     .m-table--wrap th, .m-table--wrap td { white-space: normal; }
     .m-table--wrap td:first-child { white-space: nowrap; font-weight: 600; color: var(--text-dark); }
 
+    .m-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .m-pill {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.32rem 0.8rem;
+      border-radius: 1px;
+      letter-spacing: 0.005em;
+    }
+
     .m-meta {
       font-size: 0.85rem;
       color: var(--text-mid);
@@ -583,8 +601,37 @@
         </div>
       </section>
 
+      <section class="m-section" id="skills">
+        <h2 class="m-h2">12. Skills &amp; Technical Stack</h2>
+        <p class="m-p">Built end-to-end — data pipeline, composite scoring methodology, statistical validation, and the interactive dashboard itself — covering 34 economies across MENA, South Asia, and the Horn of Africa.</p>
+        <div class="m-pill-group">
+          <span class="m-pill">Python</span>
+          <span class="m-pill">Pandas</span>
+          <span class="m-pill">Streamlit</span>
+          <span class="m-pill">Plotly</span>
+          <span class="m-pill">World Bank API (WDI &amp; WGI)</span>
+          <span class="m-pill">IMF World Economic Outlook API</span>
+          <span class="m-pill">GitHub Actions (CI/CD)</span>
+          <span class="m-pill">Composite Index Design</span>
+          <span class="m-pill">Weighted Scoring Models</span>
+          <span class="m-pill">Principal Component Analysis</span>
+          <span class="m-pill">Historical Backtesting</span>
+          <span class="m-pill">Cross-Sectional Normalization</span>
+          <span class="m-pill">Missing-Data Handling</span>
+          <span class="m-pill">PDF Report Generation</span>
+          <span class="m-pill">Choropleth Mapping</span>
+          <span class="m-pill">Data Validation Scripting</span>
+          <span class="m-pill">Confidence-Rated Sourcing</span>
+          <span class="m-pill">Sovereign Debt Analysis</span>
+          <span class="m-pill">Political Risk Analysis</span>
+          <span class="m-pill">Credit Rating Benchmarking</span>
+          <span class="m-pill">Risk Sub-Index Decomposition</span>
+          <span class="m-pill">Event Calendar Curation</span>
+        </div>
+      </section>
+
       <section class="m-section" id="version">
-        <h2 class="m-h2">12. Version and Updates</h2>
+        <h2 class="m-h2">13. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> automated weekly refresh via GitHub Actions (every Monday) — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys<br>
           <strong>Latest addition:</strong> Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
