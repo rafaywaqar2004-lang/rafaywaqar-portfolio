@@ -334,8 +334,8 @@
       <section class="m-section" id="coverage">
         <h2 class="m-h2">2. Coverage</h2>
         <ul class="m-list">
-          <li>34 economies</li>
-          <li>MENA, South Asia, and the Horn of Africa</li>
+          <li>34 economies across MENA, South Asia, and the Horn of Africa</li>
+          <li>Algeria, Bahrain, Egypt, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Libya, Morocco, Oman, Palestine, Qatar, Saudi Arabia, Syria, Tunisia, Turkey, UAE, Yemen, Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, Sri Lanka, Sudan, South Sudan, Ethiopia, Somalia, Djibouti, and Eritrea</li>
           <li>Historical coverage from 2010 to present</li>
           <li>Country-level monitoring and comparisons</li>
         </ul>
@@ -343,9 +343,9 @@
 
       <section class="m-section" id="framework">
         <h2 class="m-h2">3. Framework</h2>
-        <p class="m-p">The monitor combines 11 macroeconomic and governance indicators drawn from IMF and World Bank sources. Indicators are normalized and combined into a composite framework designed to make cross-country comparison transparent and interpretable.</p>
+        <p class="m-p">The monitor combines 10 macroeconomic and governance indicators across two pillars — economic and governance — weighted equally at 10% by default, with weights adjustable live in the app's Scenario Explorer. The quantitative score is built primarily on the World Bank's public API (WDI and WGI). IMF World Economic Outlook data is used as an automatic fallback for debt-to-GDP figures on countries the World Bank does not report consistently. Indicators are normalized and combined into a composite framework designed to make cross-country comparison transparent and interpretable.</p>
 
-        <!-- Replace these placeholder rows with the actual 11 MENASA indicators, source URLs, update frequency, transformations, and risk direction. -->
+        <!-- Replace these placeholder rows with the actual 10 MENASA indicators, source URLs, update frequency, transformations, and risk direction. The full factor/weight/source table lives in the app's own in-app Methodology tab. -->
         <div class="m-table-wrap">
           <table class="m-table">
             <thead>
@@ -368,7 +368,6 @@
               <tr><td>Indicator 8</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
               <tr><td>Indicator 9</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
               <tr><td>Indicator 10</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Indicator 11</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
             </tbody>
           </table>
         </div>
@@ -381,7 +380,7 @@
 
       <section class="m-section" id="missing-data">
         <h2 class="m-h2">5. Missing Data</h2>
-        <p class="m-p">Where country data are unavailable or constrained, the monitor documents the limitation and applies transparent handling rules rather than concealing missingness. Users should interpret scores alongside data-availability notes and country-specific context.</p>
+        <p class="m-p">Where country data are unavailable or constrained, the monitor documents the limitation and applies transparent handling rules rather than concealing missingness — a country's missing factors render as a visible "not reported" marker on the radar chart rather than silently shrinking the shape, and no value is invented to fill a gap. Debt-to-GDP coverage is a known gap area: the World Bank does not report it consistently for all 34 countries, so the IMF's World Economic Outlook is used as an automatic fallback. Iran's composite score is lower-confidence, with fewer of the 10 factors available, likely due to sanctions limiting fiscal data reporting. Users should interpret scores alongside data-availability notes and country-specific context.</p>
       </section>
 
       <section class="m-section" id="historical-validation">
@@ -393,6 +392,7 @@
         <h2 class="m-h2">7. Limitations</h2>
         <ul class="m-list">
           <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
+          <li>Default weights (10% per factor) are a transparent, reasonable starting point — not a backtested or econometrically validated model.</li>
           <li>Composite scores simplify complex country conditions and cannot capture all political or institutional nuance.</li>
           <li>Cross-country comparisons should be interpreted alongside qualitative research.</li>
           <li>Risk indicators can identify vulnerability but cannot determine the timing or certainty of specific events.</li>
@@ -403,7 +403,7 @@
       <section class="m-section" id="version">
         <h2 class="m-h2">8. Version and Updates</h2>
         <p class="m-meta">
-          <strong>Data pipeline:</strong> automated validation and scheduled updates<br>
+          <strong>Data pipeline:</strong> automated weekly refresh via GitHub Actions (every Monday) — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys<br>
           <strong>Last methodology review:</strong> [add date]<br>
           <strong>Project owner:</strong> Muhammad Rafay Waqar
         </p>
