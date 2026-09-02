@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENASA Sovereign Risk Monitor — Methodology</title>
+  <meta name="description" content="A transparent framework for monitoring macroeconomic, governance, and political-economic vulnerability across MENA, South Asia, and the Horn of Africa.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1b2a'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='11' font-weight='600' fill='%23c9a84c'>MRW</text></svg>">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP9RPS41KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QP9RPS41KJ');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #152335;
+      --navy-light:  #1e3048;
+      --gold:        #c9a84c;
+      --gold-light:  #dfc078;
+      --cream:       #f7f4ee;
+      --cream-dark:  #ede9e0;
+      --cream-mid:   #e4dfd4;
+      --white:       #ffffff;
+      --text-dark:   #1a2332;
+      --text-mid:    #4a5568;
+      --text-light:  #718096;
+      --border:      #d4c9b0;
+      --border-light:#e8e2d6;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      letter-spacing: -0.008em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---- nav ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 238, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* ---- hero ---- */
+    .m-hero {
+      background: var(--navy);
+      padding: 4rem 0 3rem;
+    }
+
+    .m-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .m-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .m-subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(247, 244, 238, 0.7);
+      max-width: 680px;
+      line-height: 1.7;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.2rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .m-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.05rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(247, 244, 238, 0.58);
+      border-color: rgba(247, 244, 238, 0.16);
+    }
+
+    .btn-ghost:hover { border-color: rgba(201, 168, 76, 0.55); color: var(--gold); }
+
+    /* ---- body ---- */
+    .m-body { padding: 3.5rem 0; }
+
+    .m-section { margin-bottom: 3rem; }
+
+    .m-h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.005em;
+    }
+
+    .m-p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .m-list {
+      list-style: none;
+      margin: 1rem 0 0;
+    }
+
+    .m-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.94rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 0.55rem;
+    }
+
+    .m-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .m-comment {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      background: var(--cream-dark);
+      border-left: 3px solid var(--gold);
+      padding: 0.65rem 1rem;
+      margin: 1.25rem 0 1rem;
+    }
+
+    .m-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-light);
+    }
+
+    table.m-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 0.85rem;
+    }
+
+    .m-table th, .m-table td {
+      text-align: left;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    .m-table th {
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .m-table td { color: var(--text-mid); }
+    .m-table tr:last-child td { border-bottom: none; }
+    .m-table tr:nth-child(even) td { background: var(--cream); }
+
+    .m-meta {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    .m-meta strong { color: var(--text-dark); }
+
+    .m-footer-cta {
+      background: var(--navy);
+      padding: 3rem 0;
+    }
+
+    .m-footer-cta .m-btns { justify-content: flex-start; }
+
+    footer {
+      background: #060e18;
+      padding: 1.6rem 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.7rem;
+      color: rgba(247, 244, 238, 0.2);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 640px) {
+      .m-hero { padding: 3rem 0 2.5rem; }
+      .m-body { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== NAVIGATION =============== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">MRW<span>.</span></a>
+      <a href="./index.html" class="nav-back">← Return to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- =============== HERO =============== -->
+  <section class="m-hero">
+    <div class="container">
+      <div class="m-eyebrow">Methodology</div>
+      <h1 class="m-title">MENASA Sovereign Risk Monitor — Methodology</h1>
+      <blockquote class="m-subtitle">
+        A transparent framework for monitoring macroeconomic, governance, and political-economic vulnerability across MENA, South Asia, and the Horn of Africa.
+      </blockquote>
+      <div class="m-btns">
+        <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Monitor</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://github.com/rafaywaqar2004-lang/overeign-risk-index" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== BODY =============== -->
+  <main class="m-body">
+    <div class="container">
+
+      <section class="m-section" id="purpose">
+        <h2 class="m-h2">1. Purpose</h2>
+        <p class="m-p">The MENASA Sovereign Risk Monitor is designed as a structured country-risk screening and monitoring tool. It helps users identify changes in macroeconomic and governance vulnerability, compare country profiles, and prioritize areas for deeper analyst review. It does not forecast crises with certainty and should not be used as investment advice or as a substitute for country-specific due diligence.</p>
+      </section>
+
+      <section class="m-section" id="coverage">
+        <h2 class="m-h2">2. Coverage</h2>
+        <ul class="m-list">
+          <li>34 economies</li>
+          <li>MENA, South Asia, and the Horn of Africa</li>
+          <li>Historical coverage from 2010 to present</li>
+          <li>Country-level monitoring and comparisons</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="framework">
+        <h2 class="m-h2">3. Framework</h2>
+        <p class="m-p">The monitor combines 11 macroeconomic and governance indicators drawn from IMF and World Bank sources. Indicators are normalized and combined into a composite framework designed to make cross-country comparison transparent and interpretable.</p>
+
+        <!-- Replace these placeholder rows with the actual 11 MENASA indicators, source URLs, update frequency, transformations, and risk direction. -->
+        <div class="m-table-wrap">
+          <table class="m-table">
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Pillar</th>
+                <th>Source</th>
+                <th>Update Frequency</th>
+                <th>Direction of Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Indicator 1</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 2</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 3</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 4</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 5</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 6</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 7</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 8</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 9</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 10</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+              <tr><td>Indicator 11</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="m-section" id="weighting-pca">
+        <h2 class="m-h2">4. Weighting and PCA</h2>
+        <p class="m-p">Principal component analysis is used as a diagnostic check for factor redundancy and correlation structure. It should not be interpreted as proof that the framework predicts sovereign crises. The monitor is designed to support transparent analytical judgment rather than replace it with a single automated output.</p>
+      </section>
+
+      <section class="m-section" id="missing-data">
+        <h2 class="m-h2">5. Missing Data</h2>
+        <p class="m-p">Where country data are unavailable or constrained, the monitor documents the limitation and applies transparent handling rules rather than concealing missingness. Users should interpret scores alongside data-availability notes and country-specific context.</p>
+      </section>
+
+      <section class="m-section" id="historical-validation">
+        <h2 class="m-h2">6. Historical Validation</h2>
+        <p class="m-p">The project includes historical comparison against documented regional crises to assess whether the composite framework moved in a direction consistent with observed deterioration. Results include same-year captures, lagged captures, and misses. This exercise is intended as a diagnostic assessment of monitoring usefulness, not a claim of deterministic prediction.</p>
+      </section>
+
+      <section class="m-section" id="limitations">
+        <h2 class="m-h2">7. Limitations</h2>
+        <ul class="m-list">
+          <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
+          <li>Composite scores simplify complex country conditions and cannot capture all political or institutional nuance.</li>
+          <li>Cross-country comparisons should be interpreted alongside qualitative research.</li>
+          <li>Risk indicators can identify vulnerability but cannot determine the timing or certainty of specific events.</li>
+          <li>The monitor is not investment advice.</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="version">
+        <h2 class="m-h2">8. Version and Updates</h2>
+        <p class="m-meta">
+          <strong>Data pipeline:</strong> automated validation and scheduled updates<br>
+          <strong>Last methodology review:</strong> [add date]<br>
+          <strong>Project owner:</strong> Muhammad Rafay Waqar
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =============== FOOTER CTA =============== -->
+  <section class="m-footer-cta">
+    <div class="container">
+      <div class="m-btns">
+        <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Monitor</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://github.com/rafaywaqar2004-lang/overeign-risk-index" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
+  </footer>
+
+</body>
+</html>

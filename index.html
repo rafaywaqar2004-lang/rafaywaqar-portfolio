@@ -18,15 +18,6 @@
   <meta name="twitter:title"       content="Muhammad Rafay Waqar — Political Economy & Geopolitical Risk">
   <meta name="twitter:description" content="Policy analyst specialising in macroeconomic policy, political risk, and development across MENA and South Asia.">
 
-  <!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -474,6 +465,196 @@
     }
 
     /* ====================================================
+       FLAGSHIP: MENASA SOVEREIGN RISK MONITOR
+    ==================================================== */
+    #flagship {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+    }
+
+    #flagship .section-title { color: var(--cream); }
+    #flagship .rule { background: rgba(201, 168, 76, 0.5); }
+
+    .flagship-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .flagship-summary {
+      font-size: 0.98rem;
+      color: rgba(247, 244, 238, 0.72);
+      line-height: 1.85;
+      margin-bottom: 1.1rem;
+    }
+
+    .flagship-disclaimer {
+      font-size: 0.76rem;
+      color: rgba(247, 244, 238, 0.4);
+      font-style: italic;
+      margin-bottom: 2.25rem;
+    }
+
+    .flagship-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+      margin-bottom: 2.25rem;
+      border-top: 1px solid rgba(247, 244, 238, 0.08);
+      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .flagship-metric-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .flagship-metric-label {
+      font-size: 0.68rem;
+      color: rgba(247, 244, 238, 0.48);
+      line-height: 1.4;
+    }
+
+    .flagship-why-heading {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .flagship-why-list {
+      list-style: none;
+      margin-bottom: 2.25rem;
+    }
+
+    .flagship-why-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+      color: rgba(247, 244, 238, 0.65);
+      line-height: 1.65;
+      margin-bottom: 0.55rem;
+    }
+
+    .flagship-why-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .flagship-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .flagship-media { position: relative; }
+
+    .flagship-img {
+      width: 100%;
+      display: block;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 2px;
+    }
+
+    .flagship-img-fallback {
+      display: none;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 1px dashed rgba(201, 168, 76, 0.3);
+      background: rgba(247, 244, 238, 0.02);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: rgba(247, 244, 238, 0.35);
+      padding: 2rem;
+    }
+
+    @media (max-width: 860px) {
+      .flagship-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .flagship-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ====================================================
+       SELECTED IMPACT
+    ==================================================== */
+    #impact {
+      background: var(--cream-dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 0;
+    }
+
+    .impact-heading {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.25rem;
+    }
+
+    .impact-metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .impact-metric-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .impact-metric-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .impact-note {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .impact-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .impact-metrics { grid-template-columns: 1fr; }
+    }
+
+    /* ====================================================
        ABOUT
     ==================================================== */
     #about { background: var(--cream); }
@@ -774,6 +955,15 @@
        RESEARCH
     ==================================================== */
     #research { background: var(--cream); }
+
+    .research-intro {
+      max-width: 680px;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.005em;
+    }
 
     .research-cards {
       display: grid;
@@ -1518,12 +1708,107 @@
       </div>
 
       <div class="hero-cta">
-        <a href="#research" class="btn btn-gold">Research Projects</a>
+        <a href="#flagship" class="btn btn-gold">View Flagship Monitor</a>
         <a href="#writing"  class="btn btn-ghost">Read Writing</a>
         <a href="#skills"   class="btn btn-ghost">Certifications &amp; Skills</a>
         <a href="./resume.pdf" download class="btn btn-ghost">Resume</a>
       </div>
 
+    </div>
+  </section>
+
+  <!-- =============== FLAGSHIP: MENASA SOVEREIGN RISK MONITOR =============== -->
+  <section id="flagship">
+    <div class="container">
+      <a href="#flagship" class="eyebrow">Flagship Research Tool</a>
+      <h2 class="section-title">MENASA Sovereign Risk Monitor</h2>
+      <div class="rule"></div>
+
+      <div class="flagship-layout">
+        <div class="flagship-text">
+          <p class="flagship-summary">
+            MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators from IMF and World Bank sources into a transparent composite framework, helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook.
+          </p>
+          <p class="flagship-summary">
+            The monitor provides country rankings, risk-driver attribution, historical trends, scenario analysis, and crisis backtesting to support structured country-risk screening and deeper analyst review.
+          </p>
+          <p class="flagship-disclaimer">Designed as a research and monitoring tool; not investment advice.</p>
+
+          <div class="flagship-metrics">
+            <div class="flagship-metric">
+              <div class="flagship-metric-num">34</div>
+              <div class="flagship-metric-label">Economies monitored</div>
+            </div>
+            <div class="flagship-metric">
+              <div class="flagship-metric-num">11</div>
+              <div class="flagship-metric-label">Macro &amp; governance indicators</div>
+            </div>
+            <div class="flagship-metric">
+              <div class="flagship-metric-num">2010–Present</div>
+              <div class="flagship-metric-label">Historical risk coverage</div>
+            </div>
+            <div class="flagship-metric">
+              <div class="flagship-metric-num">Automated</div>
+              <div class="flagship-metric-label">Data validation &amp; deployment</div>
+            </div>
+          </div>
+
+          <div class="flagship-why-heading">Why It Matters</div>
+          <ul class="flagship-why-list">
+            <li>Identifies where sovereign and political-economic risk is rising.</li>
+            <li>Shows which factors drove each country's score change.</li>
+            <li>Allows structured scenario testing and historical crisis comparison.</li>
+          </ul>
+
+          <div class="flagship-cta">
+            <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Monitor</a>
+            <a href="./menasa-methodology.html" class="btn btn-ghost">Read Methodology</a>
+            <a href="https://github.com/rafaywaqar2004-lang/overeign-risk-index" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+          </div>
+        </div>
+
+        <div class="flagship-media">
+          <img
+            src="./assets/menasa-risk-monitor-preview.png"
+            alt="Screenshot of the MENASA Sovereign Risk Monitor showing regional country-risk analysis"
+            class="flagship-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="flagship-img-fallback">Add MENASA dashboard screenshot here</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== SELECTED IMPACT =============== -->
+  <section id="impact">
+    <div class="container">
+      <div class="impact-heading">Selected Impact</div>
+
+      <div class="impact-metrics">
+        <div class="impact-metric">
+          <div class="impact-metric-num">34</div>
+          <div class="impact-metric-label">Economies monitored through MENASA Risk Monitor</div>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-num">7</div>
+          <div class="impact-metric-label">IMF constituency countries analyzed</div>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-num">8</div>
+          <div class="impact-metric-label">MENA country programs supported at World Bank Group</div>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-num">12+</div>
+          <div class="impact-metric-label">Published policy and political-economy articles</div>
+        </div>
+        <div class="impact-metric">
+          <div class="impact-metric-num">$5K</div>
+          <div class="impact-metric-label">Raised for clean-water access in rural Punjab</div>
+        </div>
+      </div>
+
+      <p class="impact-note">Selected highlights from research, multilateral-policy experience, writing, and civic leadership.</p>
     </div>
   </section>
 
@@ -1725,9 +2010,11 @@
   <!-- =============== RESEARCH =============== -->
   <section id="research">
     <div class="container">
-      <a href="#research" class="eyebrow">Work in Progress</a>
+      <a href="#research" class="eyebrow">Selected Research &amp; Tools</a>
       <h2 class="section-title">Research Projects</h2>
       <div class="rule"></div>
+
+      <p class="research-intro">Selected tools and research products examining sovereign vulnerability, geopolitical risk, technology competition, and political economy across emerging markets.</p>
 
       <div class="research-cards"></div>
 
@@ -1889,7 +2176,8 @@
         title: `MENASA Risk Monitor`,
         when: `2026`,
         status: `Live`,
-        desc: `A composite sovereign risk score covering all 34 tracked economies across MENA, South Asia, and the Horn of Africa (including Palestine, Turkey, Sudan, South Sudan, Ethiopia, Somalia, Djibouti, and Eritrea), built on World Bank and IMF data across 11 factors spanning economic and governance pillars, with a GitHub Actions pipeline that re-pulls data, recomputes scores, and redeploys automatically every night. Includes a live principal component analysis checking the 11 factors for redundancy, and a historical validation section that backtests the composite score against 6 real, well-documented crises (Syria's civil war escalation, Sri Lanka's 2022 default, Egypt's currency crisis, and others) to test whether it actually moved in the right direction and when — reporting an honest mix of same-year captures, lagged captures, and one outright miss, not just the wins. Every Country Deep Dive includes an exact, non-estimated point-by-point attribution of what drove a year-over-year score change, alongside a choropleth risk map, per-country radar breakdown, historical trend charts back to 2010, an auto-generated analyst-style Country Brief with a downloadable PDF export, sourced Key Historical Context and trade/FDI profiles, verified IMF financing arrangements, a real-world credit rating comparison against S&P, Moody's, and Fitch, a 4-country side-by-side Compare Countries tool, a Live Conflicts tab tracking 13 major regional flashpoints with sourced casualty, cost, and displacement figures for each — plotted on a CFR Global Conflict Tracker-style map that shades every affected country's territory on click and marks contested zones like Kashmir and the Nile dam dispute with a distinct symbol — a live Scenario Explorer for reweighting factors in real time, and a Geo-Economic Interdependence Dashboard mapping the region's maritime chokepoints, critical-mineral concentration, and commodity benchmarks — with real live-charted prices for crude oil, natural gas, and gold — against the corporate gatekeepers behind each. A data-validation script checks every dataset for consistency before each deploy, and missing data (e.g. Iran, where sanctions limit reporting) is handled by rescaling weights rather than hiding the gap.`,
+        flagship: true,
+        desc: `Live sovereign- and geopolitical-risk monitoring across 34 economies in MENA, South Asia, and the Horn of Africa. Uses 11 IMF and World Bank macroeconomic and governance indicators, with country-level risk attribution, scenario analysis, and historical crisis backtesting.`,
         tags: [`Python`, `Pandas`, `Streamlit`, `Plotly`, `MENA`, `South Asia`, `Horn of Africa`, `Sovereign Debt`, `Political Risk`, `World Bank WGI`, `GitHub Actions`, `Geo-Economics`, `Commodities`, `Model Validation`],
         links: [
           { label: `Live App`, url: `https://menasa-risk-monitor.onrender.com` },
@@ -2047,6 +2335,7 @@
       const container = document.querySelector('.research-cards');
       container.innerHTML = researchProjects.map(p => `
         <div class="r-card" id="${p.id}">
+          ${p.flagship ? `<div style="font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Flagship Tool — Featured Above</div>` : ''}
           ${p.companionOf ? `<a href="#${p.companionOf.id}" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-bottom:0.6rem;">↳ Companion to ${p.companionOf.label}</a>` : ''}
           <div class="r-card-top">
             <div>
