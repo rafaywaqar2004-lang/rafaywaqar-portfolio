@@ -388,7 +388,7 @@
       </blockquote>
 
       <p class="m-hero-summary">
-        MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars, built primarily on World Bank data (with IMF data used as a fallback for debt coverage), helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook. Designed as a research and monitoring tool; not investment advice.
+        MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars — reported both as one composite score and as separate Economic Risk Index / Political Risk Index sub-scores — built primarily on World Bank data (with IMF data used as a fallback for debt coverage), helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook. A sourced Upcoming Catalysts calendar of confirmed, dated near-term events (elections, IMF program reviews) complements the backward-looking composite with a forward-looking layer that is never estimated or fabricated. Designed as a research and monitoring tool; not investment advice.
       </p>
 
       <div class="m-hero-stats">
@@ -414,6 +414,8 @@
       <ul class="m-hero-why-list">
         <li>Identifies where sovereign and political-economic risk is rising.</li>
         <li>Shows which factors drove each country's score change.</li>
+        <li>Separates economic fundamentals from political/governance risk instead of collapsing both into one number.</li>
+        <li>Surfaces confirmed, dated near-term catalysts — never projected or estimated — alongside the backward-looking score.</li>
         <li>Allows structured scenario testing and historical crisis comparison.</li>
       </ul>
 
@@ -477,8 +479,14 @@
         <p class="m-p" style="margin-top:1rem;font-size:0.85rem;color:var(--text-light);">Each factor is normalized so that higher values always indicate higher risk contribution (e.g. higher debt, higher inflation, lower reserves, and weaker rule of law each push the score up). Currency Depreciation was added as an 11th factor after this project's own historical backtest (see Historical Validation below) surfaced that Egypt's 2022–23 currency crisis didn't move the prior 10-factor score at all — closing a real, documented gap rather than a cosmetic addition.</p>
       </section>
 
+      <section class="m-section" id="sub-indices">
+        <h2 class="m-h2">4. Economic Risk Index &amp; Political Risk Index</h2>
+        <p class="m-p">The two pillars above are also reported on their own, as separate 0–100 sub-scores — not a second model, just the composite's existing halves shown individually rather than only blended together. Because the Economic pillar (debt, current account, reserves, GDP growth, inflation, currency depreciation) and the Governance/Political pillar (political stability, government effectiveness, rule of law, regulatory quality, control of corruption) are each exactly 50% of the composite's weight, the relationship is exact: <strong>composite score = 0.5 × Economic Risk Index + 0.5 × Political Risk Index</strong> whenever both pillars have full factor coverage for that country.</p>
+        <p class="m-p">The point is to stop a single blended number from hiding two very different risk profiles. A country can carry low economic risk but comparatively high political risk (several Gulf states pair strong fiscal buffers with a low composite score that still masks meaningfully elevated governance-risk sub-scores), or the reverse — fiscally strained but comparatively stably governed. The app surfaces this on every Country Deep Dive page (both sub-scores shown side by side) and as a region-wide Economic Risk vs. Political Risk quadrant chart on the Overview tab, plotting all 34 countries by their two sub-scores at once.</p>
+      </section>
+
       <section class="m-section" id="context-indicators">
-        <h2 class="m-h2">4. Context-Only Indicators</h2>
+        <h2 class="m-h2">5. Context-Only Indicators</h2>
         <p class="m-p">Six additional indicators are shown as investment/trade context in every country's profile but are intentionally excluded from the risk score itself — investment direction is not unambiguously a risk signal.</p>
         <div class="m-table-wrap">
           <table class="m-table">
@@ -502,7 +510,7 @@
       </section>
 
       <section class="m-section" id="weighting-pca">
-        <h2 class="m-h2">5. Weighting and Validation</h2>
+        <h2 class="m-h2">6. Weighting and Validation</h2>
         <p class="m-p">Pillar-balanced weighting (50% economic, 50% governance, equal within each pillar) is a deliberate starting point, not a claim that all 11 factors matter equally in reality. Two independent checks were run against this same historical data: a redundancy check (principal component analysis across all 11 factors, to test for multicollinearity) and a predictive-validity check (backtesting the composite's year-over-year direction against six real, documented crises — see Historical Validation below).</p>
         <p class="m-p">The redundancy check ran on the 77 of 507 country-year observations in the underlying dataset that report all 11 factors simultaneously (a stricter complete-case approach, chosen over a pairwise-correlation matrix given how unevenly coverage varies factor to factor). The first principal component explains 41% of total variance, and it is dominated by the governance pillar — Rule of Law, Control of Corruption, Political Stability, and Government Effectiveness all load onto it in the same direction with similar strength (loadings of 0.38–0.45), while Regulatory Quality is comparatively less redundant. Concretely: Rule of Law correlates 0.84 with Control of Corruption and 0.81 with Political Stability, and Government Effectiveness correlates 0.76 with Control of Corruption — four of the five governance factors are substantially capturing the same underlying signal. The economic factors tell the opposite story: GDP Growth, Inflation, and Currency Depreciation load weakly on that dominant governance component and separate onto their own axis (a second component, 17% of variance, driven mostly by Current Account, Debt, Inflation, and Currency Depreciation moving together) — meaning Currency Depreciation is adding real, distinct signal rather than restating what governance already captures.</p>
         <p class="m-p">This confirms real redundancy inside the governance pillar — closer to 2–3 independent dimensions than 5 — but the composite still uses equal weighting within each pillar deliberately: down-weighting the correlated factors based on this same historical sample would mean fitting the model to the data it was just validated against, the exact overfitting risk this check is meant to guard against. Reported as a finding, not yet acted on.</p>
@@ -510,12 +518,12 @@
       </section>
 
       <section class="m-section" id="missing-data">
-        <h2 class="m-h2">6. Missing Data</h2>
+        <h2 class="m-h2">7. Missing Data</h2>
         <p class="m-p">Where country data are unavailable, the monitor documents the limitation and applies transparent handling rules rather than concealing missingness — a country's missing factor renders as a visible "not reported" marker on its radar chart rather than silently shrinking the shape, and no value is ever invented to fill a gap. If a country is missing a factor, that factor is dropped and the remaining weights are rescaled proportionally. Debt-to-GDP coverage is a known gap area: 17 of the 34 countries have no debt-to-GDP figure on file directly from the World Bank, so IMF World Economic Outlook data is used as an automatic fallback — even after that fallback, only 31 of 34 report it consistently. Iran's composite score is lower-confidence, with only 9 of the 11 factors available (Current Account and Reserves are both missing), likely due to sanctions limiting fiscal data reporting.</p>
       </section>
 
       <section class="m-section" id="historical-validation">
-        <h2 class="m-h2">7. Historical Validation</h2>
+        <h2 class="m-h2">8. Historical Validation</h2>
         <p class="m-p">Six well-documented, unambiguous crises were checked against the project's own historical scores (2010–2024), with no cherry-picking of only the successes. This tests direction and timing only — did the score move in the right year, not whether the exact magnitude is calibrated.</p>
         <ul class="m-list">
           <li><strong>Syria — civil war escalation:</strong> +22.0 points in a single year (2011→2012), the sharpest same-year capture of any case tested.</li>
@@ -528,16 +536,24 @@
         <p class="m-p">Overall: 4 of 6 cases captured in the same calendar year (Syria, Sri Lanka, Afghanistan, Pakistan), 1 captured correctly but roughly a year late (Lebanon), and 1 still substantially missed (Egypt) — an honest scorecard, not a claim of a perfect early-warning system.</p>
       </section>
 
+      <section class="m-section" id="upcoming-catalysts">
+        <h2 class="m-h2">9. Upcoming Catalysts</h2>
+        <p class="m-p">The composite score is annual and backward-looking by construction (see Historical Validation above). Upcoming Catalysts is a small, deliberately incomplete calendar layered on top of it: concrete, dated, forward-looking events — scheduled elections, IMF program review windows, and similar institutional milestones — shown per country and as a region-wide chronological table on the Overview tab.</p>
+        <p class="m-p">The sourcing discipline is the same one this project applies everywhere else: every entry is verified against an official or primary source — an IMF press release or program document, a national election authority, or a major wire service — never estimated or projected. A country with nothing verified shows an explicit "no confirmed near-term catalyst identified" message rather than a manufactured placeholder, the same "never silently fill a gap" principle already applied to missing factor data (see Missing Data above).</p>
+        <p class="m-comment">As of this update, 12 of the 34 countries carry a confirmed, sourced entry — among them Morocco's September 2026 general election, Israel's October 2026 election, South Sudan's first general election since independence (December 2026), and IMF program review windows for Egypt, Jordan, Pakistan, Sri Lanka, and Bangladesh. The other 22 countries carry no entry, which reflects the discipline of the sourcing bar, not an absence of political or fiscal risk.</p>
+      </section>
+
       <section class="m-section" id="limitations">
-        <h2 class="m-h2">8. Limitations</h2>
+        <h2 class="m-h2">10. Limitations</h2>
         <ul class="m-list">
           <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
           <li>Default weights (pillar-balanced, equal within each pillar) are a transparent starting point — not a backtested or econometrically validated model (see Weighting and Validation above for what was and wasn't tested).</li>
           <li>Composite scores simplify complex country conditions and cannot capture all political or institutional nuance.</li>
-          <li>The composite score is annual and backward-looking — it will not reflect an event from the last few months until World Bank data catches up; see the app's Live Conflicts tab for the qualitative, currently-relevant complement.</li>
+          <li>The composite score is annual and backward-looking — it will not reflect an event from the last few months until World Bank data catches up; see the app's Live Conflicts tab for the qualitative, currently-relevant complement, and Upcoming Catalysts above for the forward-looking one.</li>
           <li>All scores are relative rankings within this 34-country sample, not an absolute, globally-benchmarked index (see Coverage above).</li>
           <li>Deeper qualitative fields — Financing Arrangements, Key Economic Partners, Trade/Sector Profiles, Major Economic Sanctions, and HDI — are deliberately scoped to 7 of the 34 countries (Turkey and the Horn of Africa group) with the strongest available public sourcing, rather than thinly covering all 34.</li>
           <li>Historical context and conflict tracking are curated, hand-researched snapshots (fact-checked as of August 2026), not a live news feed.</li>
+          <li>Upcoming Catalysts covers 12 of the 34 countries by design — see Upcoming Catalysts above.</li>
           <li>Risk indicators can identify vulnerability but cannot determine the timing or certainty of specific events.</li>
           <li>Built with AI assistance, under the author's direction — both the code and the qualitative research were drafted with an AI assistant and fact-checked against the named sources shown throughout.</li>
           <li>The monitor is not investment advice.</li>
@@ -545,7 +561,7 @@
       </section>
 
       <section class="m-section" id="sources">
-        <h2 class="m-h2">9. Additional Sources Used</h2>
+        <h2 class="m-h2">11. Additional Sources Used</h2>
         <p class="m-p">The 11-factor risk score is built primarily on World Bank data, with IMF World Economic Outlook debt figures used as an automatic fallback. The qualitative layers — Historical Context, Live Conflicts, Key Economic Partners, Trade/Sector Profiles, and Credit Ratings — draw on a much broader set of reputable sources, reflecting how real political risk research actually works: no single database covers conflict dynamics, trade relationships, credit ratings, and fiscal data at once.</p>
         <div class="m-table-wrap">
           <table class="m-table m-table--wrap">
@@ -568,9 +584,10 @@
       </section>
 
       <section class="m-section" id="version">
-        <h2 class="m-h2">10. Version and Updates</h2>
+        <h2 class="m-h2">12. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> automated weekly refresh via GitHub Actions (every Monday) — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys<br>
+          <strong>Latest addition:</strong> Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
           <strong>Last methodology review:</strong> September 2026<br>
           <strong>Project owner:</strong> Muhammad Rafay Waqar
         </p>
