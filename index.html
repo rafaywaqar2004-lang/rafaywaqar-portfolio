@@ -579,6 +579,14 @@
       align-items: start;
     }
 
+    .flagship-layout.no-media {
+      grid-template-columns: 1fr;
+    }
+
+    .flagship-layout.no-media .flagship-text {
+      max-width: 680px;
+    }
+
     .flagship-summary {
       font-size: 0.98rem;
       color: rgba(247, 244, 238, 0.72);
@@ -661,21 +669,6 @@
       display: block;
       border: 1px solid rgba(201, 168, 76, 0.2);
       border-radius: 2px;
-    }
-
-    .flagship-img-fallback {
-      display: none;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      border: 1px dashed rgba(201, 168, 76, 0.3);
-      background: rgba(247, 244, 238, 0.02);
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      color: rgba(247, 244, 238, 0.35);
-      padding: 2rem;
     }
 
     @media (max-width: 860px) {
@@ -1831,7 +1824,7 @@
         <div class="featured-item-label">01 <span class="featured-item-label-sep">—</span> Flagship Research Tool</div>
         <h3 class="featured-primary-title">MENASA Sovereign Risk Monitor</h3>
 
-        <div class="flagship-layout">
+        <div class="flagship-layout" id="flagshipLayout">
           <div class="flagship-text">
             <p class="flagship-summary">
               MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars, built primarily on World Bank data (with IMF data used as a fallback for debt coverage), into a transparent composite framework, helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook.
@@ -1879,9 +1872,8 @@
               src="./assets/menasa-risk-monitor-preview.png"
               alt="Screenshot of the MENASA Sovereign Risk Monitor showing regional country-risk analysis"
               class="flagship-img"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              onerror="this.closest('.flagship-media').style.display='none'; document.getElementById('flagshipLayout').classList.add('no-media');"
             >
-            <div class="flagship-img-fallback">Add MENASA dashboard screenshot here</div>
           </div>
         </div>
       </div>
