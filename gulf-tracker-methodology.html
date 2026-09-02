@@ -145,6 +145,75 @@
       gap: 0.6rem;
     }
 
+    .m-hero-summary {
+      font-size: 0.95rem;
+      color: rgba(247, 244, 238, 0.68);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.75rem;
+    }
+
+    .m-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 680px;
+      padding: 1.4rem 0;
+      margin-bottom: 1.75rem;
+      border-top: 1px solid rgba(247, 244, 238, 0.08);
+      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .m-hero-stat-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .m-hero-stat-label {
+      font-size: 0.65rem;
+      color: rgba(247, 244, 238, 0.45);
+      line-height: 1.4;
+    }
+
+    .m-hero-why-heading {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .m-hero-why-list {
+      list-style: none;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .m-hero-why-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.86rem;
+      color: rgba(247, 244, 238, 0.6);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .m-hero-why-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    @media (max-width: 560px) {
+      .m-hero-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -282,6 +351,37 @@
       <blockquote class="m-subtitle">
         A comparative framework for tracking US-China technology alignment across the Gulf and wider Middle East/South Asia region.
       </blockquote>
+
+      <p class="m-hero-summary">
+        Gulf States Vision 2030 &amp; AI Investment Tracker is a comparative dashboard scoring 17 economies — the 6 Gulf Cooperation Council states plus 11 wider Middle East/South Asia comparators — on a Net Alignment Score weighing US Integration Depth against China Exposure Depth across 6 factors: US export-control access, sovereign AI investment, compute/data-center capacity, Chinese tech penetration, AI governance maturity, and non-oil diversification. Designed as a research and monitoring tool; not investment advice.
+      </p>
+
+      <div class="m-hero-stats">
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">17</div>
+          <div class="m-hero-stat-label">Economies tracked</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">6</div>
+          <div class="m-hero-stat-label">Alignment factors</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">2</div>
+          <div class="m-hero-stat-label">Sub-scores netted (US vs. China)</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">Live</div>
+          <div class="m-hero-stat-label">Scenario reweighting explorer</div>
+        </div>
+      </div>
+
+      <div class="m-hero-why-heading">Why It Matters</div>
+      <ul class="m-hero-why-list">
+        <li>Compares how Gulf and wider regional states are positioning between US and Chinese technology spheres.</li>
+        <li>Pairs a quantitative alignment score with a chronological policy-event tracker.</li>
+        <li>Supports country-level scenario testing through live factor reweighting.</li>
+      </ul>
+
       <div class="m-btns">
         <a href="https://oaqjp-final-project-emb-ai-c8u6.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Dashboard</a>
         <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>

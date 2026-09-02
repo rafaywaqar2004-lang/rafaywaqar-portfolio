@@ -145,6 +145,75 @@
       gap: 0.6rem;
     }
 
+    .m-hero-summary {
+      font-size: 0.95rem;
+      color: rgba(247, 244, 238, 0.68);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.75rem;
+    }
+
+    .m-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 680px;
+      padding: 1.4rem 0;
+      margin-bottom: 1.75rem;
+      border-top: 1px solid rgba(247, 244, 238, 0.08);
+      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .m-hero-stat-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .m-hero-stat-label {
+      font-size: 0.65rem;
+      color: rgba(247, 244, 238, 0.45);
+      line-height: 1.4;
+    }
+
+    .m-hero-why-heading {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .m-hero-why-list {
+      list-style: none;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .m-hero-why-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.86rem;
+      color: rgba(247, 244, 238, 0.6);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .m-hero-why-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    @media (max-width: 560px) {
+      .m-hero-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -317,6 +386,37 @@
       <blockquote class="m-subtitle">
         A transparent framework for monitoring macroeconomic, governance, and political-economic vulnerability across MENA, South Asia, and the Horn of Africa.
       </blockquote>
+
+      <p class="m-hero-summary">
+        MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars, built primarily on World Bank data (with IMF data used as a fallback for debt coverage), helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook. Designed as a research and monitoring tool; not investment advice.
+      </p>
+
+      <div class="m-hero-stats">
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">34</div>
+          <div class="m-hero-stat-label">Economies monitored</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">11</div>
+          <div class="m-hero-stat-label">Macro &amp; governance indicators</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">2010–Present</div>
+          <div class="m-hero-stat-label">Historical risk coverage</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">Automated</div>
+          <div class="m-hero-stat-label">Data validation &amp; deployment</div>
+        </div>
+      </div>
+
+      <div class="m-hero-why-heading">Why It Matters</div>
+      <ul class="m-hero-why-list">
+        <li>Identifies where sovereign and political-economic risk is rising.</li>
+        <li>Shows which factors drove each country's score change.</li>
+        <li>Allows structured scenario testing and historical crisis comparison.</li>
+      </ul>
+
       <div class="m-btns">
         <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Monitor</a>
         <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>

@@ -494,20 +494,125 @@
 
     .featured-item-label-sep { color: rgba(201, 168, 76, 0.4); }
 
-    .featured-primary-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: clamp(1.7rem, 3vw, 2.2rem);
-      font-weight: 500;
-      color: var(--cream);
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      margin-bottom: 2.25rem;
+    /* ---- spotlight cards: the two main featured projects ---- */
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 1rem;
     }
 
-    .featured-primary--secondary {
+    .spotlight-card {
+      background: rgba(247, 244, 238, 0.03);
+      border: 1px solid rgba(247, 244, 238, 0.1);
+      border-radius: 2px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), rgba(201, 168, 76, 0.25));
+    }
+
+    .spotlight-card:hover {
+      border-color: rgba(201, 168, 76, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+    }
+
+    .spotlight-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .spotlight-top .featured-item-label { margin-bottom: 0; }
+
+    .spotlight-status {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #68b29a;
+      background: rgba(104, 178, 154, 0.12);
+      border: 1px solid rgba(104, 178, 154, 0.3);
+      padding: 0.18rem 0.55rem;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .spotlight-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.25;
+      letter-spacing: -0.005em;
+      margin-bottom: 0.85rem;
+    }
+
+    .spotlight-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .spotlight-title a:hover { color: var(--gold); }
+
+    .spotlight-desc {
+      font-size: 0.88rem;
+      color: rgba(247, 244, 238, 0.6);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .spotlight-stats {
+      display: flex;
+      gap: 1.75rem;
+      padding: 1.1rem 0;
+      margin-bottom: 1.5rem;
       border-top: 1px solid rgba(247, 244, 238, 0.08);
-      padding-top: 3.5rem;
-      margin-top: 3.5rem;
+      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .spotlight-stat-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .spotlight-stat-label {
+      font-size: 0.64rem;
+      color: rgba(247, 244, 238, 0.42);
+      letter-spacing: 0.02em;
+    }
+
+    .spotlight-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .btn-sm {
+      font-size: 0.62rem;
+      padding: 0.42rem 0.85rem;
+    }
+
+    @media (max-width: 860px) {
+      .spotlight-grid { grid-template-columns: 1fr; }
     }
 
     .featured-secondary-heading {
@@ -576,118 +681,6 @@
 
     @media (max-width: 720px) {
       .featured-secondary-grid { grid-template-columns: 1fr; }
-    }
-
-    .flagship-layout {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 3.5rem;
-      align-items: start;
-    }
-
-    .flagship-layout.no-media {
-      grid-template-columns: 1fr;
-    }
-
-    .flagship-layout.no-media .flagship-text {
-      max-width: 680px;
-    }
-
-    .flagship-summary {
-      font-size: 0.98rem;
-      color: rgba(247, 244, 238, 0.72);
-      line-height: 1.85;
-      margin-bottom: 1.1rem;
-    }
-
-    .flagship-disclaimer {
-      font-size: 0.76rem;
-      color: rgba(247, 244, 238, 0.4);
-      font-style: italic;
-      margin-bottom: 2.25rem;
-    }
-
-    .flagship-metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
-      padding: 1.5rem 0;
-      margin-bottom: 2.25rem;
-      border-top: 1px solid rgba(247, 244, 238, 0.08);
-      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
-    }
-
-    .flagship-metric-num {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-
-    .flagship-metric-label {
-      font-size: 0.68rem;
-      color: rgba(247, 244, 238, 0.48);
-      line-height: 1.4;
-    }
-
-    .flagship-why-heading {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.9rem;
-    }
-
-    .flagship-why-list {
-      list-style: none;
-      margin-bottom: 2.25rem;
-    }
-
-    .flagship-why-list li {
-      position: relative;
-      padding-left: 1.1rem;
-      font-size: 0.88rem;
-      color: rgba(247, 244, 238, 0.65);
-      line-height: 1.65;
-      margin-bottom: 0.55rem;
-    }
-
-    .flagship-why-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
-
-    .flagship-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .flagship-media { position: relative; }
-
-    .flagship-img {
-      width: 100%;
-      display: block;
-      border: 1px solid rgba(201, 168, 76, 0.2);
-      border-radius: 2px;
-    }
-
-    @media (max-width: 860px) {
-      .flagship-layout {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .flagship-metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     /* ====================================================
@@ -1825,122 +1818,65 @@
       <div class="rule"></div>
       <p class="featured-intro">The most recent work across live tools, analytical briefs, and published research.</p>
 
-      <!-- 01 — MENASA Sovereign Risk Monitor -->
-      <div class="featured-primary">
-        <div class="featured-item-label">01 <span class="featured-item-label-sep">—</span> Flagship Research Tool</div>
-        <h3 class="featured-primary-title">MENASA Sovereign Risk Monitor</h3>
+      <!-- 01 & 02 — Main featured projects -->
+      <div class="spotlight-grid">
 
-        <div class="flagship-layout" id="flagshipLayout">
-          <div class="flagship-text">
-            <p class="flagship-summary">
-              MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars, built primarily on World Bank data (with IMF data used as a fallback for debt coverage), into a transparent composite framework, helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook.
-            </p>
-            <p class="flagship-summary">
-              The monitor provides country rankings, risk-driver attribution, historical trends, scenario analysis, and crisis backtesting to support structured country-risk screening and deeper analyst review.
-            </p>
-            <p class="flagship-disclaimer">Designed as a research and monitoring tool; not investment advice.</p>
-
-            <div class="flagship-metrics">
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">34</div>
-                <div class="flagship-metric-label">Economies monitored</div>
-              </div>
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">11</div>
-                <div class="flagship-metric-label">Macro &amp; governance indicators</div>
-              </div>
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">2010–Present</div>
-                <div class="flagship-metric-label">Historical risk coverage</div>
-              </div>
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">Automated</div>
-                <div class="flagship-metric-label">Data validation &amp; deployment</div>
-              </div>
+        <div class="spotlight-card">
+          <div class="spotlight-top">
+            <span class="featured-item-label">01 <span class="featured-item-label-sep">—</span> Flagship Research Tool</span>
+            <span class="spotlight-status">Live</span>
+          </div>
+          <h3 class="spotlight-title"><a href="./menasa-methodology.html">MENASA Sovereign Risk Monitor</a></h3>
+          <p class="spotlight-desc">Live sovereign- and geopolitical-risk monitoring across 34 economies in MENA, South Asia, and the Horn of Africa — 11 World Bank indicators, country-level risk attribution, and historical crisis backtesting.</p>
+          <div class="spotlight-stats">
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">34</div>
+              <div class="spotlight-stat-label">Economies</div>
             </div>
-
-            <div class="flagship-why-heading">Why It Matters</div>
-            <ul class="flagship-why-list">
-              <li>Identifies where sovereign and political-economic risk is rising.</li>
-              <li>Shows which factors drove each country's score change.</li>
-              <li>Allows structured scenario testing and historical crisis comparison.</li>
-            </ul>
-
-            <div class="flagship-cta">
-              <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Monitor</a>
-              <a href="./menasa-methodology.html" class="btn btn-ghost">Read Methodology</a>
-              <a href="https://github.com/rafaywaqar2004-lang/overeign-risk-index" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">11</div>
+              <div class="spotlight-stat-label">Indicators</div>
+            </div>
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">2010–</div>
+              <div class="spotlight-stat-label">Coverage</div>
             </div>
           </div>
-
-          <div class="flagship-media">
-            <img
-              src="./assets/menasa-risk-monitor-preview.png"
-              alt="Screenshot of the MENASA Sovereign Risk Monitor showing regional country-risk analysis"
-              class="flagship-img"
-              onerror="this.closest('.flagship-media').style.display='none'; document.getElementById('flagshipLayout').classList.add('no-media');"
-            >
+          <div class="spotlight-links">
+            <a href="./menasa-methodology.html" class="btn btn-gold btn-sm">View Case Study</a>
+            <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">Live App ↗</a>
+            <a href="https://github.com/rafaywaqar2004-lang/overeign-risk-index" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">GitHub ↗</a>
           </div>
         </div>
-      </div>
 
-      <!-- 02 — Gulf States Vision 2030 & AI Investment Tracker -->
-      <div class="featured-primary featured-primary--secondary">
-        <div class="featured-item-label">02 <span class="featured-item-label-sep">—</span> Live Comparative Dashboard</div>
-        <h3 class="featured-primary-title">Gulf States Vision 2030 &amp; AI Investment Tracker</h3>
-
-        <div class="flagship-layout" id="gulfFlagshipLayout">
-          <div class="flagship-text">
-            <p class="flagship-summary">
-              Gulf States Vision 2030 &amp; AI Investment Tracker is a comparative dashboard scoring 17 economies — the 6 Gulf Cooperation Council states plus 11 wider Middle East/South Asia comparators — on a Net Alignment Score weighing US Integration Depth against China Exposure Depth across 6 factors: US export-control access, sovereign AI investment, compute/data-center capacity, Chinese tech penetration, AI governance maturity, and non-oil diversification.
-            </p>
-            <p class="flagship-summary">
-              The dashboard pairs the quantitative score with a chronological policy-event tracker, auto-generated country briefs with PDF export, and a live scenario-reweighting explorer.
-            </p>
-            <p class="flagship-disclaimer">Designed as a research and monitoring tool; not investment advice.</p>
-
-            <div class="flagship-metrics">
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">17</div>
-                <div class="flagship-metric-label">Economies tracked</div>
-              </div>
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">6</div>
-                <div class="flagship-metric-label">Alignment factors</div>
-              </div>
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">2</div>
-                <div class="flagship-metric-label">Sub-scores netted (US vs. China)</div>
-              </div>
-              <div class="flagship-metric">
-                <div class="flagship-metric-num">Live</div>
-                <div class="flagship-metric-label">Scenario reweighting explorer</div>
-              </div>
+        <div class="spotlight-card">
+          <div class="spotlight-top">
+            <span class="featured-item-label">02 <span class="featured-item-label-sep">—</span> Live Comparative Dashboard</span>
+            <span class="spotlight-status">Live</span>
+          </div>
+          <h3 class="spotlight-title"><a href="./gulf-tracker-methodology.html">Gulf States Vision 2030 &amp; AI Investment Tracker</a></h3>
+          <p class="spotlight-desc">Comparative dashboard scoring 17 economies on a Net Alignment Score — US Integration Depth vs. China Exposure Depth — with a policy-event tracker and live scenario reweighting.</p>
+          <div class="spotlight-stats">
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">17</div>
+              <div class="spotlight-stat-label">Economies</div>
             </div>
-
-            <div class="flagship-why-heading">Why It Matters</div>
-            <ul class="flagship-why-list">
-              <li>Compares how Gulf and wider regional states are positioning between US and Chinese technology spheres.</li>
-              <li>Pairs a quantitative alignment score with a chronological policy-event tracker.</li>
-              <li>Supports country-level scenario testing through live factor reweighting.</li>
-            </ul>
-
-            <div class="flagship-cta">
-              <a href="https://oaqjp-final-project-emb-ai-c8u6.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Dashboard</a>
-              <a href="./gulf-tracker-methodology.html" class="btn btn-ghost">Read Methodology</a>
-              <a href="https://github.com/rafaywaqar2004-lang/oaqjp-final-project-emb-ai" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">6</div>
+              <div class="spotlight-stat-label">Factors</div>
+            </div>
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">Live</div>
+              <div class="spotlight-stat-label">Scenario Tool</div>
             </div>
           </div>
-
-          <div class="flagship-media">
-            <img
-              src="./assets/gulf-tracker-preview.png"
-              alt="Screenshot of the Gulf States Vision 2030 & AI Investment Tracker showing the Net Alignment Score dashboard"
-              class="flagship-img"
-              onerror="this.closest('.flagship-media').style.display='none'; document.getElementById('gulfFlagshipLayout').classList.add('no-media');"
-            >
+          <div class="spotlight-links">
+            <a href="./gulf-tracker-methodology.html" class="btn btn-gold btn-sm">View Case Study</a>
+            <a href="https://oaqjp-final-project-emb-ai-c8u6.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">Live App ↗</a>
+            <a href="https://github.com/rafaywaqar2004-lang/oaqjp-final-project-emb-ai" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">GitHub ↗</a>
           </div>
         </div>
+
       </div>
 
       <!-- 03 & 04 — Recent companion analysis -->
