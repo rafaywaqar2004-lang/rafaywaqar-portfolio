@@ -300,6 +300,41 @@
       margin: 1.25rem 0 1rem;
     }
 
+    .m-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-light);
+    }
+
+    table.m-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 0.85rem;
+    }
+
+    .m-table th, .m-table td {
+      text-align: left;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    .m-table th {
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .m-table td { color: var(--text-mid); }
+    .m-table tr:last-child td { border-bottom: none; }
+    .m-table tr:nth-child(even) td { background: var(--cream); }
+
+    .m-table--wrap th, .m-table--wrap td { white-space: normal; }
+    .m-table--wrap td:first-child { white-space: nowrap; font-weight: 600; color: var(--text-dark); }
+
     .m-meta {
       font-size: 0.85rem;
       color: var(--text-mid);
@@ -396,31 +431,61 @@
 
       <section class="m-section" id="purpose">
         <h2 class="m-h2">1. Purpose</h2>
-        <p class="m-p">The Gulf States Vision 2030 &amp; AI Investment Tracker is designed to compare how Gulf and wider regional economies are positioning themselves in the US-China technology and AI competition. It combines a quantitative Net Alignment Score with a chronological policy-event tracker and auto-generated country briefs to support structured comparison rather than a single definitive verdict. It is a screening and monitoring tool, not investment advice or a forecast of how any government will act.</p>
+        <p class="m-p">Gulf states have spent the past several years hedging between two technology spheres: deepening AI and semiconductor partnerships with the United States while simultaneously expanding infrastructure and investment ties with China. That dual-track positioning creates real strategic ambiguity for anyone trying to assess where a given country actually stands — a headline deal with a US chipmaker doesn't tell the whole story if it sits alongside a growing Chinese telecom or surveillance-infrastructure footprint in the same country.</p>
+        <p class="m-p">The Gulf States Vision 2030 &amp; AI Investment Tracker is designed to make that positioning legible and comparable across countries. It combines a quantitative Net Alignment Score with a chronological policy-event tracker and auto-generated country briefs, so a single number is never presented without the underlying events and context that produced it. It is a screening and monitoring tool, not investment advice or a forecast of how any government will act.</p>
       </section>
 
       <section class="m-section" id="coverage">
         <h2 class="m-h2">2. Coverage</h2>
-        <ul class="m-list">
-          <li>17 economies: the 6 Gulf Cooperation Council states, plus 11 wider Middle East/South Asia comparators</li>
-          <li>Comparator states: Pakistan, Turkey, Israel, Egypt, Jordan, Iraq, Lebanon, Syria, Iran, Yemen, and Afghanistan</li>
-          <li>Country-level comparison and a chronological policy-event tracker</li>
-        </ul>
+        <p class="m-p">17 economies in total: the 6 Gulf Cooperation Council member states, tracked as the tool's primary focus, plus 11 wider Middle East/South Asia states tracked as comparators.</p>
+        <div class="m-table-wrap">
+          <table class="m-table m-table--wrap">
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Countries</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Gulf Cooperation Council (6)</td><td>Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, United Arab Emirates</td></tr>
+              <tr><td>Wider comparators (11)</td><td>Pakistan, Turkey, Israel, Egypt, Jordan, Iraq, Lebanon, Syria, Iran, Yemen, Afghanistan</td></tr>
+            </tbody>
+          </table>
+        </div>
         <p class="m-comment">The tracker's scope grew from an original 2-country design to its current 17-country coverage. Comparisons across countries added at different points in the project's development should be read with that evolution in mind rather than assumed to be uniformly deep across all 17 from the start.</p>
       </section>
 
       <section class="m-section" id="framework">
         <h2 class="m-h2">3. Framework</h2>
-        <p class="m-p">Each country receives a Net Alignment Score — US Integration Depth weighed against China Exposure Depth — built from six factors: US export-control access, sovereign AI investment, compute/data-center capacity, Chinese tech penetration, AI governance maturity, and non-oil diversification. These six factors combine into two directional sub-scores that are then netted into a single alignment score per country.</p>
+        <p class="m-p">Each country receives a Net Alignment Score — US Integration Depth weighed against China Exposure Depth — built from six factors. These six factors combine into two directional sub-scores that are then netted into a single alignment score per country, rather than averaged into one undifferentiated number that would obscure which direction a country is actually leaning.</p>
+        <div class="m-table-wrap">
+          <table class="m-table m-table--wrap">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>What It Captures</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>US Export-Control Access</td><td>Whether a country retains access to export-controlled US technology — advanced chips, AI hardware — despite progressively tightening US export-control regimes.</td></tr>
+              <tr><td>Sovereign AI Investment</td><td>Scale of state-directed capital (sovereign wealth funds, national AI initiatives) committed to domestic AI development and infrastructure.</td></tr>
+              <tr><td>Compute / Data-Center Capacity</td><td>Installed and planned compute infrastructure supporting AI workloads, a physical precondition for any serious AI ambitions.</td></tr>
+              <tr><td>Chinese Tech Penetration</td><td>Depth of Chinese technology vendors, telecom infrastructure, and investment presence in the country.</td></tr>
+              <tr><td>AI Governance Maturity</td><td>Existence and sophistication of a national AI governance and regulatory framework.</td></tr>
+              <tr><td>Non-Oil Diversification</td><td>Progress diversifying the economy away from oil and gas dependence — a structural precondition for sustained tech-sector investment.</td></tr>
+            </tbody>
+          </table>
+        </div>
         <p class="m-comment">The exact per-factor weighting and underlying data sources are documented inside the live dashboard's own interface rather than reproduced here — open the live app above to see the full factor breakdown for any country.</p>
       </section>
 
       <section class="m-section" id="features">
         <h2 class="m-h2">4. Additional Features</h2>
+        <p class="m-p">Beyond the composite score, the dashboard pairs three additional layers designed to keep the quantitative alignment score grounded in real, checkable events rather than standing alone as an unexplained number:</p>
         <ul class="m-list">
-          <li>A chronological policy-event tracker spanning the covered countries</li>
-          <li>Auto-generated, analyst-style country briefs with PDF export</li>
-          <li>A live scenario-reweighting explorer for testing how the alignment score shifts under alternative factor weights</li>
+          <li><strong>Policy-event tracker</strong> — a chronological record of the specific deals, export-control decisions, and diplomatic moves spanning the covered countries, so a score change can be traced back to the event that plausibly drove it.</li>
+          <li><strong>Auto-generated country briefs</strong> — analyst-style summaries generated per country, downloadable as PDF, intended to read like a structured research note rather than a raw data dump.</li>
+          <li><strong>Live scenario-reweighting explorer</strong> — lets a user test how the alignment score shifts under alternative factor weights, surfacing how sensitive a given country's position is to the model's own assumptions rather than presenting the default weighting as the only possible read.</li>
         </ul>
       </section>
 
@@ -429,7 +494,9 @@
         <ul class="m-list">
           <li>The Net Alignment Score simplifies a genuinely multidimensional geopolitical position into a single comparative number — it is a screening aid, not a substitute for country-specific analysis.</li>
           <li>Public-source data on export controls, sovereign investment, and technology penetration can be incomplete, delayed, or disputed between sources.</li>
+          <li>Government transparency on state-directed AI investment and technology partnerships varies significantly across the 17 tracked countries, which can make the underlying inputs more reliable for some countries than others even where the scoring method is applied consistently.</li>
           <li>The tracker's scope expanded well beyond its original design (see Coverage above); newer comparator countries may have shallower historical grounding than the states covered from the start.</li>
+          <li>A single Net Alignment Score cannot capture that a country may be simultaneously deepening ties with both the US and China in different sectors — the policy-event tracker exists precisely to surface that nuance alongside the composite number.</li>
           <li>This is a comparative screening and monitoring tool, not investment advice or a prediction of government policy.</li>
         </ul>
       </section>
