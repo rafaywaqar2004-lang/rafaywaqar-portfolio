@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gulf States Vision 2030 & AI Investment Tracker — Methodology</title>
+  <meta name="description" content="A comparative framework for tracking US-China technology alignment across the Gulf and wider Middle East/South Asia region.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1b2a'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='11' font-weight='600' fill='%23c9a84c'>MRW</text></svg>">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP9RPS41KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QP9RPS41KJ');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #152335;
+      --navy-light:  #1e3048;
+      --gold:        #c9a84c;
+      --gold-light:  #dfc078;
+      --cream:       #f7f4ee;
+      --cream-dark:  #ede9e0;
+      --cream-mid:   #e4dfd4;
+      --white:       #ffffff;
+      --text-dark:   #1a2332;
+      --text-mid:    #4a5568;
+      --text-light:  #718096;
+      --border:      #d4c9b0;
+      --border-light:#e8e2d6;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      letter-spacing: -0.008em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---- nav ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 238, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* ---- hero ---- */
+    .m-hero {
+      background: var(--navy);
+      padding: 4rem 0 3rem;
+    }
+
+    .m-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .m-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .m-subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(247, 244, 238, 0.7);
+      max-width: 680px;
+      line-height: 1.7;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.2rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .m-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.05rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(247, 244, 238, 0.58);
+      border-color: rgba(247, 244, 238, 0.16);
+    }
+
+    .btn-ghost:hover { border-color: rgba(201, 168, 76, 0.55); color: var(--gold); }
+
+    /* ---- body ---- */
+    .m-body { padding: 3.5rem 0; }
+
+    .m-section { margin-bottom: 3rem; }
+
+    .m-h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.005em;
+    }
+
+    .m-p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .m-list {
+      list-style: none;
+      margin: 1rem 0 0;
+    }
+
+    .m-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.94rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 0.55rem;
+    }
+
+    .m-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .m-comment {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      background: var(--cream-dark);
+      border-left: 3px solid var(--gold);
+      padding: 0.65rem 1rem;
+      margin: 1.25rem 0 1rem;
+    }
+
+    .m-meta {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    .m-meta strong { color: var(--text-dark); }
+
+    .m-footer-cta {
+      background: var(--navy);
+      padding: 3rem 0;
+    }
+
+    .m-footer-cta .m-btns { justify-content: flex-start; }
+
+    footer {
+      background: #060e18;
+      padding: 1.6rem 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.7rem;
+      color: rgba(247, 244, 238, 0.2);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 640px) {
+      .m-hero { padding: 3rem 0 2.5rem; }
+      .m-body { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== NAVIGATION =============== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">MRW<span>.</span></a>
+      <a href="./index.html" class="nav-back">← Return to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- =============== HERO =============== -->
+  <section class="m-hero">
+    <div class="container">
+      <div class="m-eyebrow">Methodology</div>
+      <h1 class="m-title">Gulf States Vision 2030 &amp; AI Investment Tracker — Methodology</h1>
+      <blockquote class="m-subtitle">
+        A comparative framework for tracking US-China technology alignment across the Gulf and wider Middle East/South Asia region.
+      </blockquote>
+      <div class="m-btns">
+        <a href="https://oaqjp-final-project-emb-ai-c8u6.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Dashboard</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://github.com/rafaywaqar2004-lang/oaqjp-final-project-emb-ai" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== BODY =============== -->
+  <main class="m-body">
+    <div class="container">
+
+      <section class="m-section" id="purpose">
+        <h2 class="m-h2">1. Purpose</h2>
+        <p class="m-p">The Gulf States Vision 2030 &amp; AI Investment Tracker is designed to compare how Gulf and wider regional economies are positioning themselves in the US-China technology and AI competition. It combines a quantitative Net Alignment Score with a chronological policy-event tracker and auto-generated country briefs to support structured comparison rather than a single definitive verdict. It is a screening and monitoring tool, not investment advice or a forecast of how any government will act.</p>
+      </section>
+
+      <section class="m-section" id="coverage">
+        <h2 class="m-h2">2. Coverage</h2>
+        <ul class="m-list">
+          <li>17 economies: the 6 Gulf Cooperation Council states, plus 11 wider Middle East/South Asia comparators</li>
+          <li>Comparator states: Pakistan, Turkey, Israel, Egypt, Jordan, Iraq, Lebanon, Syria, Iran, Yemen, and Afghanistan</li>
+          <li>Country-level comparison and a chronological policy-event tracker</li>
+        </ul>
+        <p class="m-comment">The tracker's scope grew from an original 2-country design to its current 17-country coverage. Comparisons across countries added at different points in the project's development should be read with that evolution in mind rather than assumed to be uniformly deep across all 17 from the start.</p>
+      </section>
+
+      <section class="m-section" id="framework">
+        <h2 class="m-h2">3. Framework</h2>
+        <p class="m-p">Each country receives a Net Alignment Score — US Integration Depth weighed against China Exposure Depth — built from six factors: US export-control access, sovereign AI investment, compute/data-center capacity, Chinese tech penetration, AI governance maturity, and non-oil diversification. These six factors combine into two directional sub-scores that are then netted into a single alignment score per country.</p>
+        <p class="m-comment">The exact per-factor weighting and underlying data sources are documented inside the live dashboard's own interface rather than reproduced here — open the live app above to see the full factor breakdown for any country.</p>
+      </section>
+
+      <section class="m-section" id="features">
+        <h2 class="m-h2">4. Additional Features</h2>
+        <ul class="m-list">
+          <li>A chronological policy-event tracker spanning the covered countries</li>
+          <li>Auto-generated, analyst-style country briefs with PDF export</li>
+          <li>A live scenario-reweighting explorer for testing how the alignment score shifts under alternative factor weights</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="limitations">
+        <h2 class="m-h2">5. Limitations</h2>
+        <ul class="m-list">
+          <li>The Net Alignment Score simplifies a genuinely multidimensional geopolitical position into a single comparative number — it is a screening aid, not a substitute for country-specific analysis.</li>
+          <li>Public-source data on export controls, sovereign investment, and technology penetration can be incomplete, delayed, or disputed between sources.</li>
+          <li>The tracker's scope expanded well beyond its original design (see Coverage above); newer comparator countries may have shallower historical grounding than the states covered from the start.</li>
+          <li>This is a comparative screening and monitoring tool, not investment advice or a prediction of government policy.</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="version">
+        <h2 class="m-h2">6. Version and Updates</h2>
+        <p class="m-meta">
+          <strong>Companion analysis:</strong> Gulf AI Ambitions and Geopolitical Risk (analytic brief, linked from the Research section)<br>
+          <strong>Project owner:</strong> Muhammad Rafay Waqar
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =============== FOOTER CTA =============== -->
+  <section class="m-footer-cta">
+    <div class="container">
+      <div class="m-btns">
+        <a href="https://oaqjp-final-project-emb-ai-c8u6.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Dashboard</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://github.com/rafaywaqar2004-lang/oaqjp-final-project-emb-ai" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
+  </footer>
+
+</body>
+</html>
