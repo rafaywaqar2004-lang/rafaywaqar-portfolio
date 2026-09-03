@@ -406,7 +406,7 @@
       </blockquote>
 
       <p class="m-hero-summary">
-        MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars — reported both as one composite score and as separate Economic Risk Index / Political Risk Index sub-scores — built primarily on World Bank data (with IMF data used as a fallback for debt coverage), helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook. A sourced Upcoming Catalysts calendar of confirmed, dated near-term events (elections, IMF program reviews) complements the backward-looking composite with a forward-looking layer that is never estimated or fabricated. Designed as a research and monitoring tool; not investment advice.
+        MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars — reported both as one composite score and as separate Economic Risk Index / Political Risk Index sub-scores — built primarily on World Bank data (with IMF data used as a fallback for debt coverage), helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook. A sourced Upcoming Catalysts calendar of confirmed, dated near-term events (elections, IMF program reviews) complements the backward-looking composite with a forward-looking layer that is never estimated or fabricated. A separate Drivers Analysis tab runs Pooled OLS / Fixed Effects / Random Effects panel regressions with clustered standard errors and a Hausman test on the same underlying data, with one-click R and Stata code export for independent reproduction. Designed as a research and monitoring tool; not investment advice.
       </p>
 
       <div class="m-hero-stats">
@@ -435,6 +435,7 @@
         <li>Separates economic fundamentals from political/governance risk instead of collapsing both into one number.</li>
         <li>Surfaces confirmed, dated near-term catalysts — never projected or estimated — alongside the backward-looking score.</li>
         <li>Allows structured scenario testing and historical crisis comparison.</li>
+        <li>Tests which variables actually predict political stability via reproducible panel regressions, not just correlation-free scoring.</li>
       </ul>
 
       <div class="m-btns">
@@ -561,8 +562,16 @@
         <p class="m-comment">As of this update, 12 of the 34 countries carry a confirmed, sourced entry — among them Morocco's September 2026 general election, Israel's October 2026 election, South Sudan's first general election since independence (December 2026), and IMF program review windows for Egypt, Jordan, Pakistan, Sri Lanka, and Bangladesh. The other 22 countries carry no entry, which reflects the discipline of the sourcing bar, not an absence of political or fiscal risk.</p>
       </section>
 
+      <section class="m-section" id="drivers-analysis">
+        <h2 class="m-h2">10. Drivers Analysis (Panel Regressions)</h2>
+        <p class="m-p">A separate "Drivers Analysis" tab runs panel regressions on this project's own 34-country, 2010–2024 dataset to test which macroeconomic and governance variables statistically predict political stability — Pooled OLS, Fixed Effects (entity + time, standard errors clustered by country), and Random Effects, with a Hausman test comparing the latter two. Users can toggle which of 7 predictors (debt, GDP growth, inflation, current account, reserves cover, trade openness, government expenditure) enter the model, with a live coverage table showing exactly how many country-years survive listwise deletion for the current selection — several series (debt-to-GDP and government expenditure especially) have genuinely sparse historical reporting for these 34 economies, disclosed directly rather than hidden.</p>
+        <p class="m-p">Three robustness checks run alongside the main results: predictors lagged one year, leave-one-country-out re-estimation (to catch a single country silently driving a coefficient), and an ACLED-based conflict-onset alternative dependent variable — the last of which stays visibly disabled with an explanatory message in this deployment rather than approximated with fabricated conflict data, since it requires a registered ACLED API key this deployment doesn't hold.</p>
+        <p class="m-comment">Built for independent verification, not just display: a "Download R Code" and "Download Stata Code" button each export a complete reproduction script (<code>plm</code> in R, <code>xtreg</code> in Stata) matching whatever predictor selection is currently active in the app, alongside a "Download Panel Data (CSV)" button for the underlying data those scripts run against.</p>
+        <p class="m-p">Explicitly scoped as illustrative, academic-style analysis, not a publication-quality causal study — the in-app Methodology section for this tab covers the same standard caveats as any panel study of this kind: endogeneity/reverse causality between debt and instability, omitted-variable bias, a short within-country time dimension, and the WGI dependent variable's own annual, backward-looking, estimated (not precisely measured) nature.</p>
+      </section>
+
       <section class="m-section" id="limitations">
-        <h2 class="m-h2">10. Limitations</h2>
+        <h2 class="m-h2">11. Limitations</h2>
         <ul class="m-list">
           <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
           <li>Default weights (pillar-balanced, equal within each pillar) are a transparent starting point — not a backtested or econometrically validated model (see Weighting and Validation above for what was and wasn't tested).</li>
@@ -579,7 +588,7 @@
       </section>
 
       <section class="m-section" id="sources">
-        <h2 class="m-h2">11. Additional Sources Used</h2>
+        <h2 class="m-h2">12. Additional Sources Used</h2>
         <p class="m-p">The 11-factor risk score is built primarily on World Bank data, with IMF World Economic Outlook debt figures used as an automatic fallback. The qualitative layers — Historical Context, Live Conflicts, Key Economic Partners, Trade/Sector Profiles, and Credit Ratings — draw on a much broader set of reputable sources, reflecting how real political risk research actually works: no single database covers conflict dynamics, trade relationships, credit ratings, and fiscal data at once.</p>
         <div class="m-table-wrap">
           <table class="m-table m-table--wrap">
@@ -602,7 +611,7 @@
       </section>
 
       <section class="m-section" id="skills">
-        <h2 class="m-h2">12. Skills &amp; Technical Stack</h2>
+        <h2 class="m-h2">13. Skills &amp; Technical Stack</h2>
         <p class="m-p">Built end-to-end — data pipeline, composite scoring methodology, statistical validation, and the interactive dashboard itself — covering 34 economies across MENA, South Asia, and the Horn of Africa.</p>
         <div class="m-pill-group">
           <span class="m-pill">Python</span>
@@ -627,14 +636,22 @@
           <span class="m-pill">Credit Rating Benchmarking</span>
           <span class="m-pill">Risk Sub-Index Decomposition</span>
           <span class="m-pill">Event Calendar Curation</span>
+          <span class="m-pill">Panel Data Econometrics</span>
+          <span class="m-pill">Fixed &amp; Random Effects Regression</span>
+          <span class="m-pill">Clustered Standard Errors</span>
+          <span class="m-pill">Hausman Specification Testing</span>
+          <span class="m-pill">linearmodels &amp; statsmodels</span>
+          <span class="m-pill">R (plm)</span>
+          <span class="m-pill">Stata (xtreg)</span>
         </div>
       </section>
 
       <section class="m-section" id="version">
-        <h2 class="m-h2">13. Version and Updates</h2>
+        <h2 class="m-h2">14. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> automated weekly refresh via GitHub Actions (every Monday) — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys<br>
-          <strong>Latest addition:</strong> Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
+          <strong>Latest addition:</strong> Drivers Analysis panel-regression tab, with R/Stata code export (September 2026)<br>
+          <strong>Also added:</strong> Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
           <strong>Last methodology review:</strong> September 2026<br>
           <strong>Project owner:</strong> Muhammad Rafay Waqar
         </p>
