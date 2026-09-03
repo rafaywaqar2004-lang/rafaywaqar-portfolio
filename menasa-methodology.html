@@ -570,8 +570,22 @@
         <p class="m-p">Explicitly scoped as illustrative, academic-style analysis, not a publication-quality causal study — the in-app Methodology section for this tab covers the same standard caveats as any panel study of this kind: endogeneity/reverse causality between debt and instability, omitted-variable bias, a short within-country time dimension, and the WGI dependent variable's own annual, backward-looking, estimated (not precisely measured) nature.</p>
       </section>
 
+      <section class="m-section" id="shock-scenario-lab">
+        <h2 class="m-h2">11. Shock Scenario Lab</h2>
+        <p class="m-p">The former "Scenario Explorer" tab is upgraded into a Shock Scenario Lab: four calibrated shock scenarios — a Strait of Hormuz closure, a Red Sea/Bab-el-Mandeb disruption, a Pakistan sovereign default, and a fully custom shock builder — that flow oil-price, shipping-cost, conflict, and currency shocks through disclosed transmission formulas (energy fiscal exposure, freight-cost pass-through to import prices, reserve-cover depletion, and conflict/currency point adjustments) into a per-country point delta on the existing composite score.</p>
+        <p class="m-p">Every calibration constant behind these formulas — chokepoint trade-exposure classifications, the share of a country's imports assumed to be energy versus freight-cost-sensitive, points-per-percent conversion factors — is explicitly disclosed as a modeling assumption, not a measured statistic, in a "Transmission Model &amp; Assumptions" write-up inside the tab itself. Four visualizations accompany the results: a before/after ranked bar chart, an exposure-vs-impact scatter, an impact choropleth map, and a sector/channel impact heatmap, alongside a full results table.</p>
+        <p class="m-comment">The original weight-reweighting/normalization-sensitivity tool from the prior Scenario Explorer is preserved unchanged, nested as a "Weight Sensitivity" sub-section within the new tab — nothing about the original functionality was removed. Every scenario carries the same explicit disclaimer: "These scenarios use simplified transmission assumptions for analytical illustration. They are not forecasts."</p>
+      </section>
+
+      <section class="m-section" id="market-signals">
+        <h2 class="m-h2">12. Market Signals</h2>
+        <p class="m-p">A "Market Signals" sub-section on every Country Deep Dive page adds four supplementary, market-based indicators below the existing World Bank/WGI risk scores — additive context only, never part of the composite score or any factor weight. An Exchange Rate Pressure Index is built from this project's own already-fetched real annual World Bank exchange-rate data; IMF's monthly effective-exchange-rate API was evaluated live and found unworkable within reasonable effort (its real indicator codes are undocumented composite strings that returned empty datasets even for reference queries), so this is explicitly disclosed as annual, not monthly, granularity rather than shipping an unverified figure.</p>
+        <p class="m-p">Live ACLED conflict-event counts (30/90/365-day windows with a simple trend flag) and a live UN Comtrade import-partner concentration index (Herfindahl-Hirschman Index) round out three of the four signals, each requiring a free API key entered into a sidebar "Market Data Settings" panel and kept in browser session state only, never written to disk. The fourth, Sovereign Bond Yield, is honestly always reported as "N/A": a full scan of the World Bank WDI indicator catalog and IMF's public APIs turned up no free source for market sovereign bond yields across this country set, so the real data gap is disclosed rather than papered over with a mislabeled proxy interest rate.</p>
+        <p class="m-comment">Consistent with the project's "never fabricate to fill a gap" discipline: with no API keys configured, the app works exactly as before and every affected row simply reads "Not configured" — and a failed request (an invalid key, an unreachable API) is distinguished from a genuine zero-result response rather than showing the same thing for both.</p>
+      </section>
+
       <section class="m-section" id="limitations">
-        <h2 class="m-h2">11. Limitations</h2>
+        <h2 class="m-h2">13. Limitations</h2>
         <ul class="m-list">
           <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
           <li>Default weights (pillar-balanced, equal within each pillar) are a transparent starting point — not a backtested or econometrically validated model (see Weighting and Validation above for what was and wasn't tested).</li>
@@ -588,7 +602,7 @@
       </section>
 
       <section class="m-section" id="sources">
-        <h2 class="m-h2">12. Additional Sources Used</h2>
+        <h2 class="m-h2">14. Additional Sources Used</h2>
         <p class="m-p">The 11-factor risk score is built primarily on World Bank data, with IMF World Economic Outlook debt figures used as an automatic fallback. The qualitative layers — Historical Context, Live Conflicts, Key Economic Partners, Trade/Sector Profiles, and Credit Ratings — draw on a much broader set of reputable sources, reflecting how real political risk research actually works: no single database covers conflict dynamics, trade relationships, credit ratings, and fiscal data at once.</p>
         <div class="m-table-wrap">
           <table class="m-table m-table--wrap">
@@ -611,7 +625,7 @@
       </section>
 
       <section class="m-section" id="skills">
-        <h2 class="m-h2">13. Skills &amp; Technical Stack</h2>
+        <h2 class="m-h2">15. Skills &amp; Technical Stack</h2>
         <p class="m-p">Built end-to-end — data pipeline, composite scoring methodology, statistical validation, and the interactive dashboard itself — covering 34 economies across MENA, South Asia, and the Horn of Africa.</p>
         <div class="m-pill-group">
           <span class="m-pill">Python</span>
@@ -647,11 +661,11 @@
       </section>
 
       <section class="m-section" id="version">
-        <h2 class="m-h2">14. Version and Updates</h2>
+        <h2 class="m-h2">16. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> automated weekly refresh via GitHub Actions (every Monday) — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys<br>
-          <strong>Latest addition:</strong> Drivers Analysis panel-regression tab, with R/Stata code export (September 2026)<br>
-          <strong>Also added:</strong> Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
+          <strong>Latest addition:</strong> Market Signals sub-section on every Country Deep Dive page — live exchange-rate pressure, ACLED conflict events, and UN Comtrade trade-concentration indicators (September 2026)<br>
+          <strong>Also added:</strong> Shock Scenario Lab (upgraded from Scenario Explorer) modeling Hormuz/Red Sea chokepoint closures and sovereign default contagion; Drivers Analysis panel-regression tab with R/Stata code export; Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
           <strong>Last methodology review:</strong> September 2026<br>
           <strong>Project owner:</strong> Muhammad Rafay Waqar
         </p>
