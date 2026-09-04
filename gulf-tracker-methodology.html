@@ -590,7 +590,7 @@
 
       <section class="m-section" id="features">
         <h2 class="m-h2">8. Additional Features</h2>
-        <p class="m-p">Beyond the composite score, the dashboard is 10 pages designed to keep the alignment score grounded in checkable events and transparent reasoning rather than standing alone as an unexplained number:</p>
+        <p class="m-p">Beyond the composite score, the dashboard is 12 pages designed to keep the alignment score grounded in checkable events and transparent reasoning rather than standing alone as an unexplained number:</p>
         <ul class="m-list">
           <li><strong>Executive Key Findings</strong> — a Bottom Line / Key Judgment / Confidence / Why It Matters card at the top of the Overview, computed from the live data every time, plus an interactive map with optional AI/compute-hub and major-city marker layers.</li>
           <li><strong>Policy-event tracker</strong> — a chronological, sourced feed of chip-policy events (the AI Diffusion Rule's issuance and rescission, the Chip Security Act, the late-2025 Saudi/UAE chip authorizations, smuggling indictments, the UAE's Country Group upgrade), filterable by country, date, and category, each tagged Loosening/Tightening and linked to how it connects to the scoring model.</li>
@@ -598,6 +598,8 @@
           <li><strong>Scenario Lab</strong> — live reweighting of the US Integration Depth and China Exposure Depth sub-weights and the US-vs-China axis balance, with 7 named presets each carrying a stated rationale. Also includes a Normalization Sensitivity check, a Rank Stability / robustness analysis, and a templated plain-language interpretation of each scenario's effect — never a claim that any one configuration is the "correct" one.</li>
           <li><strong>Strategic Risk</strong> — a regional matrix rating every country on 4 risk dimensions traced to already-scored data (US policy exposure, China exposure, infrastructure execution risk, measurement confidence risk), plus per-country investor/corporate/policy transmission-channel implications.</li>
           <li><strong>12-Month Outlook</strong> — a Base Case and Alternative Case per country, built from the tracker's own pending indicators, with every probability an explicit qualitative band (never a fabricated percentage) and every judgment labeled analyst judgment vs. model output.</li>
+          <li><strong>Sanctions &amp; Entity List Exposure</strong> — a 0–100 Sanctions Exposure Score per country, a weighted average of six factors (BIS Entity List count, BIS Country Group tier, OFAC active programs, CAATSA status, secondary-sanctions risk, evasion risk) renormalized over whichever factors have verified data, never scored as zero for a gap. Rendered as a country-by-factor severity heatmap and a Sanctions Exposure vs. Net Alignment positioning scatter, with a one-click PDF brief.</li>
+          <li><strong>Sovereign AI Investment Flow Tracker</strong> — tracks Gulf-state sovereign-fund and government-directed AI/tech capital flows deal-by-deal and computes a per-country Capital Alignment Ratio (US-bound ÷ (US-bound + China-bound), over confirmed-value cross-border deals only). Same-country sovereign-launch buildouts (e.g. Saudi Arabia's own HUMAIN initiative) are tracked but excluded from the cross-border ratio as a deliberate, documented modeling choice — folding domestic capital deployment into a "flow direction" metric would be a category error. Rendered as a Sankey capital-flow diagram, quarterly and sector breakdowns, and a one-click PDF brief.</li>
           <li><strong>Economic Analysis</strong> — the tracker's one serious empirical finding: AI governance maturity is moderately-to-strongly associated with US export-control tier (Pearson r=0.68, full 17-country sample), reported as correlation rather than a fitted regression, with an explicit association-not-causation discussion.</li>
           <li><strong>Sources &amp; Data</strong> — a research data catalog covering every dataset the tracker uses, with coverage, observation counts, and missingness computed live from the actual files, plus a CSV download button per dataset.</li>
         </ul>
@@ -615,6 +617,8 @@
           <li>A single Net Alignment Score cannot fully capture a country simultaneously deepening ties with both the US and China in different sectors — the policy-event tracker exists precisely to surface that nuance alongside the composite number.</li>
           <li>The choropleth map uses simplified public-domain boundaries — fine for color-by-country comparison at a regional zoom level, not suitable for any use requiring precise or politically sensitive boundary accuracy.</li>
           <li>This is a comparative screening and monitoring tool, not investment advice or a prediction of government policy.</li>
+          <li>The Sanctions Exposure module's BIS Entity List count factor is RESEARCH_NEEDED for all 17 countries — no source found publishes a live, per-country tally of the list (it's a rolling record built from decades of individual Federal Register rules, not a country-indexed database), so that factor is excluded from the composite score's weighted average rather than guessed.</li>
+          <li>The Investment Flow Tracker's deal values are frequently undisclosed by design — chip-export authorizations and telecom-vendor MoUs rarely carry a public dollar figure. Those deals are tracked but excluded from every dollar total, never treated as zero, so a country's Capital Alignment Ratio can show "insufficient data" even with multiple confirmed deals on file (e.g. Bahrain, Kuwait, and Oman each have real, sourced deals in both directions but no disclosed value on either side).</li>
         </ul>
       </section>
 
@@ -639,6 +643,8 @@
           <span class="m-pill">Geopolitical Risk Analysis</span>
           <span class="m-pill">US-China Tech Competition Analysis</span>
           <span class="m-pill">Export-Control Policy Analysis</span>
+          <span class="m-pill">Sanctions &amp; Entity List Screening</span>
+          <span class="m-pill">Capital Flow Analysis</span>
         </div>
       </section>
 
