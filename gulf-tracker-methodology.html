@@ -590,10 +590,11 @@
 
       <section class="m-section" id="features">
         <h2 class="m-h2">8. Additional Features</h2>
-        <p class="m-p">Beyond the composite score, the dashboard is 12 pages designed to keep the alignment score grounded in checkable events and transparent reasoning rather than standing alone as an unexplained number:</p>
+        <p class="m-p">Beyond the composite score, the dashboard is 13 pages designed to keep the alignment score grounded in checkable events and transparent reasoning rather than standing alone as an unexplained number:</p>
         <ul class="m-list">
           <li><strong>Executive Key Findings</strong> — a Bottom Line / Key Judgment / Confidence / Why It Matters card at the top of the Overview, computed from the live data every time, plus an interactive map with optional AI/compute-hub and major-city marker layers.</li>
           <li><strong>Policy-event tracker</strong> — a chronological, sourced feed of chip-policy events (the AI Diffusion Rule's issuance and rescission, the Chip Security Act, the late-2025 Saudi/UAE chip authorizations, smuggling indictments, the UAE's Country Group upgrade), filterable by country, date, and category, each tagged Loosening/Tightening and linked to how it connects to the scoring model.</li>
+          <li><strong>Candidate Events review queue</strong> — explicitly not a live feed. Two official, free sources (the Federal Register API for BIS documents, OFAC's Recent Actions page) are polled daily by a GitHub Actions workflow and surfaced for review, each auto-matched against the tracker's own country list as a hint, never a filter. Nothing is added to the Policy Event Tracker automatically — a human reviews each candidate and either dismisses it or opens a pre-filled form (only date/title come from the source; category and direction are left for the human to actually decide) before it becomes a real, curated event, keeping the same "a person read the source" rule every other fact in this project follows.</li>
           <li><strong>Country Deep Dive</strong> — a full per-country intelligence profile: current position, key judgments, a factor-level Key Drivers table, a trend section (honestly reporting "insufficient data" until enough dated snapshots accumulate), recent policy developments, qualified strategic implications for policymakers/investors/corporates, forward-looking Watch Next indicators, a data-quality summary, and a downloadable PDF brief covering all of it.</li>
           <li><strong>Scenario Lab</strong> — live reweighting of the US Integration Depth and China Exposure Depth sub-weights and the US-vs-China axis balance, with 7 named presets each carrying a stated rationale. Also includes a Normalization Sensitivity check, a Rank Stability / robustness analysis, and a templated plain-language interpretation of each scenario's effect — never a claim that any one configuration is the "correct" one.</li>
           <li><strong>Strategic Risk</strong> — a regional matrix rating every country on 4 risk dimensions traced to already-scored data (US policy exposure, China exposure, infrastructure execution risk, measurement confidence risk), plus per-country investor/corporate/policy transmission-channel implications.</li>
@@ -645,6 +646,8 @@
           <span class="m-pill">Export-Control Policy Analysis</span>
           <span class="m-pill">Sanctions &amp; Entity List Screening</span>
           <span class="m-pill">Capital Flow Analysis</span>
+          <span class="m-pill">Federal Register &amp; OFAC API Integration</span>
+          <span class="m-pill">Human-in-the-Loop Review Workflow</span>
         </div>
       </section>
 
