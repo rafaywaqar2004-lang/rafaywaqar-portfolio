@@ -572,8 +572,35 @@
       font-size: 0.88rem;
       color: rgba(247, 244, 238, 0.6);
       line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .spotlight-finding {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      background: rgba(201, 168, 76, 0.06);
+      border-left: 2px solid var(--gold);
+      padding: 0.7rem 0.9rem;
       margin-bottom: 1.5rem;
       flex: 1;
+    }
+
+    .spotlight-finding-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding-top: 0.15rem;
+    }
+
+    .spotlight-finding-text {
+      font-size: 0.8rem;
+      color: rgba(247, 244, 238, 0.72);
+      line-height: 1.6;
     }
 
     .spotlight-stats {
@@ -1866,7 +1893,11 @@
             <span class="spotlight-status">Live</span>
           </div>
           <h3 class="spotlight-title"><a href="./menasa-methodology.html">MENASA Sovereign Risk Monitor</a></h3>
-          <p class="spotlight-desc">Live sovereign- and geopolitical-risk monitoring across 34 economies in MENA, South Asia, and the Horn of Africa — 11 World Bank indicators split into Economic Risk Index / Political Risk Index sub-scores, a Shock Scenario Lab modeling Hormuz/Red Sea chokepoint closures and sovereign default contagion, live Market Signals (daily-updating exchange-rate pressure, ACLED conflict events, trade-concentration HHI), panel-regression drivers analysis with R/Stata code export, and historical crisis backtesting.</p>
+          <p class="spotlight-desc">A live sovereign-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa, built on public World Bank data. It scores each country on 11 macroeconomic and governance indicators, models shock scenarios, and is validated against real historical crises.</p>
+          <div class="spotlight-finding">
+            <span class="spotlight-finding-label">Key Finding</span>
+            <span class="spotlight-finding-text">Backtested against six major crises since 2010, the model correctly flagged 4 of 6 in the same year they began — including Sri Lanka's 2022 default and Afghanistan's 2021 collapse.</span>
+          </div>
           <div class="spotlight-stats">
             <div class="spotlight-stat">
               <div class="spotlight-stat-num">34</div>
@@ -1895,7 +1926,11 @@
             <span class="spotlight-status">Live</span>
           </div>
           <h3 class="spotlight-title"><a href="./gulf-tracker-methodology.html">Gulf States Vision 2030 &amp; AI Investment Tracker</a></h3>
-          <p class="spotlight-desc">Comparative dashboard scoring 17 economies on a Net Alignment Score — US Integration Depth vs. China Exposure Depth — with a policy-event tracker, live scenario reweighting, a sanctions exposure score, and a sovereign AI investment flow tracker.</p>
+          <p class="spotlight-desc">A comparative dashboard tracking how 17 Gulf and regional economies are balancing the US-China AI and chip competition, scored on a Net Alignment Score across two axes: US Integration Depth and China Exposure Depth.</p>
+          <div class="spotlight-finding">
+            <span class="spotlight-finding-label">Key Finding</span>
+            <span class="spotlight-finding-text">Across all 17 tracked economies, AI governance maturity is moderately-to-strongly correlated with a country's US export-control tier (r = 0.68).</span>
+          </div>
           <div class="spotlight-stats">
             <div class="spotlight-stat">
               <div class="spotlight-stat-num">17</div>

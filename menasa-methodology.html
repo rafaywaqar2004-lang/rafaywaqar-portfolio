@@ -300,6 +300,34 @@
       margin: 1.25rem 0 1rem;
     }
 
+    .m-key-finding {
+      background: rgba(247, 244, 238, 0.05);
+      border-left: 3px solid var(--gold);
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.75rem;
+      max-width: 680px;
+    }
+
+    .m-key-finding-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .m-key-finding p {
+      font-size: 0.88rem;
+      color: rgba(247, 244, 238, 0.72);
+      line-height: 1.7;
+    }
+
+    .m-key-finding a {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
     .m-table-wrap {
       overflow-x: auto;
       border: 1px solid var(--border-light);
@@ -408,6 +436,11 @@
       <p class="m-hero-summary">
         MENASA Sovereign Risk Monitor is a live country-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa. It integrates 11 macroeconomic and governance indicators across two equally-weighted pillars — reported both as one composite score and as separate Economic Risk Index / Political Risk Index sub-scores — built primarily on World Bank data (with IMF data used as a fallback for debt coverage), helping users identify where sovereign and political-economic vulnerabilities are rising, why they are changing, and how alternative assumptions affect the outlook. A sourced Upcoming Catalysts calendar of confirmed, dated near-term events (elections, IMF program reviews) complements the backward-looking composite with a forward-looking layer that is never estimated or fabricated. A separate Drivers Analysis tab runs Pooled OLS / Fixed Effects / Random Effects panel regressions with clustered standard errors and a Hausman test on the same underlying data, with one-click R and Stata code export for independent reproduction. Designed as a research and monitoring tool; not investment advice.
       </p>
+
+      <div class="m-key-finding">
+        <div class="m-key-finding-label">Key Finding</div>
+        <p>Backtested against six well-documented, unambiguous crises since 2010, the composite score correctly moved in the same calendar year for 4 of 6 cases — including Sri Lanka's 2022 default and Afghanistan's 2021 collapse — and captured Lebanon's collapse with roughly a one-year lag. Egypt's 2022–23 currency crisis was the one clear miss, which is exactly why Currency Depreciation was added as the model's 11th factor. See <a href="#historical-validation">Historical Validation</a> below for the full case-by-case breakdown.</p>
+      </div>
 
       <div class="m-hero-stats">
         <div class="m-hero-stat">
