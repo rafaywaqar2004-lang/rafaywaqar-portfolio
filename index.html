@@ -1295,76 +1295,6 @@
     ==================================================== */
     #writing { background: var(--cream-dark); }
 
-    .writing-featured-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .writing-featured-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 2.75rem;
-      max-width: 800px;
-    }
-
-    .w-featured-card {
-      background: var(--white);
-      border: 1px solid var(--border-light);
-      border-top: 3px solid var(--gold);
-      padding: 1.5rem;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.22s ease;
-    }
-
-    .w-featured-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-      border-color: var(--border);
-    }
-
-    .w-featured-pub {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .w-featured-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--navy);
-      line-height: 1.3;
-      margin-bottom: 0.6rem;
-      letter-spacing: -0.005em;
-    }
-
-    .w-featured-desc {
-      font-size: 0.82rem;
-      color: var(--text-mid);
-      line-height: 1.6;
-      flex: 1;
-    }
-
-    .w-featured-year {
-      font-size: 0.72rem;
-      color: var(--text-light);
-      margin-top: 0.85rem;
-    }
-
-    @media (max-width: 720px) {
-      .writing-featured-grid { grid-template-columns: 1fr; }
-    }
-
     .writing-list {
       max-width: 800px;
       margin-bottom: 2.25rem;
@@ -2353,9 +2283,6 @@
       <h2 class="section-title">Writing</h2>
       <div class="rule"></div>
 
-      <div class="writing-featured-label">Featured Commentary</div>
-      <div class="writing-featured-grid"></div>
-
       <div class="writing-list"></div>
 
       <div class="writing-note">
@@ -2573,8 +2500,8 @@
     ];
 
     const writingEntries = [
-      { pub: `The News International`, url: `https://www.thenews.pk/print/1419734-the-last-barrel`, title: `The Last Barrel`, desc: `What happens to Gulf economies when the oil era actually ends — not as a distant abstraction but as a policy problem being solved right now? I traced the economics, the political stakes, and what Vision 2030 is really betting on.`, year: 2026, featured: true },
-      { pub: `The News International`, url: `https://www.thenews.pk/print/1415881-governing-ai`, title: `Governing AI`, desc: `Who actually gets to write the rules for AI — and what happens to the countries that don't have a seat at that table? I went looking for answers in the gap between Silicon Valley rhetoric and global governance reality.`, year: 2026, featured: true },
+      { pub: `The News International`, url: `https://www.thenews.pk/print/1419734-the-last-barrel`, title: `The Last Barrel`, desc: `What happens to Gulf economies when the oil era actually ends — not as a distant abstraction but as a policy problem being solved right now? I traced the economics, the political stakes, and what Vision 2030 is really betting on.`, year: 2026 },
+      { pub: `The News International`, url: `https://www.thenews.pk/print/1415881-governing-ai`, title: `Governing AI`, desc: `Who actually gets to write the rules for AI — and what happens to the countries that don't have a seat at that table? I went looking for answers in the gap between Silicon Valley rhetoric and global governance reality.`, year: 2026 },
       { pub: `The News International`, url: `https://www.thenews.com.pk/print/1280799-economic-agenda`, title: `Economic Agenda`, desc: `Every new government arrives with an economic vision. I wanted to understand what that vision actually runs into — the debt obligations, the IMF red lines, the structural walls that quietly decide what's possible before parliament even votes.`, year: 2025 },
       { pub: `The News International`, url: `https://www.thenews.com.pk/print/987812-global-food-security`, title: `Ukraine: Global Food Security`, desc: `A war in Eastern Europe, and suddenly millions go hungry across Africa and the Middle East. I traced how one conflict travels through supply chains and lands on dinner tables thousands of miles away.`, year: 2022 },
       { pub: `The Express Tribune`, url: `https://tribune.com.pk/story/2462270/genocides-unseen-epidemics`, title: `Genocides' Unseen Epidemics`, desc: `The death tolls we remember are always undercounts. I wanted to surface what gets buried beneath them — the disease outbreaks, the famines, the slow violence that follows atrocity and rarely makes the headline.`, year: 2022 },
@@ -2697,16 +2624,6 @@
     }
 
     function renderWriting() {
-      const featuredContainer = document.querySelector('.writing-featured-grid');
-      featuredContainer.innerHTML = writingEntries.filter(w => w.featured).map(w => `
-        <a href="${w.url}" target="_blank" rel="noopener noreferrer" class="w-featured-card">
-          <div class="w-featured-pub">${w.pub}</div>
-          <div class="w-featured-title">"${w.title}"</div>
-          <p class="w-featured-desc">${w.desc}</p>
-          <div class="w-featured-year">${w.year}</div>
-        </a>
-      `).join('');
-
       const container = document.querySelector('.writing-list');
       container.innerHTML = writingEntries.map(w => `
         <div class="w-entry">
