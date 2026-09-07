@@ -617,8 +617,17 @@
         <p class="m-comment">Consistent with the project's "never fabricate to fill a gap" discipline: with no API keys configured, the app works exactly as before and every affected row simply reads "Not configured" — and a failed request (an invalid key, an unreachable API) is distinguished from a genuine zero-result response rather than showing the same thing for both.</p>
       </section>
 
+      <section class="m-section" id="policy-implications">
+        <h2 class="m-h2">13. Policy Implications</h2>
+        <p class="m-p">This tool is built to support judgment, not replace it — the composite score and its supporting layers are designed to be read together by a policy, risk, or investment audience rather than treated as a single automated verdict.</p>
+        <p class="m-p">The Economic Risk Index / Political Risk Index split (see above) exists because the appropriate response differs by which pillar is driving a country's score: a fiscally-driven deterioration points toward IMF program engagement, debt restructuring conversations, or reserve-adequacy monitoring, while a governance-driven deterioration points toward political-risk insurance, institutional engagement, or contingency planning that a purely fiscal read would miss. Collapsing both into one blended number, as most commercial country-risk products do, hides exactly this distinction.</p>
+        <p class="m-p">The Shock Scenario Lab is built for a specific class of question: not "is this country risky" but "what happens to this specific country if this specific event occurs" — a Strait of Hormuz closure, a Red Sea shipping disruption, a Pakistan-style sovereign default. That framing is more useful for contingency planning and trade-exposure assessment than a static risk score alone.</p>
+        <p class="m-p">The Drivers Analysis tab's panel regressions and the Upcoming Catalysts calendar serve a complementary use: identifying which macro/governance variables actually predict political stability across this dataset, and flagging concrete, dated near-term events worth monitoring rather than backward-looking data alone.</p>
+        <p class="m-comment">Consistent with the rest of this project's discipline: none of this is offered as investment advice, a forecast, or a substitute for country-specific diplomatic or on-the-ground reporting — it is a structured starting point for a more informed judgment, not the judgment itself.</p>
+      </section>
+
       <section class="m-section" id="limitations">
-        <h2 class="m-h2">13. Limitations</h2>
+        <h2 class="m-h2">14. Limitations</h2>
         <ul class="m-list">
           <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
           <li>Default weights (pillar-balanced, equal within each pillar) are a transparent starting point — not a backtested or econometrically validated model (see Weighting and Validation above for what was and wasn't tested).</li>
@@ -635,7 +644,7 @@
       </section>
 
       <section class="m-section" id="sources">
-        <h2 class="m-h2">14. Additional Sources Used</h2>
+        <h2 class="m-h2">15. Additional Sources Used</h2>
         <p class="m-p">The 11-factor risk score is built primarily on World Bank data, with IMF World Economic Outlook debt figures used as an automatic fallback. The qualitative layers — Historical Context, Live Conflicts, Key Economic Partners, Trade/Sector Profiles, and Credit Ratings — draw on a much broader set of reputable sources, reflecting how real political risk research actually works: no single database covers conflict dynamics, trade relationships, credit ratings, and fiscal data at once.</p>
         <div class="m-table-wrap">
           <table class="m-table m-table--wrap">
@@ -658,7 +667,7 @@
       </section>
 
       <section class="m-section" id="skills">
-        <h2 class="m-h2">15. Skills &amp; Technical Stack</h2>
+        <h2 class="m-h2">16. Skills &amp; Technical Stack</h2>
         <p class="m-p">Built end-to-end — data pipeline, composite scoring methodology, statistical validation, and the interactive dashboard itself — covering 34 economies across MENA, South Asia, and the Horn of Africa.</p>
         <div class="m-pill-group">
           <span class="m-pill">Python</span>
@@ -696,7 +705,7 @@
       </section>
 
       <section class="m-section" id="version">
-        <h2 class="m-h2">16. Version and Updates</h2>
+        <h2 class="m-h2">17. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> automated nightly refresh via GitHub Actions — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys; a second nightly Action accumulates a real daily exchange-rate snapshot per country<br>
           <strong>Latest addition:</strong> the Exchange Rate Pressure Index upgraded from annual-only to real daily granularity, backed by a new daily-accumulating data pipeline, with automatic fallback to the original annual calculation until enough daily history exists for a country (September 2026)<br>
