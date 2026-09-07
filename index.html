@@ -1210,7 +1210,34 @@
       color: var(--text-mid);
       line-height: 1.72;
       margin-bottom: 1.25rem;
+    }
+
+    .r-key-finding {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      background: var(--cream);
+      border-left: 2px solid var(--gold);
+      padding: 0.65rem 0.85rem;
+      margin-bottom: 1.25rem;
       flex: 1;
+    }
+
+    .r-key-finding-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a6a1a;
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding-top: 0.15rem;
+    }
+
+    .r-key-finding-text {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.6;
     }
 
     .r-tags {
@@ -2386,7 +2413,8 @@
         when: `2026`,
         status: `Live`,
         kindLabel: `Featured Above — Flagship Tool`,
-        desc: `Live sovereign- and geopolitical-risk monitoring across 34 economies in MENA, South Asia, and the Horn of Africa. Uses 11 World Bank macroeconomic and governance indicators across two weighted pillars (with an IMF fallback for debt coverage), reported both as one composite score and as separate Economic Risk Index / Political Risk Index sub-scores, with country-level risk attribution, a sourced Upcoming Catalysts calendar of confirmed near-term events, and historical crisis backtesting. A Shock Scenario Lab models four calibrated shocks — Strait of Hormuz closure, Red Sea/Bab-el-Mandeb disruption, a Pakistan sovereign default, and a fully custom shock builder — through disclosed transmission formulas (energy fiscal exposure, freight pass-through, reserve depletion) into a per-country score delta, alongside the original weight-sensitivity tool. A Market Signals sub-section adds live, real-data indicators to each country page: an exchange-rate pressure index (a daily GitHub Action accumulates real daily rates over time, with transparent fallback to an annual calculation until enough daily history exists), live ACLED conflict-event counts, and a UN Comtrade trade-concentration (HHI) index — each independently gated on real data or an API key, honestly reporting "not configured" rather than ever fabricating a figure. A separate Drivers Analysis tab runs Pooled OLS / Fixed Effects / Random Effects panel regressions (clustered SEs, Hausman test, lagged and leave-one-out robustness checks) with one-click R and Stata code export for independent reproduction.`,
+        desc: `A live sovereign-risk platform covering 34 economies across MENA, South Asia, and the Horn of Africa, scored on 11 World Bank macroeconomic and governance indicators. Includes a Shock Scenario Lab for stress-testing crises, live market signals, and a full panel-regression drivers analysis with R/Stata export.`,
+        keyFinding: `Backtested against six major crises since 2010, the model correctly flagged 4 of 6 in the same year they began — including Sri Lanka's 2022 default and Afghanistan's 2021 collapse.`,
         tags: [`Python`, `Pandas`, `Streamlit`, `Plotly`, `World Bank API`, `IMF Data Integration`, `ACLED API`, `UN Comtrade API`, `GitHub Actions (CI/CD)`, `Composite Index Design`, `Principal Component Analysis`, `Risk Decomposition`, `Scenario/Shock Modeling`, `Historical Backtesting`, `Panel Regression`, `linearmodels/statsmodels`, `MENA`, `South Asia`],
         links: [
           { label: `Live App`, url: `https://menasa-risk-monitor.onrender.com` },
@@ -2430,7 +2458,8 @@
         when: `2026`,
         status: `Live`,
         kindLabel: `Live Dashboard`,
-        desc: `Comparative interactive dashboard scoring 17 countries — the 6 Gulf states plus 11 wider Middle East/South Asia states (Pakistan, Turkey, Israel, Egypt, Jordan, Iraq, Lebanon, Syria, Iran, Yemen, Afghanistan) — on a Net Alignment Score (US Integration Depth vs. China Exposure Depth) built from 5 scored factors across two weighted axes (US export-control access, sovereign AI investment, and compute/data-center capacity on the US side; Chinese telecom penetration and Chinese AI/cloud/digital ties on the China side), plus 2 more (AI governance maturity, non-oil diversification) tracked as context (7 factors tracked in total). Thirteen pages: a flagship Overview with executive key findings and an interactive map (AI/compute-hub and city markers), a chronological policy-event tracker with model-impact links, a Candidate Events review queue (Federal Register + OFAC, polled daily, never auto-added -- a human confirms each one), per-country intelligence profiles (key drivers, trend, strategic implications, PDF export), a live Scenario Lab with normalization-sensitivity and rank-stability checks, a Strategic Risk matrix, a 12-Month Outlook, a Sanctions &amp; Entity List Exposure module (six-factor Sanctions Exposure Score, per-country severity heatmap), a Sovereign AI Investment Flow Tracker (deal-level capital-flow data computing a Capital Alignment Ratio per country), one real empirical economic-diversification analysis, and a full sources-and-data catalog with CSV downloads. Every figure is individually sourced and confidence-rated. Exceeds its original 2-country scope. Pairs with the Gulf AI Ambitions risk brief as the quantitative data layer to the analytical narrative.`,
+        desc: `A comparative dashboard tracking how 17 Gulf and regional economies are balancing the US-China AI and chip competition, scored on a Net Alignment Score across US Integration Depth and China Exposure Depth. Includes a live scenario lab, sanctions exposure scoring, and a sovereign AI investment flow tracker.`,
+        keyFinding: `Across all 17 tracked economies, AI governance maturity is moderately-to-strongly correlated with a country's US export-control tier (r = 0.68).`,
         tags: [`Python`, `Streamlit`, `Plotly`, `Log-Scale Normalization`, `Weighted Composite Scoring`, `GitHub Actions (CI/CD)`, `Automated Testing (pytest)`, `World Bank API`, `Choropleth Mapping`, `PDF Generation (ReportLab)`, `US-China Tech Competition`, `Gulf States`, `Strategic Risk`, `Economic Analysis`, `Sanctions & Export-Control Screening`, `Capital Flow Tracking`, `Federal Register API`, `Human-in-the-Loop Review Queue`],
         links: [
           { label: `Live App`, url: `https://oaqjp-final-project-emb-ai-c8u6.onrender.com` },
@@ -2563,6 +2592,10 @@
           </div>
           ${p.subtitle ? `<div class="r-card-subtitle" style="font-size:0.82rem;color:var(--text-mid);margin-bottom:0.75rem;line-height:1.5;">${p.subtitle}</div>` : ''}
           <p class="r-card-desc">${p.desc}</p>
+          ${p.keyFinding ? `<div class="r-key-finding">
+            <span class="r-key-finding-label">Key Finding</span>
+            <span class="r-key-finding-text">${p.keyFinding}</span>
+          </div>` : ''}
           <div class="r-tags">
             ${p.tags.map(t => `<span class="r-tag">${t}</span>`).join('')}
           </div>
