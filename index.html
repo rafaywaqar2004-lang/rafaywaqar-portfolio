@@ -771,6 +771,37 @@
 
     .about-body p:last-child { margin-bottom: 0; }
 
+    .about-tldr {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      background: var(--cream-dark);
+      border-left: 3px solid var(--gold);
+      padding: 1.3rem 1.6rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .about-tldr-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .about-tldr-item::before {
+      content: '—';
+      color: var(--gold);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .about-tldr-item strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
     .about-sidebar {
       position: sticky;
       top: 84px;
@@ -1794,6 +1825,7 @@
       </p>
 
       <div class="hero-badges">
+        <span class="badge">2 Live Risk-Analytics Tools</span>
         <span class="badge">IMF — OEDMD Constituency Analyst</span>
         <span class="badge">World Bank — MENA Policy Research</span>
         <span class="badge">12+ Published Op-Eds</span>
@@ -1948,6 +1980,11 @@
 
       <div class="about-layout">
         <div class="about-body">
+          <div class="about-tldr">
+            <div class="about-tldr-item"><span><strong>IMF & World Bank experience</strong> — macro-financial policy analysis for the IMF's OEDMD constituency and MENA country programmes at the World Bank Group.</span></div>
+            <div class="about-tldr-item"><span><strong>Builds live analytical tools, not just reports</strong> — MENASA Sovereign Risk Monitor and the Gulf States Vision 2030 & AI Investment Tracker, both shipped and publicly live.</span></div>
+            <div class="about-tldr-item"><span><strong>Published across three outlets</strong> — 12+ op-eds in The News International, The Express Tribune, and Dawn on political economy and international affairs.</span></div>
+          </div>
           <p style="font-weight:600;color:var(--text-dark);">
             Muhammad Rafay Waqar is a policy analyst and researcher working at the intersection of geopolitical risk, macroeconomics, and quantitative data analytics across emerging markets. He translates qualitative regional research into structured, data-driven risk assessments that help organisations navigate global volatility.
           </p>
