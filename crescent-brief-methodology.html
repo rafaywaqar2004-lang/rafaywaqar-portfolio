@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Crescent Brief — Methodology</title>
+  <meta name="description" content="Editorial methodology for The Crescent Brief: sourcing, analytic framework, and publishing cadence for a monthly publication on political economy and geopolitical risk across MENA, South Asia, and the Horn of Africa.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1b2a'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='11' font-weight='600' fill='%23c9a84c'>MRW</text></svg>">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP9RPS41KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QP9RPS41KJ');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #152335;
+      --navy-light:  #1e3048;
+      --gold:        #c9a84c;
+      --gold-light:  #dfc078;
+      --cream:       #f7f4ee;
+      --cream-dark:  #ede9e0;
+      --cream-mid:   #e4dfd4;
+      --white:       #ffffff;
+      --text-dark:   #1a2332;
+      --text-mid:    #4a5568;
+      --text-light:  #718096;
+      --border:      #d4c9b0;
+      --border-light:#e8e2d6;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      letter-spacing: -0.008em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---- nav ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 238, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* ---- hero ---- */
+    .m-hero {
+      background: var(--navy);
+      padding: 4rem 0 3rem;
+    }
+
+    .m-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .m-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .m-subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(247, 244, 238, 0.7);
+      max-width: 680px;
+      line-height: 1.7;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.2rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .m-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .m-hero-summary {
+      font-size: 0.95rem;
+      color: rgba(247, 244, 238, 0.68);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.75rem;
+    }
+
+    .m-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 680px;
+      padding: 1.4rem 0;
+      margin-bottom: 1.75rem;
+      border-top: 1px solid rgba(247, 244, 238, 0.08);
+      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .m-hero-stat-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .m-hero-stat-label {
+      font-size: 0.65rem;
+      color: rgba(247, 244, 238, 0.45);
+      line-height: 1.4;
+    }
+
+    .m-hero-why-heading {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .m-hero-why-list {
+      list-style: none;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .m-hero-why-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.86rem;
+      color: rgba(247, 244, 238, 0.6);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .m-hero-why-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    @media (max-width: 560px) {
+      .m-hero-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.05rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(247, 244, 238, 0.58);
+      border-color: rgba(247, 244, 238, 0.16);
+    }
+
+    .btn-ghost:hover { border-color: rgba(201, 168, 76, 0.55); color: var(--gold); }
+
+    /* ---- body ---- */
+    .m-body { padding: 3.5rem 0; }
+
+    .m-section { margin-bottom: 3rem; }
+
+    .m-h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.005em;
+    }
+
+    .m-p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .m-list {
+      list-style: none;
+      margin: 1rem 0 0;
+    }
+
+    .m-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.94rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 0.55rem;
+    }
+
+    .m-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .m-comment {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      background: var(--cream-dark);
+      border-left: 3px solid var(--gold);
+      padding: 0.65rem 1rem;
+      margin: 1.25rem 0 1rem;
+    }
+
+    .m-key-finding {
+      background: rgba(247, 244, 238, 0.05);
+      border-left: 3px solid var(--gold);
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.75rem;
+      max-width: 680px;
+    }
+
+    .m-key-finding-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .m-key-finding p {
+      font-size: 0.88rem;
+      color: rgba(247, 244, 238, 0.72);
+      line-height: 1.7;
+    }
+
+    .m-key-finding a {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88em;
+      background: rgba(13, 27, 42, 0.06);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+    }
+
+    .m-comment code { background: rgba(13, 27, 42, 0.08); }
+
+    .m-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-light);
+    }
+
+    table.m-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 0.85rem;
+    }
+
+    .m-table th, .m-table td {
+      text-align: left;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    .m-table th {
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .m-table td { color: var(--text-mid); }
+    .m-table tr:last-child td { border-bottom: none; }
+    .m-table tr:nth-child(even) td { background: var(--cream); }
+
+    .m-table--wrap th, .m-table--wrap td { white-space: normal; }
+    .m-table--wrap td:first-child { white-space: nowrap; font-weight: 600; color: var(--text-dark); }
+
+    .m-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .m-pill {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.32rem 0.8rem;
+      border-radius: 1px;
+      letter-spacing: 0.005em;
+    }
+
+    .m-meta {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    .m-meta strong { color: var(--text-dark); }
+
+    .m-footer-cta {
+      background: var(--navy);
+      padding: 3rem 0;
+    }
+
+    .m-footer-cta .m-btns { justify-content: flex-start; }
+
+    footer {
+      background: #060e18;
+      padding: 1.6rem 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.7rem;
+      color: rgba(247, 244, 238, 0.2);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 640px) {
+      .m-hero { padding: 3rem 0 2.5rem; }
+      .m-body { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== NAVIGATION =============== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">MRW<span>.</span></a>
+      <a href="./index.html" class="nav-back">← Return to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- =============== HERO =============== -->
+  <section class="m-hero">
+    <div class="container">
+      <div class="m-eyebrow">Methodology</div>
+      <h1 class="m-title">The Crescent Brief — Methodology</h1>
+      <blockquote class="m-subtitle">
+        How a monthly publication on political economy and geopolitical risk across MENA, South Asia, and the Horn of Africa is sourced, structured, and fact-checked.
+      </blockquote>
+
+      <p class="m-hero-summary">
+        The Crescent Brief is an independent publication that draws on two layers of source material: the quantitative and qualitative datasets underlying the MENASA Risk Monitor, and direct wire-service, IMF, rating-agency, and institutional reporting for everything the Risk Monitor's own dataset doesn't cover. Every figure in a published piece traces to a specific cited row or source; nothing is estimated or extrapolated beyond what the underlying data states.
+      </p>
+
+      <div class="m-key-finding">
+        <div class="m-key-finding-label">Editorial Standard</div>
+        <p>Every published piece closes with its own dedicated Methodology section naming the exact datasets, files, and outlets a given figure traces back to — the same discipline applied here at the publication level. See <a href="#sourcing">Data &amp; Sourcing</a> below for the full breakdown.</p>
+      </div>
+
+      <div class="m-hero-stats">
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">3</div>
+          <div class="m-hero-stat-label">Regions covered</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">2</div>
+          <div class="m-hero-stat-label">Sourcing layers per piece</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">Monthly</div>
+          <div class="m-hero-stat-label">Regional digest cadence</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">0</div>
+          <div class="m-hero-stat-label">Figures without a traceable source</div>
+        </div>
+      </div>
+
+      <div class="m-hero-why-heading">Why It's Structured This Way</div>
+      <ul class="m-hero-why-list">
+        <li>Separates what the underlying data actually states from what it's reasonable to infer from it — a distinction each piece makes explicit rather than blurring for narrative effect.</li>
+        <li>Inherits the MENASA Risk Monitor's own stated limitations rather than presenting its outputs as more precise than the Monitor itself claims them to be.</li>
+        <li>Pairs a backward-looking composite score with forward-looking, event-level reporting, since the two measure different things and neither substitutes for the other.</li>
+      </ul>
+
+      <div class="m-btns">
+        <a href="https://thecrescentbrief.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Read The Crescent Brief</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Open MENASA Risk Monitor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== BODY =============== -->
+  <main class="m-body">
+    <div class="container">
+
+      <section class="m-section" id="purpose">
+        <h2 class="m-h2">1. Purpose</h2>
+        <p class="m-p">The Crescent Brief exists to do what a backward-looking annual composite score structurally can't: walk through why a country's risk picture moved the way it did, in the words and sequence the events actually happened in, and connect what's happening in one country to the pattern (or lack of one) across the wider region. It is a companion to the MENASA Risk Monitor, not a replacement for it — the Monitor's score tells you where a country sits; The Crescent Brief explains how it got there and what it might mean for what comes next.</p>
+        <p class="m-p">This is a research/portfolio publication, not a commissioned or institutional assessment, and every piece says so explicitly in its own closing section.</p>
+      </section>
+
+      <section class="m-section" id="scope">
+        <h2 class="m-h2">2. Editorial Scope</h2>
+        <p class="m-p">Coverage spans the same geography as the MENASA Risk Monitor: MENA, South Asia, and the Horn of Africa. Within that footprint, two recurring formats carry the publication:</p>
+        <ul class="m-list">
+          <li><strong>Standalone case-study briefs</strong> — deep, multi-country comparative pieces built around a specific analytical question (for example, how sovereign debt distress and political instability reinforce each other, tested across several countries rather than assumed as a single universal pattern). Published as the underlying research warrants, not on a fixed schedule.</li>
+          <li><strong>The MENA Geopolitical Risk Brief</strong> — a monthly regional digest: a snapshot of the region's composite risk scores, that month's biggest risk-score movers, two to three spotlighted conflicts or developments, and a shorter roundup of everything else being tracked.</li>
+        </ul>
+        <p class="m-comment">South Asia-centered conflicts in the Risk Monitor's own dataset (Pakistan-Afghanistan, India-Pakistan Kashmir, Balochistan/CPEC) are held out of the MENA-focused monthly digest by design and are better suited to a future South Asia-focused issue or a dedicated case-study brief, rather than folded into MENA coverage where they don't geographically belong.</p>
+      </section>
+
+      <section class="m-section" id="sourcing">
+        <h2 class="m-h2">3. Data &amp; Sourcing</h2>
+        <p class="m-p">Every piece draws on two distinct layers, and each is disclosed separately rather than blended into one undifferentiated source line:</p>
+        <ul class="m-list">
+          <li><strong>Quantitative layer</strong> — risk scores, debt-to-GDP, governance indicators, reserves, and credit ratings, pulled directly from the MENASA Risk Monitor's <code>scored_data.csv</code>, <code>driver_data.csv</code>, <code>CREDIT_RATINGS</code>, and <code>CURRENT_GOVERNMENT</code> data.</li>
+          <li><strong>Qualitative layer</strong> — historical-context narratives, IMF-program histories, and current live-conflict detail, drawn from the Monitor's curated <code>context_data.py</code> file, including its <code>LIVE_CONFLICTS</code> dataset.</li>
+        </ul>
+        <p class="m-p">Where a piece needs detail the Risk Monitor's own dataset doesn't carry, that detail is sourced directly and cited to the outlet: IMF press releases and program documents, Reuters, Bloomberg, and AP wire reporting, rating-agency actions (S&amp;P, Moody's, Fitch), Al Jazeera, CFR, the Atlantic Council, the World Bank, and the UK House of Commons Library, among others. Every figure traces to a specific cited row or a named source; nothing is estimated or extrapolated beyond what that source states.</p>
+      </section>
+
+      <section class="m-section" id="framework">
+        <h2 class="m-h2">4. Analytic Framework</h2>
+        <p class="m-p">Case-study briefs open with a bottom-line-up-front summary, walk through each country in turn against a consistent set of questions (what's the current standing, what's the sequence of events, what does the political response look like, what does it actually mean), and close with a cross-case synthesis that tests competing explanatory framings against each other rather than forcing every case into a single narrative. Where the evidence doesn't support one clean answer, that's stated directly as the finding, not treated as a shortfall in the analysis.</p>
+        <p class="m-p">The monthly regional digest follows a fixed structure issue to issue: a regional snapshot, a risk-movers table, spotlighted conflicts, a shorter "Also Watching" roundup, and an outlook section that explicitly carries forward the open questions from the prior issue, so each digest builds on the last rather than resetting.</p>
+      </section>
+
+      <section class="m-section" id="relationship">
+        <h2 class="m-h2">5. Relationship to the MENASA Risk Monitor</h2>
+        <p class="m-p">The Crescent Brief is a companion publication to the MENASA Risk Monitor, not a marketing extension of it. Where the underlying data reveals a real limitation in the Monitor's own methodology, that gets said plainly. The first case-study brief, for instance, concludes that the Monitor's backward-looking, annual composite score would have been slow to catch Bangladesh's 2024 political rupture and Pakistan's 2025 geopolitical shocks, both of which arrived on a faster timeline than an annual score can track, and that the Monitor's own qualitative Live Conflicts tab is the more appropriate tool for exactly that kind of fast-moving event.</p>
+        <div class="m-key-finding">
+          <div class="m-key-finding-label">Key Finding</div>
+          <p>Backtested against six major crises since 2010, the MENASA Risk Monitor's composite score correctly flagged 4 of 6 in the same year they began — a real, disclosed result, not a claim of forecasting reliability. See the Monitor's own <a href="./menasa-methodology.html">methodology page</a> for the full backtest.</p>
+        </div>
+      </section>
+
+      <section class="m-section" id="cadence">
+        <h2 class="m-h2">6. Publishing Cadence</h2>
+        <p class="m-p">The MENA Geopolitical Risk Brief publishes roughly monthly. Case-study briefs publish as the underlying research warrants, rather than to a fixed schedule, since forcing a comparative case study onto a monthly clock would trade depth for punctuality. Both formats live on the same publication and are cross-referenced from each other where relevant.</p>
+      </section>
+
+      <section class="m-section" id="limitations">
+        <h2 class="m-h2">7. Limitations</h2>
+        <p class="m-p">The Crescent Brief inherits the MENASA Risk Monitor's own stated limitations rather than presenting its outputs as more precise than the Monitor claims them to be:</p>
+        <ul class="m-list">
+          <li>The Monitor's composite score is annual and backward-looking by design, and is treated here as a screening tool, not a leading indicator for abrupt political rupture or fast-moving geopolitical shocks.</li>
+          <li>Debt-to-GDP coverage is sparse and reference years vary by country; cross-country debt comparisons in any piece should be read as directional, not perfectly time-matched.</li>
+          <li>The Monitor's own README describes its scoring weights as "a transparent, reasonable starting point, not a backtested or econometrically validated model" — a caveat that applies with equal force to any conclusion drawn from that data here.</li>
+        </ul>
+        <p class="m-comment">Source disagreement is reported rather than resolved into a single false-precision figure where it exists in the underlying reporting itself — for example, casualty estimates for an active conflict that vary by a factor of two across outlets are shown as a range, not averaged into one number.</p>
+      </section>
+
+      <section class="m-section" id="version">
+        <h2 class="m-h2">8. Version and Updates</h2>
+        <p class="m-meta">
+          <strong>Underlying data:</strong> MENASA Risk Monitor's quantitative layer refreshes weekly via its own GitHub Actions pipeline; its qualitative conflict narratives are a periodically curated snapshot, not a live feed<br>
+          <strong>Publication cadence:</strong> MENA Geopolitical Risk Brief, monthly; case-study briefs, as research warrants<br>
+          <strong>Companion tool:</strong> MENASA Risk Monitor (linked from the Research section)<br>
+          <strong>Publisher:</strong> Muhammad Rafay Waqar
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =============== FOOTER CTA =============== -->
+  <section class="m-footer-cta">
+    <div class="container">
+      <div class="m-btns">
+        <a href="https://thecrescentbrief.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Read The Crescent Brief</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://menasa-risk-monitor.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Open MENASA Risk Monitor</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
+  </footer>
+
+</body>
+</html>
