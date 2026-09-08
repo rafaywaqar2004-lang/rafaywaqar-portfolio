@@ -647,8 +647,38 @@
         <p class="m-comment">Consistent with the rest of this project's discipline: none of this is a forecasting tool, an investment signal, or an authoritative government assessment (see "What this is (and isn't)" above) — it is a structured starting point for a more informed judgment, not a substitute for one.</p>
       </section>
 
+      <section class="m-section" id="companion-brief">
+        <h2 class="m-h2">10. Companion Analytic Brief: Gulf AI Ambitions and Geopolitical Risk</h2>
+        <p class="m-p"><em>Hedging in the US-China chip race: Saudi Arabia, the UAE, and the regional competition for AI supremacy.</em></p>
+
+        <div class="m-key-finding">
+          <div class="m-key-finding-label">Bottom Line Up Front</div>
+          <p>Gulf states are not choosing between Washington and Beijing on artificial intelligence — they are maximizing ties with both simultaneously, and the United States is, for now, tolerating it. The UAE holds the most favorable US chip-export status of any state in the region while still running Huawei radio equipment on live 5G networks; Saudi Arabia's chip access is real but capped and bespoke, tied to a single sovereign vehicle rather than a country-wide rule. The central risk for Western strategic interests is not that the Gulf will defect to China — it is that Washington's bilateral, entity-specific approach to chip access is rewarding institutional capacity as much as strategic alignment, a narrower and more fragile basis for regional influence than it looks.</p>
+        </div>
+
+        <p class="m-p"><strong>Key Judgments</strong></p>
+        <ul class="m-list">
+          <li>Gulf states, led by the UAE and Saudi Arabia, are pursuing simultaneous integration with both blocs rather than sequential alignment with one — the UAE is the most US-integrated state in this analysis by chip-export status, and simultaneously a state where a national telecom operator deployed Huawei radio hardware on a live 5G network in the same period. <em>(High confidence.)</em></li>
+          <li>Washington's post-May-2025 bilateral approach is tolerating continued Chinese commercial ties in exchange for entity-level compliance, not requiring a wholesale break with Chinese vendors — the UAE's July 2026 upgrade came with a named, auditable list of approved end users, a narrower ask than "pick a side." <em>(Moderate-high confidence.)</em></li>
+          <li>Saudi Arabia's chip access is real but structurally more fragile than the UAE's — its authorization is capped, entity-specific, and conditioned on compliance, not a blanket Country Group upgrade, leaving it more exposed to renegotiation risk. <em>(Moderate confidence.)</em></li>
+          <li>Smaller Gulf states are pursuing AI ambitions through a materially lower-capital-intensity strategy than the two regional leaders — portfolio stakes and telecom partnerships rather than in-country compute, with no disclosed bilateral chip arrangement. <em>(Moderate confidence.)</em></li>
+          <li>Chinese technology integration is deepest not in the Gulf but in the two non-Gulf comparators — Pakistan's and Turkey's Huawei relationships are both older and more structurally embedded than any Gulf state's, suggesting this hedging pattern is a general feature of how US security partners behave, not a Gulf-specific hedge. <em>(High confidence on the underlying facts; moderate confidence on the generalization.)</em></li>
+          <li>The rescission of the prior worldwide AI chip licensing rule in favor of bilateral dealmaking has structurally advantaged states that can stand up a single, well-governed sovereign AI vehicle able to satisfy US security and reporting conditions — rewarding institutional capacity at least as much as geopolitical alignment. <em>(Moderate confidence.)</em></li>
+        </ul>
+
+        <p class="m-p"><strong>Implications for Western Strategic Interests</strong></p>
+        <ul class="m-list">
+          <li>Chip diversion risk is a Gulf-specific concern precisely because Gulf states are the most successful bilateral partners — a large, concentrated, capped allocation is exactly the kind of arrangement enforcement mandates are designed to audit.</li>
+          <li>US leverage over the Gulf is currently narrower than "chip access" suggests — Washington's ask has been entity-level compliance, not bloc alignment, which means the leverage secured is over specific vehicles' compliance behavior, not over Gulf states' broader foreign-policy choices.</li>
+          <li>Interdependence now runs in both directions, as major US AI firms' multi-billion-dollar Gulf commitments mean US capital and infrastructure exposure sits in the Gulf too, not just the reverse.</li>
+          <li>Regional stability implications here are about diversification, not bloc politics — the MENASA Risk Monitor's broader sovereign-risk framework is the more appropriate tool for tracking rentier-state fragility specifically; this brief's scope is the technology-bloc question alone.</li>
+        </ul>
+
+        <p class="m-comment">This brief draws on the same country-level dataset as the tracker above (<code>data/curated/*.csv</code>, covering Saudi Arabia, UAE, Qatar, Bahrain, Kuwait, Oman, Pakistan, and Turkey). Every factual claim traces to a cited, dated source; confidence levels reflect both the strength of that sourcing and the size of the inferential step from evidence to judgment, following standard analytic tradecraft practice. Several inputs behind the smaller Gulf states' characterization are marked <code>Low</code> confidence in the underlying dataset and should be checked against the source data directly before being relied on for a specific claim. This is a research/portfolio product, not a commissioned or institutional assessment.</p>
+      </section>
+
       <section class="m-section" id="limitations">
-        <h2 class="m-h2">10. Limitations</h2>
+        <h2 class="m-h2">11. Limitations</h2>
         <ul class="m-list">
           <li>China Exposure Depth's second factor (Chinese AI/cloud/digital ties) is a newer, thinner research pass than the telecom-penetration factor it complements — several rows rest on a single MOU or marketing announcement rather than a confirmed, audited deployment figure. Directionally sound, less battle-tested than the telecom factor it's averaged with.</li>
           <li>Strategic Risk deliberately does not rate "semiconductor dependency" or "geopolitical volatility" per country — the first would just restate the existing US/China axes, the second would require a political judgment the curated data doesn't support without guessing.</li>
@@ -665,7 +695,7 @@
       </section>
 
       <section class="m-section" id="skills">
-        <h2 class="m-h2">11. Skills &amp; Technical Stack</h2>
+        <h2 class="m-h2">12. Skills &amp; Technical Stack</h2>
         <p class="m-p">Built end-to-end — data pipeline, two-axis scoring model, statistical sensitivity testing, and the interactive dashboard itself — covering the Gulf Cooperation Council states (Saudi Arabia, UAE, Qatar, Bahrain, Kuwait, Oman) plus 11 wider Middle East/South Asia comparators (Pakistan, Turkey, Israel, Egypt, Jordan, Iraq, Lebanon, Syria, Iran, Yemen, Afghanistan).</p>
         <div class="m-pill-group">
           <span class="m-pill">Python</span>
@@ -693,7 +723,7 @@
       </section>
 
       <section class="m-section" id="version">
-        <h2 class="m-h2">12. Version and Updates</h2>
+        <h2 class="m-h2">13. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> World Bank layer automated and refreshed weekly via GitHub Actions; export-control tier, Chinese telecom penetration, Chinese AI/cloud/digital ties, AI governance maturity, and deal-level investment/compute figures are manually curated and sourced as new information is disclosed<br>
           <strong>Companion analysis:</strong> Gulf AI Ambitions and Geopolitical Risk (analytic brief, linked from the Research section)<br>
