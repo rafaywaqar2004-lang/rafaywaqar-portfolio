@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forecast Track Record — The Crescent Brief</title>
+  <meta name="description" content="A dated, scored log of falsifiable geopolitical and sovereign-risk forecasts made in The Crescent Brief, tracked to resolution and scored against outcomes using a Brier score.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1b2a'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='11' font-weight='600' fill='%23c9a84c'>MRW</text></svg>">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP9RPS41KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QP9RPS41KJ');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #152335;
+      --navy-light:  #1e3048;
+      --gold:        #c9a84c;
+      --gold-light:  #dfc078;
+      --cream:       #f7f4ee;
+      --cream-dark:  #ede9e0;
+      --cream-mid:   #e4dfd4;
+      --white:       #ffffff;
+      --text-dark:   #1a2332;
+      --text-mid:    #4a5568;
+      --text-light:  #718096;
+      --border:      #d4c9b0;
+      --border-light:#e8e2d6;
+      --green:       #3a6b52;
+      --red:         #a4443a;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      letter-spacing: -0.008em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---- nav ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 238, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* ---- hero ---- */
+    .m-hero {
+      background: var(--navy);
+      padding: 4rem 0 3rem;
+    }
+
+    .m-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .m-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .m-subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(247, 244, 238, 0.7);
+      max-width: 680px;
+      line-height: 1.7;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.2rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .m-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .m-hero-summary {
+      font-size: 0.95rem;
+      color: rgba(247, 244, 238, 0.68);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.75rem;
+    }
+
+    .m-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 680px;
+      padding: 1.4rem 0;
+      margin-bottom: 1.75rem;
+      border-top: 1px solid rgba(247, 244, 238, 0.08);
+      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .m-hero-stat-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .m-hero-stat-label {
+      font-size: 0.65rem;
+      color: rgba(247, 244, 238, 0.45);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 560px) {
+      .m-hero-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.05rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(247, 244, 238, 0.58);
+      border-color: rgba(247, 244, 238, 0.16);
+    }
+
+    .btn-ghost:hover { border-color: rgba(201, 168, 76, 0.55); color: var(--gold); }
+
+    /* ---- body ---- */
+    .m-body { padding: 3.5rem 0; }
+
+    .m-section { margin-bottom: 3rem; }
+
+    .m-h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.005em;
+    }
+
+    .m-p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .m-list {
+      list-style: none;
+      margin: 1rem 0 0;
+    }
+
+    .m-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.94rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 0.55rem;
+    }
+
+    .m-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .m-comment {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      background: var(--cream-dark);
+      border-left: 3px solid var(--gold);
+      padding: 0.65rem 1rem;
+      margin: 1.25rem 0 1rem;
+    }
+
+    .m-key-finding {
+      background: rgba(247, 244, 238, 0.05);
+      border-left: 3px solid var(--gold);
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.75rem;
+      max-width: 680px;
+    }
+
+    .m-key-finding-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .m-key-finding p {
+      font-size: 0.88rem;
+      color: rgba(247, 244, 238, 0.72);
+      line-height: 1.7;
+    }
+
+    .m-key-finding a {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88em;
+      background: rgba(13, 27, 42, 0.06);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+    }
+
+    .m-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-light);
+    }
+
+    table.m-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 0.85rem;
+    }
+
+    .m-table th, .m-table td {
+      text-align: left;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--border-light);
+      white-space: normal;
+    }
+
+    .m-table th {
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .m-table td { color: var(--text-mid); }
+    .m-table tr:last-child td { border-bottom: none; }
+    .m-table tr:nth-child(even) td { background: var(--cream); }
+    .m-table td:first-child { font-weight: 600; color: var(--text-dark); white-space: nowrap; }
+
+    .status-pill {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 1px;
+      white-space: nowrap;
+    }
+
+    .status-open   { background: rgba(201, 168, 76, 0.15); color: #8a6d1f; }
+    .status-yes    { background: rgba(58, 107, 82, 0.15); color: var(--green); }
+    .status-no     { background: rgba(164, 68, 58, 0.15); color: var(--red); }
+
+    .m-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .m-pill {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.32rem 0.8rem;
+      border-radius: 1px;
+      letter-spacing: 0.005em;
+    }
+
+    .m-meta {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    .m-meta strong { color: var(--text-dark); }
+
+    .m-footer-cta {
+      background: var(--navy);
+      padding: 3rem 0;
+    }
+
+    .m-footer-cta .m-btns { justify-content: flex-start; }
+
+    footer {
+      background: #060e18;
+      padding: 1.6rem 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.7rem;
+      color: rgba(247, 244, 238, 0.2);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 640px) {
+      .m-hero { padding: 3rem 0 2.5rem; }
+      .m-body { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== NAVIGATION =============== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">MRW<span>.</span></a>
+      <a href="./index.html" class="nav-back">← Return to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- =============== HERO =============== -->
+  <section class="m-hero">
+    <div class="container">
+      <div class="m-eyebrow">Forecast Track Record</div>
+      <h1 class="m-title">Forecast Track Record</h1>
+      <blockquote class="m-subtitle">
+        A dated, scored log of falsifiable calls made in The Crescent Brief and its companion trackers — tracked to resolution and graded, not just written and forgotten.
+      </blockquote>
+
+      <p class="m-hero-summary">
+        Risk analysis is only as credible as its willingness to be checked. Every forecast below was logged on the date shown, before its outcome was known, with an explicit probability rather than a hedge. When a forecast resolves, the outcome is recorded here unedited — correct or not — and folded into a running Brier score. Nothing on this page is retroactively softened.
+      </p>
+
+      <div class="m-hero-stats" id="stats-row">
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num" id="stat-total">—</div>
+          <div class="m-hero-stat-label">Forecasts logged</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num" id="stat-open">—</div>
+          <div class="m-hero-stat-label">Currently open</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num" id="stat-resolved">—</div>
+          <div class="m-hero-stat-label">Resolved</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num" id="stat-brier">N/A</div>
+          <div class="m-hero-stat-label">Brier score (resolved only)</div>
+        </div>
+      </div>
+
+      <div class="m-key-finding">
+        <div class="m-key-finding-label">Status</div>
+        <p>This log launched September 2026 with its first batch of forecasts, drawn directly from the "Indicators to Watch" section of the published <a href="https://thecrescentbrief.substack.com/p/gulf-ai-ambitions-and-geopolitical" target="_blank" rel="noopener noreferrer">Gulf AI Ambitions and Geopolitical Risk</a> brief. No forecast has reached its resolution date yet, so the Brier score is not yet computed. See <a href="#methodology">Methodology</a> below for how scoring works once outcomes are in.</p>
+      </div>
+
+      <div class="m-btns">
+        <a href="./crescent-brief-methodology.html" class="btn btn-gold">Crescent Brief Methodology</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://thecrescentbrief.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Read The Crescent Brief</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== BODY =============== -->
+  <main class="m-body">
+    <div class="container">
+
+      <section class="m-section" id="purpose">
+        <h2 class="m-h2">1. Purpose</h2>
+        <p class="m-p">Every piece published on The Crescent Brief and its companion trackers (the MENASA Risk Monitor, the Gulf AI &amp; Tech-Bloc Alignment Tracker) makes judgments about what's likely to happen next. Most published risk analysis never comes back to check those judgments against what actually happened. This page exists to close that loop: specific, dated, falsifiable forecasts, logged before the outcome is known, scored against reality once it resolves.</p>
+        <p class="m-p">This is the same discipline geopolitical risk consultancies use internally to evaluate analyst performance, applied here in the open.</p>
+      </section>
+
+      <section class="m-section" id="log">
+        <h2 class="m-h2">2. Forecast Log</h2>
+        <p class="m-p">Each forecast states a specific, checkable claim, a probability, a resolution date, and the source piece it was drawn from. The first batch below is drawn directly from the published Outlook section of the Gulf AI Ambitions and Geopolitical Risk brief — every question that section posed as worth watching becomes a scored forecast here rather than staying an open-ended prompt.</p>
+
+        <div class="m-table-wrap">
+          <table class="m-table m-table--wrap">
+            <thead>
+              <tr>
+                <th>Logged</th>
+                <th>Forecast</th>
+                <th>P(Yes)</th>
+                <th>Resolves by</th>
+                <th>Status</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sep 2026</td>
+                <td>Saudi Arabia receives a Country-Group-style US chip-export upgrade analogous to the UAE's July 2026 move (a broad, entity-based authorization rather than the current capped, single-vehicle arrangement).</td>
+                <td>35%</td>
+                <td>Jun 2027</td>
+                <td><span class="status-pill status-open">Open</span></td>
+                <td>Gulf AI Brief</td>
+              </tr>
+              <tr>
+                <td>Sep 2026</td>
+                <td>Huawei's footprint in UAE or Saudi telecom infrastructure measurably declines (a disclosed contract non-renewal, a public vendor-swap announcement, or an equivalent verifiable signal) following their respective 2025–2026 US chip-access gains.</td>
+                <td>20%</td>
+                <td>Mar 2027</td>
+                <td><span class="status-pill status-open">Open</span></td>
+                <td>Gulf AI Brief</td>
+              </tr>
+              <tr>
+                <td>Sep 2026</td>
+                <td>At least one of Qatar, Bahrain, Kuwait, or Oman secures its own disclosed bilateral US chip-export arrangement (any Country-Group-style or entity-specific authorization, not merely a stated intent).</td>
+                <td>25%</td>
+                <td>Dec 2027</td>
+                <td><span class="status-pill status-open">Open</span></td>
+                <td>Gulf AI Brief</td>
+              </tr>
+              <tr>
+                <td>Sep 2026</td>
+                <td>New US chip location-verification mandates result in at least one disclosed enforcement action (investigation, penalty, or confirmed diversion finding) involving a Gulf-allocated chip shipment.</td>
+                <td>30%</td>
+                <td>Dec 2027</td>
+                <td><span class="status-pill status-open">Open</span></td>
+                <td>Gulf AI Brief</td>
+              </tr>
+              <tr>
+                <td>Sep 2026</td>
+                <td>China's rare-earth and critical-mineral export controls are formally extended to cover components used in Gulf-bound AI infrastructure (not merely discussed, but an announced or implemented control).</td>
+                <td>15%</td>
+                <td>Jun 2027</td>
+                <td><span class="status-pill status-open">Open</span></td>
+                <td>Gulf AI Brief</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="m-comment">Probabilities are the author's own analytic judgment at the time logged, not a market-derived or model-generated estimate. They are recorded here specifically so they can be checked, not because they carry special authority.</p>
+      </section>
+
+      <section class="m-section" id="methodology">
+        <h2 class="m-h2">3. Methodology</h2>
+        <p class="m-p">Each forecast is logged with a probability between 0 and 100% that the stated claim resolves "Yes" by the given date. When the resolution date passes, the outcome is recorded as Yes or No based on public, citable evidence, and the forecast is scored using the Brier score, the standard method for grading probabilistic forecasts:</p>
+        <p class="m-p"><code>Brier score = (forecast probability − outcome)²</code>, where outcome is 1 if the event happened and 0 if it didn't, averaged across all resolved forecasts.</p>
+        <p class="m-p">A lower Brier score is better. A score of 0 means perfect calibration; 0.25 is what a forecaster gets by guessing 50% on everything; a well-calibrated forecaster who says 70% on things that happen 70% of the time scores well below that. This is the same scoring convention used in forecasting-tournament research (Tetlock's Good Judgment Project) and by professional forecasting platforms.</p>
+        <ul class="m-list">
+          <li>Forecasts are never edited or deleted after logging, including their stated probability. Only the resolution outcome and date are added once known.</li>
+          <li>A forecast that resolves ambiguously is marked as such and excluded from the Brier calculation, with the ambiguity explained, rather than scored in either direction.</li>
+          <li>New forecasts are added as new pieces publish on The Crescent Brief and its companion trackers, drawn from each piece's own stated Outlook or Indicators-to-Watch section.</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="limitations">
+        <h2 class="m-h2">4. Limitations</h2>
+        <ul class="m-list">
+          <li>Sample size is currently small. A handful of resolved forecasts is not enough to draw strong conclusions about calibration; this page discloses that plainly rather than presenting an early Brier score as more meaningful than it is.</li>
+          <li>Resolution judgment is the author's own, applied against publicly available evidence and explained in the resolution note once a forecast closes; it is not adjudicated by an independent third party.</li>
+          <li>This is a research and portfolio exercise, not a commissioned forecasting product, and should be read accordingly.</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="version">
+        <h2 class="m-h2">5. Version and Updates</h2>
+        <p class="m-meta">
+          <strong>Launched:</strong> September 2026<br>
+          <strong>Forecasts logged:</strong> 5<br>
+          <strong>Forecasts resolved:</strong> 0<br>
+          <strong>Companion publication:</strong> The Crescent Brief<br>
+          <strong>Publisher:</strong> Muhammad Rafay Waqar
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =============== FOOTER CTA =============== -->
+  <section class="m-footer-cta">
+    <div class="container">
+      <div class="m-btns">
+        <a href="https://thecrescentbrief.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Read The Crescent Brief</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="./crescent-brief-methodology.html" class="btn btn-ghost">Crescent Brief Methodology</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
+  </footer>
+
+  <script>
+    document.getElementById('stat-total').textContent = '5';
+    document.getElementById('stat-open').textContent = '5';
+    document.getElementById('stat-resolved').textContent = '0';
+  </script>
+
+</body>
+</html>
