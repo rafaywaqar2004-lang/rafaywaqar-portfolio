@@ -510,7 +510,7 @@
     /* ---- spotlight cards: the two main featured projects ---- */
     .spotlight-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.75rem;
       margin-bottom: 1rem;
     }
@@ -631,7 +631,11 @@
       letter-spacing: 0.01em;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 1100px) {
+      .spotlight-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
       .spotlight-grid { grid-template-columns: 1fr; }
     }
 
@@ -1872,7 +1876,7 @@
       </p>
 
       <div class="hero-badges">
-        <span class="badge">2 Live Risk-Analytics Tools</span>
+        <span class="badge">3 Live Risk-Analytics Tools</span>
         <span class="badge">IMF — OEDMD Constituency Analyst</span>
         <span class="badge">World Bank — MENA Policy Research</span>
         <span class="badge">12+ Published Op-Eds</span>
@@ -1958,6 +1962,34 @@
           <div class="spotlight-hint">Live app runs on a free-tier host — first load may take ~30s to wake up.</div>
         </div>
 
+        <div class="spotlight-card">
+          <div class="spotlight-top">
+            <span class="featured-item-label">03 <span class="featured-item-label-sep">—</span> Live Interactive Model</span>
+            <span class="spotlight-status">Live</span>
+          </div>
+          <h3 class="spotlight-title">EM Macro &amp; Geopolitical Risk Engine</h3>
+          <p class="spotlight-desc">Three connected, independently R-validated layers over the same 34 MENA and South Asia economies: a panel logit model predicting sovereign fiscal distress, a real GDELT-vs-FX event study measuring how geopolitical shocks move currency markets, and a panel AR(1) forecasting model with a live, interactive stress-testing tool.</p>
+          <div class="spotlight-stats">
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">3</div>
+              <div class="spotlight-stat-label">Model Phases</div>
+            </div>
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">17</div>
+              <div class="spotlight-stat-label">Real Events</div>
+            </div>
+            <div class="spotlight-stat">
+              <div class="spotlight-stat-num">R</div>
+              <div class="spotlight-stat-label">Cross-Validated</div>
+            </div>
+          </div>
+          <div class="spotlight-links">
+            <a href="https://em-macro-geopolitical-risk-engine.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold-outline btn-sm">Live App ↗</a>
+            <a href="https://github.com/rafaywaqar2004-lang/sovereign-distress-model" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">GitHub ↗</a>
+          </div>
+          <div class="spotlight-hint">Live app runs on a free-tier host — first load may take ~50s to wake up.</div>
+        </div>
+
       </div>
 
       <!-- 03 & 04 — Recent companion analysis -->
@@ -1965,7 +1997,7 @@
       <div class="featured-secondary-grid">
 
         <a href="https://thecrescentbrief.substack.com/p/gulf-ai-ambitions-and-geopolitical" target="_blank" rel="noopener noreferrer" class="featured-card">
-          <div class="featured-item-label">03 <span class="featured-item-label-sep">—</span> Analytical Brief</div>
+          <div class="featured-item-label">04 <span class="featured-item-label-sep">—</span> Analytical Brief</div>
           <h3 class="featured-card-title">Gulf AI Ambitions and Geopolitical Risk</h3>
           <p class="featured-card-desc">A geopolitical risk assessment examining how Gulf states are navigating the US-China AI and chip competition — key judgments, alternative-hypothesis analysis, and implications for Western strategic interests.</p>
           <div class="featured-card-meta">
@@ -1975,7 +2007,7 @@
         </a>
 
         <a href="https://thecrescentbrief.substack.com" target="_blank" rel="noopener noreferrer" class="featured-card">
-          <div class="featured-item-label">04 <span class="featured-item-label-sep">—</span> Independent Publication</div>
+          <div class="featured-item-label">05 <span class="featured-item-label-sep">—</span> Independent Publication</div>
           <h3 class="featured-card-title">The Crescent Brief</h3>
           <p class="featured-card-desc">Standalone case-study briefs and a monthly MENA regional risk digest — regional snapshot, top risk movers, and spotlighted conflicts, companion to the MENASA Risk Monitor.</p>
           <div class="featured-card-meta">
@@ -2419,7 +2451,26 @@
           { label: `GitHub`, url: `https://github.com/rafaywaqar2004-lang/overeign-risk-index` }
         ],
         companions: [
-          { label: `The Crescent Brief`, id: `project-crescent-brief` }
+          { label: `The Crescent Brief`, id: `project-crescent-brief` },
+          { label: `EM Macro & Geopolitical Risk Engine`, id: `project-em-macro-engine` }
+        ]
+      },
+      {
+        id: 'project-em-macro-engine',
+        title: `EM Macro & Geopolitical Risk Engine`,
+        when: `2026`,
+        status: `Live`,
+        companionOf: { label: `MENASA Risk Monitor`, id: `project-sovereign-risk` },
+        kindLabel: `Live Interactive Model`,
+        desc: `Three connected, independently-validated layers over the same 34 MENA and South Asia economies this project's sibling MENASA Risk Monitor already tracks: a panel logistic regression predicting sovereign fiscal distress (default and IMF program entry), a real event study pairing GDELT media-coverage data against real historical FX rates for 5 dated geopolitical shocks, and a panel AR(1) macro forecasting model with a live, interactive stress-testing tool.`,
+        keyFinding: `Every model is independently reproduced in R and matches the Python output almost to the decimal. Real, honest limitations are disclosed alongside the results rather than hidden — including near-perfect separation in the 2-event default model and non-significant shock coefficients in the stress test.`,
+        tags: [`Python`, `Panel Logistic Regression`, `Event Study Design`, `Panel AR(1) Forecasting`, `R Cross-Validation`, `SQL`],
+        links: [
+          { label: `Live App`, url: `https://em-macro-geopolitical-risk-engine.onrender.com` },
+          { label: `GitHub`, url: `https://github.com/rafaywaqar2004-lang/sovereign-distress-model` }
+        ],
+        companions: [
+          { label: `MENASA Risk Monitor`, id: `project-sovereign-risk` }
         ]
       },
       {
