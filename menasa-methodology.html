@@ -605,8 +605,9 @@
 
       <section class="m-section" id="shock-scenario-lab">
         <h2 class="m-h2">11. Shock Scenario Lab</h2>
-        <p class="m-p">The former "Scenario Explorer" tab is upgraded into a Shock Scenario Lab: four calibrated shock scenarios — a Strait of Hormuz closure, a Red Sea/Bab-el-Mandeb disruption, a Pakistan sovereign default, and a fully custom shock builder — that flow oil-price, shipping-cost, conflict, and currency shocks through disclosed transmission formulas (energy fiscal exposure, freight-cost pass-through to import prices, reserve-cover depletion, and conflict/currency point adjustments) into a per-country point delta on the existing composite score.</p>
+        <p class="m-p">The former "Scenario Explorer" tab is upgraded into a Shock Scenario Lab: six calibrated shock scenarios — a Strait of Hormuz closure, a Red Sea/Bab-el-Mandeb disruption, a Pakistan sovereign default, an Iran-Israel-US War escalation, an India-Pakistan Crisis escalation, and a fully custom shock builder — that flow oil-price, shipping-cost, conflict, and currency shocks through disclosed transmission formulas (energy fiscal exposure, freight-cost pass-through to import prices, reserve-cover depletion, and conflict/currency point adjustments) into a per-country point delta on the existing composite score.</p>
         <p class="m-p">Every calibration constant behind these formulas — chokepoint trade-exposure classifications, the share of a country's imports assumed to be energy versus freight-cost-sensitive, points-per-percent conversion factors — is explicitly disclosed as a modeling assumption, not a measured statistic, in a "Transmission Model &amp; Assumptions" write-up inside the tab itself. Four visualizations accompany the results: a before/after ranked bar chart, an exposure-vs-impact scatter, an impact choropleth map, and a sector/channel impact heatmap, alongside a full results table.</p>
+        <p class="m-p">The two newest scenarios model this app's own two most heavily-tracked live conflicts (see the Live Conflicts tab), and route every input through a real, already-sourced figure rather than a new assumption: the Iran-Israel-US War scenario applies Qatar's real ~17% LNG export-capacity loss (Iranian strikes on its Ras Laffan/Mesaieed facilities) and Israel's own Finance Ministry war-cost estimate (~$11.5bn, converted via Israel's real GDP); the India-Pakistan Crisis scenario applies Pakistan's real, already-published GDP impact from India's Indus Waters Treaty suspension (-1.5% to -2%, using the -1.75% midpoint) — which is also why that scenario hits Pakistan meaningfully harder than India, mirroring the real 2025 crisis's own asymmetry (Pakistan's KSE-30 fell 7.2% in a single day; India's Sensex moved roughly 0.5%).</p>
         <p class="m-comment">The original weight-reweighting/normalization-sensitivity tool from the prior Scenario Explorer is preserved unchanged, nested as a "Weight Sensitivity" sub-section within the new tab — nothing about the original functionality was removed. Every scenario carries the same explicit disclaimer: "These scenarios use simplified transmission assumptions for analytical illustration. They are not forecasts."</p>
       </section>
 
@@ -617,8 +618,20 @@
         <p class="m-comment">Consistent with the project's "never fabricate to fill a gap" discipline: with no API keys configured, the app works exactly as before and every affected row simply reads "Not configured" — and a failed request (an invalid key, an unreachable API) is distinguished from a genuine zero-result response rather than showing the same thing for both.</p>
       </section>
 
+      <section class="m-section" id="research-reports">
+        <h2 class="m-h2">13. Research &amp; Reports</h2>
+        <p class="m-p">A "Research &amp; Reports" tab surfaces two standalone written analytic briefs that previously lived only as files linked from the project's README, never actually reachable from inside the running app: a three-case-study piece on sovereign debt and political instability (Pakistan, Sri Lanka, Bangladesh) and the first issue of a planned monthly MENA Geopolitical Risk Brief series. Both are shown as cards with a full-text reader and a download button, drawing directly on the app's own <code>scored_data.csv</code>, <code>driver_data.csv</code>, and curated <code>context_data.py</code> records.</p>
+        <p class="m-comment">This closes a real gap rather than adding new content for its own sake: the analytical narrative half of this project existed and was fact-checked, but a visitor to the live app itself had no way to find it without already knowing the GitHub repository's file structure.</p>
+      </section>
+
+      <section class="m-section" id="event-timelines">
+        <h2 class="m-h2">14. Event Timelines</h2>
+        <p class="m-p">Two new visual timelines turn this project's existing sourced historical-context data into a different, more immediate view, with no new data collection required. Every Country Deep Dive page's Key Historical Context section now opens with a real timeline chart plotting that country's own sourced events by year, staggering same-year entries so each stays individually hoverable above the existing detailed table. The Live Conflicts tab adds a "Regional Historical Timeline" plotting all 389 sourced events across all 34 tracked countries on one shared year axis — letting a real pattern (a sharp increase in tracked events across nearly every country from roughly 2019 onward) become visible at a glance rather than staying buried across 34 separate per-country tables.</p>
+        <p class="m-comment">A country multiselect (defaulting to all 34) lets a visitor narrow the regional timeline to specific countries for direct comparison.</p>
+      </section>
+
       <section class="m-section" id="policy-implications">
-        <h2 class="m-h2">13. Policy Implications</h2>
+        <h2 class="m-h2">15. Policy Implications</h2>
         <p class="m-p">This tool is built to support judgment, not replace it — the composite score and its supporting layers are designed to be read together by a policy, risk, or investment audience rather than treated as a single automated verdict.</p>
         <p class="m-p">The Economic Risk Index / Political Risk Index split (see above) exists because the appropriate response differs by which pillar is driving a country's score: a fiscally-driven deterioration points toward IMF program engagement, debt restructuring conversations, or reserve-adequacy monitoring, while a governance-driven deterioration points toward political-risk insurance, institutional engagement, or contingency planning that a purely fiscal read would miss. Collapsing both into one blended number, as most commercial country-risk products do, hides exactly this distinction.</p>
         <p class="m-p">The Shock Scenario Lab is built for a specific class of question: not "is this country risky" but "what happens to this specific country if this specific event occurs" — a Strait of Hormuz closure, a Red Sea shipping disruption, a Pakistan-style sovereign default. That framing is more useful for contingency planning and trade-exposure assessment than a static risk score alone.</p>
@@ -627,7 +640,7 @@
       </section>
 
       <section class="m-section" id="limitations">
-        <h2 class="m-h2">14. Limitations</h2>
+        <h2 class="m-h2">16. Limitations</h2>
         <ul class="m-list">
           <li>Public-source data can be revised, delayed, incomplete, or inconsistently reported.</li>
           <li>Default weights (pillar-balanced, equal within each pillar) are a transparent starting point — not a backtested or econometrically validated model (see Weighting and Validation above for what was and wasn't tested).</li>
@@ -644,7 +657,7 @@
       </section>
 
       <section class="m-section" id="sources">
-        <h2 class="m-h2">15. Additional Sources Used</h2>
+        <h2 class="m-h2">17. Additional Sources Used</h2>
         <p class="m-p">The 11-factor risk score is built primarily on World Bank data, with IMF World Economic Outlook debt figures used as an automatic fallback. The qualitative layers — Historical Context, Live Conflicts, Key Economic Partners, Trade/Sector Profiles, and Credit Ratings — draw on a much broader set of reputable sources, reflecting how real political risk research actually works: no single database covers conflict dynamics, trade relationships, credit ratings, and fiscal data at once.</p>
         <div class="m-table-wrap">
           <table class="m-table m-table--wrap">
@@ -667,7 +680,7 @@
       </section>
 
       <section class="m-section" id="skills">
-        <h2 class="m-h2">16. Skills &amp; Technical Stack</h2>
+        <h2 class="m-h2">18. Skills &amp; Technical Stack</h2>
         <p class="m-p">Built end-to-end — data pipeline, composite scoring methodology, statistical validation, and the interactive dashboard itself — covering 34 economies across MENA, South Asia, and the Horn of Africa.</p>
         <div class="m-pill-group">
           <span class="m-pill">Python</span>
@@ -701,15 +714,17 @@
           <span class="m-pill">Stata (xtreg)</span>
           <span class="m-pill">Automated Testing (pytest)</span>
           <span class="m-pill">CI/CD Regression Gating</span>
+          <span class="m-pill">Geopolitical Shock Modeling</span>
+          <span class="m-pill">Timeline Data Visualization</span>
         </div>
       </section>
 
       <section class="m-section" id="version">
-        <h2 class="m-h2">17. Version and Updates</h2>
+        <h2 class="m-h2">19. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> automated nightly refresh via GitHub Actions — re-pulls World Bank and IMF data, recomputes scores, validates every dataset, and redeploys; a second nightly Action accumulates a real daily exchange-rate snapshot per country<br>
-          <strong>Latest addition:</strong> the Exchange Rate Pressure Index upgraded from annual-only to real daily granularity, backed by a new daily-accumulating data pipeline, with automatic fallback to the original annual calculation until enough daily history exists for a country (September 2026)<br>
-          <strong>Also added:</strong> a data-driven PCA-derived weighting preset in the Shock Scenario Lab's Weight Sensitivity tool, plus a 51-test automated regression suite (pytest) run via GitHub Actions on every push to catch data/scoring bugs before they reach production; Market Signals sub-section on every Country Deep Dive page (exchange-rate pressure, ACLED conflict events, UN Comtrade trade-concentration indicators); Shock Scenario Lab (upgraded from Scenario Explorer) modeling Hormuz/Red Sea chokepoint closures and sovereign default contagion; Drivers Analysis panel-regression tab with R/Stata code export; Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
+          <strong>Latest addition:</strong> a Research &amp; Reports tab surfacing this project's two standalone written analytic briefs inside the app itself, two new Shock Scenario Lab presets (Iran-Israel-US War and India-Pakistan Crisis escalation, both built entirely on real figures already sourced in the app's own conflict-tracking data), and real event-timeline visualizations in both Country Deep Dive and Live Conflicts (September 2026)<br>
+          <strong>Also added:</strong> the Exchange Rate Pressure Index upgraded from annual-only to real daily granularity, backed by a new daily-accumulating data pipeline, with automatic fallback to the original annual calculation until enough daily history exists for a country; a data-driven PCA-derived weighting preset in the Shock Scenario Lab's Weight Sensitivity tool; a 55-test automated regression suite (pytest) run via GitHub Actions on every push to catch data/scoring bugs before they reach production; Market Signals sub-section on every Country Deep Dive page (exchange-rate pressure, ACLED conflict events, UN Comtrade trade-concentration indicators); Drivers Analysis panel-regression tab with R/Stata code export; Economic Risk Index / Political Risk Index sub-scores and the Upcoming Catalysts calendar (September 2026)<br>
           <strong>Last methodology review:</strong> September 2026<br>
           <strong>Project owner:</strong> Muhammad Rafay Waqar
         </p>
