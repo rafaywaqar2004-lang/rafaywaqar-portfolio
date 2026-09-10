@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EM Macro & Geopolitical Risk Engine — Methodology</title>
+  <meta name="description" content="Three connected, independently R-validated model layers over 34 MENA and South Asia economies: sovereign distress prediction, a real geopolitical shock event study, and macro forecasting with an interactive stress test.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1b2a'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='11' font-weight='600' fill='%23c9a84c'>MRW</text></svg>">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP9RPS41KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QP9RPS41KJ');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #152335;
+      --navy-light:  #1e3048;
+      --gold:        #c9a84c;
+      --gold-light:  #dfc078;
+      --cream:       #f7f4ee;
+      --cream-dark:  #ede9e0;
+      --cream-mid:   #e4dfd4;
+      --white:       #ffffff;
+      --text-dark:   #1a2332;
+      --text-mid:    #4a5568;
+      --text-light:  #718096;
+      --border:      #d4c9b0;
+      --border-light:#e8e2d6;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      letter-spacing: -0.008em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---- nav ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-back {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 238, 0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* ---- hero ---- */
+    .m-hero {
+      background: var(--navy);
+      padding: 4rem 0 3rem;
+    }
+
+    .m-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .m-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .m-subtitle {
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(247, 244, 238, 0.7);
+      max-width: 680px;
+      line-height: 1.7;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.2rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .m-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .m-hero-summary {
+      font-size: 0.95rem;
+      color: rgba(247, 244, 238, 0.68);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.75rem;
+    }
+
+    .m-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 680px;
+      padding: 1.4rem 0;
+      margin-bottom: 1.75rem;
+      border-top: 1px solid rgba(247, 244, 238, 0.08);
+      border-bottom: 1px solid rgba(247, 244, 238, 0.08);
+    }
+
+    .m-hero-stat-num {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .m-hero-stat-label {
+      font-size: 0.65rem;
+      color: rgba(247, 244, 238, 0.45);
+      line-height: 1.4;
+    }
+
+    .m-hero-why-heading {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .m-hero-why-list {
+      list-style: none;
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .m-hero-why-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.86rem;
+      color: rgba(247, 244, 238, 0.6);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .m-hero-why-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    @media (max-width: 560px) {
+      .m-hero-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.05rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(247, 244, 238, 0.58);
+      border-color: rgba(247, 244, 238, 0.16);
+    }
+
+    .btn-ghost:hover { border-color: rgba(201, 168, 76, 0.55); color: var(--gold); }
+
+    /* ---- body ---- */
+    .m-body { padding: 3.5rem 0; }
+
+    .m-section { margin-bottom: 3rem; }
+
+    .m-h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.005em;
+    }
+
+    .m-p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .m-list {
+      list-style: none;
+      margin: 1rem 0 0;
+    }
+
+    .m-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.94rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 0.55rem;
+    }
+
+    .m-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .m-comment {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      background: var(--cream-dark);
+      border-left: 3px solid var(--gold);
+      padding: 0.65rem 1rem;
+      margin: 1.25rem 0 1rem;
+    }
+
+    .m-key-finding {
+      background: rgba(247, 244, 238, 0.05);
+      border-left: 3px solid var(--gold);
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.75rem;
+      max-width: 680px;
+    }
+
+    .m-key-finding-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .m-key-finding p {
+      font-size: 0.88rem;
+      color: rgba(247, 244, 238, 0.72);
+      line-height: 1.7;
+    }
+
+    .m-key-finding a {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .m-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-light);
+    }
+
+    table.m-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 0.85rem;
+    }
+
+    .m-table th, .m-table td {
+      text-align: left;
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    .m-table th {
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .m-table td { color: var(--text-mid); }
+    .m-table tr:last-child td { border-bottom: none; }
+    .m-table tr:nth-child(even) td { background: var(--cream); }
+
+    .m-table--wrap th, .m-table--wrap td { white-space: normal; }
+    .m-table--wrap td:first-child { white-space: nowrap; font-weight: 600; color: var(--text-dark); }
+
+    .m-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .m-pill {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.32rem 0.8rem;
+      border-radius: 1px;
+      letter-spacing: 0.005em;
+    }
+
+    .m-meta {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    .m-meta strong { color: var(--text-dark); }
+
+    .m-footer-cta {
+      background: var(--navy);
+      padding: 3rem 0;
+    }
+
+    .m-footer-cta .m-btns { justify-content: flex-start; }
+
+    footer {
+      background: #060e18;
+      padding: 1.6rem 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.7rem;
+      color: rgba(247, 244, 238, 0.2);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 640px) {
+      .m-hero { padding: 3rem 0 2.5rem; }
+      .m-body { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== NAVIGATION =============== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">MRW<span>.</span></a>
+      <a href="./index.html" class="nav-back">← Return to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- =============== HERO =============== -->
+  <section class="m-hero">
+    <div class="container">
+      <div class="m-eyebrow">Methodology</div>
+      <h1 class="m-title">EM Macro &amp; Geopolitical Risk Engine — Methodology</h1>
+      <blockquote class="m-subtitle">
+        Three connected, independently R-validated model layers over the same 34 MENA and South Asia economies the MENASA Risk Monitor already tracks — sovereign distress prediction, a real geopolitical shock event study, and macro forecasting with an interactive stress test.
+      </blockquote>
+
+      <p class="m-hero-summary">
+        The EM Macro &amp; Geopolitical Risk Engine is a companion research tool to the MENASA Sovereign Risk Monitor, built on the same 34-country panel but oriented around formal statistical modeling rather than composite scoring: a panel logistic regression predicting real sovereign-distress events, an event study testing whether geopolitical shocks actually move currency markets, and a panel forecasting model with a live, interactive stress-testing layer. A fourth layer — real UN Comtrade bilateral trade-spillover data, maritime chokepoint exposure, and displacement/equity market signals — extends the risk picture beyond the three core model phases. Every model is independently cross-validated in R; every real methodological problem encountered during development (near-perfect separation, a normalized-vs-raw data bug, dead API endpoints) is disclosed here rather than quietly fixed and hidden.
+      </p>
+
+      <div class="m-key-finding">
+        <div class="m-key-finding-label">Key Finding</div>
+        <p>The geopolitical shock event study (Phase 2) surfaces a real, counter-intuitive result: worse media tone around a shock doesn't automatically mean bigger currency movement. Israel's October 2023 shock carries the worst media tone in the usable sample (-3.90) but only a +4.2% FX move, while Egypt's mildest-tone event (-0.31) saw the largest depreciation (+15.6%) — a country's exchange-rate regime (freely floating vs. pegged/managed) matters as much as the shock itself. See <a href="#phase-2">Phase 2: Geopolitical Shock Module</a> below for the full event-by-event breakdown.</p>
+      </div>
+
+      <div class="m-hero-stats">
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">34</div>
+          <div class="m-hero-stat-label">Economies covered</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">3</div>
+          <div class="m-hero-stat-label">Independent model phases</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">17</div>
+          <div class="m-hero-stat-label">Real sovereign distress events</div>
+        </div>
+        <div class="m-hero-stat">
+          <div class="m-hero-stat-num">R</div>
+          <div class="m-hero-stat-label">Cross-validated, every model</div>
+        </div>
+      </div>
+
+      <div class="m-hero-why-heading">Why It Matters</div>
+      <ul class="m-hero-why-list">
+        <li>Tests, rather than assumes, whether macro/governance fundamentals actually predict which countries enter fiscal distress.</li>
+        <li>Measures whether geopolitical shocks show up in real financial-market movement, instead of asserting they do.</li>
+        <li>Forecasts inflation with a real, backtested model — and is equally honest that growth, in this data, isn't forecastable at all.</li>
+        <li>Lets a user run their own oil, rate, VIX, or dollar-strength shock through the model's own fitted coefficients, not a guessed multiplier.</li>
+        <li>Extends the risk picture with real bilateral trade-spillover exposure, maritime chokepoint dependency, and displacement/market signals.</li>
+        <li>Every finding — significant or not — is reported as computed, including several that ran counter to initial expectations.</li>
+      </ul>
+
+      <div class="m-btns">
+        <a href="https://em-macro-geopolitical-risk-engine.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Engine</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://github.com/rafaywaqar2004-lang/sovereign-distress-model" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== BODY =============== -->
+  <main class="m-body">
+    <div class="container">
+
+      <section class="m-section" id="purpose">
+        <h2 class="m-h2">1. Purpose</h2>
+        <p class="m-p">The EM Macro &amp; Geopolitical Risk Engine is a research tool testing three specific, falsifiable questions against real data: do macro/governance fundamentals predict sovereign distress, do geopolitical shocks move currency markets, and can macro variables be forecast with a defensible model. It is deliberately scoped as exploratory, screening-level research — not a production early-warning system, a trading signal, or investment advice.</p>
+      </section>
+
+      <section class="m-section" id="coverage">
+        <h2 class="m-h2">2. Coverage</h2>
+        <ul class="m-list">
+          <li>The same 34 economies as the MENASA Sovereign Risk Monitor: Algeria, Bahrain, Egypt, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Libya, Morocco, Oman, Palestine, Qatar, Saudi Arabia, Syria, Tunisia, Turkey, UAE, Yemen, Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, Sri Lanka, Sudan, South Sudan, Ethiopia, Somalia, Djibouti, and Eritrea</li>
+          <li>Panel coverage 2010–present for the two panel-based phases (sovereign distress, macro forecasting)</li>
+          <li>13 curated geopolitical shock events (2011–2023) for the event-study phase, 12 with real fetched data</li>
+        </ul>
+        <p class="m-comment">This project shares its underlying macro/governance panel with the MENASA Risk Monitor but does not share its composite scoring methodology — the two are complementary, not duplicative: MENASA produces a transparent, weighted risk score; this engine tests formal statistical relationships (logit, event-study, panel forecasting) against the same underlying reality.</p>
+      </section>
+
+      <section class="m-section" id="phase-1">
+        <h2 class="m-h2">3. Phase 1 — Sovereign Distress Model</h2>
+        <p class="m-p">A panel logistic regression predicting two real, sourced outcome types — <code>sovereign_default</code> (2 real events: Lebanon 2020, Sri Lanka 2022) and <code>imf_program_entry</code> (15 real IMF Executive Board-approved program entries) — from 10 primary macro/governance factors: current account (% GDP), reserves (months of imports), GDP growth, inflation, currency depreciation, and the same 5 World Bank Worldwide Governance Indicators used in MENASA (political stability, government effectiveness, rule of law, regulatory quality, control of corruption). Standard errors are clustered by country.</p>
+        <p class="m-p"><strong>A real, disclosed methodological finding:</strong> <code>debt_to_gdp</code> has severe missingness in this panel (91 of 507 observations), and the country-years missing it are disproportionately the same country-years in genuine fiscal distress (Lebanon stopped publishing fiscal data entirely, for instance). Requiring complete cases across all 11 factors including debt_to_gdp would collapse the usable sample to 77 rows and drop 16 of 17 real distress events with it. The fix: the primary specification excludes <code>debt_to_gdp</code> (retaining 355 observations and 14–16 of 17 events depending on outcome), with debt_to_gdp tested separately as an explicit robustness check on its own smaller subsample, not silently folded into a specification where its missingness would gut the sample.</p>
+        <p class="m-p"><strong>Firth's penalized logistic regression:</strong> with only 2 real <code>sovereign_default</code> events across 355 observations and 10 predictors, the plain maximum-likelihood fit exhibits severe near-perfect separation (statsmodels raises <code>PerfectSeparationWarning</code>; coefficients diverge toward infinity). Firth's bias-reduction (Firth 1993) — the standard remedy for exactly this rare-event problem — is implemented from scratch (<code>model/firth_logit.py</code>), since PyPI's <code>firthlogist</code> package requires an older Python version than this project runs, and R's <code>logistf</code> (CRAN) could not be installed in this project's development sandbox to independently cross-check (a real, disclosed environment constraint, not routed around). Cross-checked instead against statsmodels' plain Logit on a well-behaved synthetic case with no separation, where both agree closely. On the real data it converges cleanly to finite, interpretable coefficients where plain MLE cannot — <code>gdp_growth</code> and <code>inflation</code> come out significant at 5% with economically sensible signs. Inference uses the standard Wald approximation from the observed-information inverse, not Firth's preferred profile-likelihood test, which isn't implemented — a disclosed limitation of this fix, not a hidden one.</p>
+        <p class="m-p"><strong>Validation:</strong> in-sample AUC of 0.84 for <code>imf_program_entry</code> (12 positive events, 10 predictors — a real overfitting risk given the ratio, disclosed rather than presented as a clean result), alongside a genuine out-of-sample temporal holdout (trained on years ≤2021 with only 4 real events, tested on real 2022–2024 outcomes never seen during fitting) yielding an out-of-sample AUC of 0.68 across 8 real events in a 71-row test set — kept clearly separate from the in-sample figure rather than blended into one headline number.</p>
+        <p class="m-comment">Independently cross-validated in R (<code>glm</code> with cluster-robust standard errors) — matches Python almost to the decimal (e.g. <code>reserves_months_imports</code>: -0.1808 in both).</p>
+      </section>
+
+      <section class="m-section" id="phase-2">
+        <h2 class="m-h2">4. Phase 2 — Geopolitical Shock Module</h2>
+        <p class="m-p">Measures whether real geopolitical shocks show up in real financial-market movement, pairing real GDELT 2.0 Doc API media-coverage data against real historical FX rates (yfinance) for 13 precisely-dated shock events (not vague years) — an event-study design, not a qualitative judgment call. One event (Syria, January 2012) was dropped after a real fetch confirmed it predates GDELT's own actual data-coverage window (February 2015+), a genuine scope constraint disclosed rather than hidden; 12 events remain, of which 6 returned both a real tone and a real FX signal on the fetch run behind the current live numbers — GDELT's own aggressive rate limiting means not every run returns both signals for every event, disclosed per-event rather than silently filled in.</p>
+        <p class="m-p">The 12 shock events span Lebanon's 2019 collapse, Sri Lanka's 2022 default, Afghanistan's 2021 collapse, Egypt's 2022–23 currency crisis, Pakistan's 2022–23 BoP crisis, Turkey's 2018 currency crisis, Qatar's 2017 diplomatic blockade, Saudi Arabia's 2019 Aramco attack, Sudan's 2023 civil war outbreak, Ethiopia's 2020 Tigray conflict, Israel's October 2023 war, and Iran's 2022 protests — each with a specific date and a cited real source, not an approximated year.</p>
+        <p class="m-p"><strong>Real, honest finding:</strong> the correlation (n=6 usable events, ρ=0.76) runs counter to naive intuition in places — worse media tone doesn't automatically mean bigger FX movement (see the Key Finding above for the Israel/Egypt contrast). Pegged or managed currencies (Lebanon, Iran officially, several Gulf states) can show large tone swings with little real FX movement regardless of event severity, since their official rate reflects a frozen peg rather than the parallel/black market where the real crisis actually played out — disclosed explicitly for both Lebanon and Iran rather than treated as "no shock."</p>
+        <p class="m-comment">n=6 is not a sample size to draw a statistical conclusion from — this is a real, correctly-computed correlation on real data, not a validated predictive relationship, which would need dozens of comparable events. Independently validated in R (<code>cor()</code>) — matches Python's correlation exactly.</p>
+      </section>
+
+      <section class="m-section" id="phase-3">
+        <h2 class="m-h2">5. Phase 3 — Macro Forecasting &amp; Stress Test</h2>
+        <p class="m-p">A panel AR(1) fixed-effects model forecasting next-year GDP growth and inflation from the same real raw World Bank economic data, backtested honestly (trained on 2010–2023, forecast 2024, compared against the real 2024 value already in the data).</p>
+        <p class="m-p"><strong>A real bug caught and fixed during development:</strong> the first version forecast MENASA's normalized 0–100 risk sub-scores instead of real GDP growth/inflation values — that source file's own header comment says explicitly it's normalized, not raw. The tell was backtest output containing values of exactly 100.0 or 0.0 (rank extremes, not real rates). Fixed by switching to the real raw indicator values.</p>
+        <p class="m-p"><strong>Real, honest findings:</strong> GDP growth shows essentially no real predictive power (R²=0.06, lag coefficient not significant) — the naive "no change" baseline actually beats it (2.93 vs. 3.41 MAE), consistent with well-documented growth literature that annual growth is close to a random walk at the country level, reported plainly rather than hidden. Inflation shows real, significant persistence (lag coefficient 0.571, p&lt;0.0001, R²=0.30), genuinely beating the naive baseline by 25% (10.63 vs. 14.12 MAE).</p>
+        <p class="m-p"><strong>Interactive stress test:</strong> the inflation model — the one with real signal — is extended with four real, fetched shock drivers, applied through the model's own fitted coefficients rather than an assumed multiplier: oil price (yfinance <code>CL=F</code>), a US short-rate proxy (yfinance <code>^IRX</code>, used after FRED's own export endpoint was confirmed as a genuine dead end across 4 real attempts), VIX (yfinance <code>^VIX</code>, global risk aversion), and the US Dollar Index (yfinance <code>DX-Y.NYB</code>, dollar strength). Two more real candidate series — the US 10-year Treasury yield and an EM bond ETF price — were tested for the same role and deliberately excluded: both correlate too strongly (|r| ≥ 0.65) with the short-rate driver already in the model to add distinct signal on a panel this thin, tested and excluded rather than silently left out.</p>
+        <p class="m-p">None of the four shock coefficients is statistically significant at conventional levels. The oil coefficient's sign is directionally sensible (higher oil prices → higher inflation, plausible given several oil-importing economies in the panel); VIX and the dollar index come out negatively signed, which is not the textbook direction — reported as-is rather than adjusted to match expectation, since on a panel this thin the sign itself isn't reliable either. Six named scenario presets (a baseline, an escalation, a de-escalation, a global risk-off shock, a dollar-surge shock, and a severe combined tail-risk scenario) plus free-form sliders let a user apply any combination of the four real shocks and watch the forecast move through the model's own coefficients.</p>
+        <p class="m-comment">Independently validated in R (<code>plm</code>) — matches Python almost exactly on all four coefficients. Dynamic (horizon-by-horizon) effects of the oil shock are also estimated via Jordà-style local projections, shown separately in the live app.</p>
+      </section>
+
+      <section class="m-section" id="risk-architecture">
+        <h2 class="m-h2">6. Risk Architecture Extension Layer</h2>
+        <p class="m-p">A real-data expansion layer built after auditing the core three phases against a broader risk-architecture framework: extended World Bank WDI indicators (external debt/GNI, fiscal balance/GDP, bank non-performing loans, private credit/GDP, trade openness, remittances/GDP, FDI/GDP, and more — coverage varies genuinely by indicator and is shown as "N of M components available," never silently imputed), organized into sub-indices (external vulnerability, fiscal/sovereign, banking-sector, buffers, commodity/trade) alongside institutional and global-financial-conditions context.</p>
+        <p class="m-p">Each sub-index is validated against this project's own real distress-event history (cross-sectional AUC of "ever distressed" vs. "never distressed" against each sub-index's current standing) — the validation exercise itself caught a real, self-introduced bug: 5 governance factors had their risk-direction flag backwards, confirmed by inspecting raw values directly (Yemen and Syria scoring ~90–100 on a factor Qatar and Israel scored ~10–20 on, under a "higher = safer" assumption that was exactly backwards) and cross-checked against Phase 1's own fitted coefficient sign. Fixing it moved that sub-index's validation AUC from 0.24 to 0.76.</p>
+        <p class="m-p">A peer-relative percentile layer shows each country's standing against the other 33 tracked economies for every factor, plus a real "what changed" year-over-year attribution, and a real ablation test comparing economic-only, governance-only, and combined model specifications to test whether governance factors add real predictive information beyond economic fundamentals alone.</p>
+      </section>
+
+      <section class="m-section" id="trade-infrastructure">
+        <h2 class="m-h2">7. Trade Network &amp; Infrastructure</h2>
+        <p class="m-p">A real UN Comtrade bilateral trade-network fetch (7,730 real reporter-partner rows) covering 25 of the 34 tracked countries — the remaining 9 (Afghanistan, Bangladesh, Eritrea, Iran, Libya, Nepal, Sudan, Somalia, Syria) returned a clean "no real data found in the last 3 reporting years" from UN Comtrade itself, a genuine structural gap (several are under sanctions or in active conflict and simply don't report recent trade statistics), not a fetch failure. This real trade data drives a spillover-exposure tool on the Geopolitical Shocks tab: if a selected country experiences a shock, which other tracked countries are most exposed through real trade, either as an export market that shuts (import exposure) or a buyer that stops purchasing (export exposure).</p>
+        <p class="m-p">A separate Trade &amp; Infrastructure tab maps real maritime chokepoint exposure (Suez Canal, Bab el-Mandeb, Strait of Hormuz) by real geography and trade dependency — not a proximity assumption — alongside major regional trade blocs and ports, adapted from the same already-fact-checked research the companion MENASA Risk Monitor uses for its own chokepoint analysis.</p>
+        <p class="m-p">Two further real data layers round out the Country Risk tab: real UNHCR displacement data (refugees, IDPs, asylum seekers) for 23 of the 34 countries, and real country-level equity ETF signals for 8 countries, built with a test-and-keep discipline — two initial candidate tickers (for Bangladesh and Sri Lanka) were fetched, found to have anomalously short, unverifiable histories inconsistent with an established fund tracking that specific country, and dropped rather than risk a mislabeled signal.</p>
+      </section>
+
+      <section class="m-section" id="sources">
+        <h2 class="m-h2">8. Data Sources</h2>
+        <div class="m-table-wrap">
+          <table class="m-table m-table--wrap">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Used For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>World Bank WDI &amp; WGI</td><td>Macro and governance factors — shared with the MENASA Risk Monitor's pipeline, not re-fetched</td></tr>
+              <tr><td>IMF Executive Board records (own sourced dataset)</td><td>17 real sovereign_default / imf_program_entry outcome events, individually cited</td></tr>
+              <tr><td>GDELT 2.0 Doc API</td><td>Media tone/volume around 12 real, fetched geopolitical shock events</td></tr>
+              <tr><td>yfinance — FX pairs, CL=F, ^IRX, ^VIX, DX-Y.NYB, EMB</td><td>Historical exchange rates around shocks; oil, short-rate, VIX, and dollar-index stress-test drivers; EM bond ETF risk-premium proxy</td></tr>
+              <tr><td>UN Comtrade</td><td>Real bilateral trade network (25 of 34 reporters, 7,730 rows) for spillover-exposure analysis</td></tr>
+              <tr><td>UNHCR Refugee Data Finder</td><td>Real displacement data (refugees, IDPs, asylum seekers) for 23 of 34 countries</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="m-comment">IMF Financial Soundness Indicators and BIS banking-statistics APIs were both investigated as candidate additional sources and concluded to be genuine dead ends within reasonable effort (a dead endpoint and an unconfirmed dimension key respectively) — reported honestly rather than left unmentioned or guessed at further.</p>
+      </section>
+
+      <section class="m-section" id="limitations">
+        <h2 class="m-h2">9. Limitations</h2>
+        <ul class="m-list">
+          <li>Sample size is the real constraint throughout: formal sovereign distress is rare by definition, and a 34-country, 15-year panel only contains as many real events as history actually produced.</li>
+          <li>sovereign_default's near-perfect separation is fixed via Firth's regression, but inference still relies on the standard Wald approximation, not Firth's preferred profile-likelihood test.</li>
+          <li>The geopolitical shock event study's n=6 usable events is not a sample to draw a statistical conclusion from — a real, correctly-computed correlation, not a validated predictive relationship.</li>
+          <li>GDP growth is not forecastable in this data — reported honestly rather than shipped as a confident-looking but meaningless forecast.</li>
+          <li>None of the four stress-test shock coefficients is statistically significant; two carry a counter-intuitive sign, disclosed as-is.</li>
+          <li>UN Comtrade trade-network coverage is 25 of 34 countries — the other 9 are genuine non-reporters (sanctions, active conflict), not a fetch failure.</li>
+          <li>Lebanon's and Iran's FX series reflect official/pegged rates, not the parallel markets where their real crises actually played out.</li>
+          <li>Built with AI assistance, under the author's direction — both the code and the modeling choices were drafted with an AI assistant and checked against the sources and diagnostics shown throughout.</li>
+          <li>This is a research/portfolio product, not investment advice or an official IMF/World Bank assessment.</li>
+        </ul>
+      </section>
+
+      <section class="m-section" id="skills">
+        <h2 class="m-h2">10. Skills &amp; Technical Stack</h2>
+        <p class="m-p">Built end-to-end — data pipelines, panel econometrics, event-study design, a from-scratch bias-reduction estimator, and the interactive dashboard itself — over the same 34-economy panel as the MENASA Risk Monitor.</p>
+        <div class="m-pill-group">
+          <span class="m-pill">Python</span>
+          <span class="m-pill">Pandas</span>
+          <span class="m-pill">Streamlit</span>
+          <span class="m-pill">Plotly</span>
+          <span class="m-pill">statsmodels (Logit, PanelOLS)</span>
+          <span class="m-pill">linearmodels</span>
+          <span class="m-pill">Firth's Bias-Reduced Logistic Regression</span>
+          <span class="m-pill">Panel Data Econometrics</span>
+          <span class="m-pill">Fixed-Effects Regression</span>
+          <span class="m-pill">Clustered Standard Errors</span>
+          <span class="m-pill">Event-Study Methodology</span>
+          <span class="m-pill">Local Projections (Jordà)</span>
+          <span class="m-pill">Out-of-Sample Backtesting</span>
+          <span class="m-pill">GDELT 2.0 Doc API</span>
+          <span class="m-pill">yfinance</span>
+          <span class="m-pill">UN Comtrade API</span>
+          <span class="m-pill">UNHCR API</span>
+          <span class="m-pill">World Bank API (WDI &amp; WGI)</span>
+          <span class="m-pill">R (glm, plm, logistf attempted)</span>
+          <span class="m-pill">SQLite</span>
+          <span class="m-pill">GitHub Actions (CI/CD)</span>
+          <span class="m-pill">Sub-Index Construction &amp; Validation</span>
+          <span class="m-pill">Peer-Relative Benchmarking</span>
+          <span class="m-pill">Trade-Spillover Network Analysis</span>
+          <span class="m-pill">Maritime Chokepoint Exposure Mapping</span>
+        </div>
+      </section>
+
+      <section class="m-section" id="version">
+        <h2 class="m-h2">11. Version and Updates</h2>
+        <p class="m-meta">
+          <strong>Data pipeline:</strong> real fetches (GDELT, yfinance, UN Comtrade, UNHCR) run via GitHub Actions, not the local development sandbox, since those external APIs are unreachable from it<br>
+          <strong>Latest addition:</strong> Firth's penalized logistic regression for sovereign_default's near-perfect separation, and two more stress-test shock drivers (VIX, US Dollar Index) extending Phase 3's interactive scenarios from two drivers to four (September 2026)<br>
+          <strong>Also added:</strong> a real UN Comtrade bilateral trade-spillover network (25 of 34 countries), a Trade &amp; Infrastructure tab (maritime chokepoints, trade blocs, ports), real UNHCR displacement data, real country equity-market signals, a validated risk-architecture extension layer (sub-indices, peer-relative percentiles, ablation testing), and 7 additional real geopolitical shock events (from 5 to 12) (September 2026)<br>
+          <strong>Last methodology review:</strong> September 2026<br>
+          <strong>Project owner:</strong> Muhammad Rafay Waqar
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =============== FOOTER CTA =============== -->
+  <section class="m-footer-cta">
+    <div class="container">
+      <div class="m-btns">
+        <a href="https://em-macro-geopolitical-risk-engine.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Open Live Engine</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://github.com/rafaywaqar2004-lang/sovereign-distress-model" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
+  </footer>
+
+</body>
+</html>

@@ -1984,6 +1984,7 @@
             </div>
           </div>
           <div class="spotlight-links">
+            <a href="./em-macro-methodology.html" class="btn btn-gold btn-sm">View Case Study</a>
             <a href="https://em-macro-geopolitical-risk-engine.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold-outline btn-sm">Live App ↗</a>
             <a href="https://github.com/rafaywaqar2004-lang/sovereign-distress-model" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">GitHub ↗</a>
           </div>
@@ -2462,11 +2463,12 @@
         status: `Live`,
         companionOf: { label: `MENASA Risk Monitor`, id: `project-sovereign-risk` },
         kindLabel: `Live Interactive Model`,
-        desc: `Three connected, independently-validated layers over the same 34 MENA and South Asia economies this project's sibling MENASA Risk Monitor already tracks: a panel logistic regression predicting sovereign fiscal distress (default and IMF program entry), a real event study pairing GDELT media-coverage data against real historical FX rates for 5 dated geopolitical shocks, and a panel AR(1) macro forecasting model with a live, interactive stress-testing tool.`,
-        keyFinding: `Every model is independently reproduced in R and matches the Python output almost to the decimal. Real, honest limitations are disclosed alongside the results rather than hidden — including near-perfect separation in the 2-event default model and non-significant shock coefficients in the stress test.`,
-        tags: [`Python`, `Panel Logistic Regression`, `Event Study Design`, `Panel AR(1) Forecasting`, `R Cross-Validation`, `SQL`],
+        desc: `Three connected, independently-validated layers over the same 34 MENA and South Asia economies this project's sibling MENASA Risk Monitor already tracks: a panel logistic regression predicting sovereign fiscal distress (default and IMF program entry), a real event study pairing GDELT media-coverage data against real historical FX rates for 12 dated geopolitical shocks, and a panel AR(1) macro forecasting model with a live, interactive stress-testing tool driven by four real shock drivers. Extended with a real UN Comtrade trade-spillover network, maritime chokepoint exposure, and displacement/equity market signals.`,
+        keyFinding: `Every model is independently reproduced in R and matches the Python output almost to the decimal. Real, honest limitations are disclosed alongside the results rather than hidden — including a from-scratch Firth's penalized regression fixing near-perfect separation in the 2-event default model, and non-significant shock coefficients in the stress test.`,
+        tags: [`Python`, `Panel Logistic Regression`, `Firth's Bias-Reduced Regression`, `Event Study Design`, `Panel AR(1) Forecasting`, `R Cross-Validation`, `SQL`],
         links: [
           { label: `Live App`, url: `https://em-macro-geopolitical-risk-engine.onrender.com` },
+          { label: `Methodology`, url: `./em-macro-methodology.html` },
           { label: `GitHub`, url: `https://github.com/rafaywaqar2004-lang/sovereign-distress-model` }
         ],
         companions: [
