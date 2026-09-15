@@ -1,86 +1,327 @@
 %PDF-1.3
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%âãÏÓ
 1 0 obj
 <<
-/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 5 0 R
+/Producer (pypdf)
 >>
 endobj
 2 0 obj
 <<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
 >>
 endobj
 3 0 obj
 <<
-/BaseFont /Times-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+/Type /Catalog
+/Pages 2 0 R
+/Outlines 11 0 R
 >>
 endobj
 4 0 obj
 <<
-/BaseFont /Times-Roman /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+/Contents 5 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font 6 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Parent 2 0 R
 >>
 endobj
 5 0 obj
 <<
-/BaseFont /Times-Italic /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+/Length 12296
 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 18 Tf 21.6 TL ET
+BT 1 0 0 1 204.003 769.5 Tm (Muhammad Rafay Waqar) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 131.276 746 Tm (Davis, CA \267 linkedin.com/in/rafaywaqar \267 +1 \(530\) 608-4289 \267 rafaywaqar2004@gmail.com) Tj T* ET
+BT 1 0 0 1 206.2785 736.3 Tm (rafaywaqar2004-lang.github.io/rafaywaqar-portfolio) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 50.4 722.6 Tm (SUMMARY) Tj T* ET
+.75 w
+n 50.4 718.1 m 561.6 718.1 l S
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 708.3 Tm (Policy analyst with hands-on experience at the IMF and World Bank Group \(achieved through participation of University of) Tj T* ET
+BT 1 0 0 1 50.4 698.6 Tm (California Washington Program\), specializing in macroeconomic research, stakeholder engagement, and data-driven policy analysis) Tj T* ET
+BT 1 0 0 1 50.4 688.9 Tm (for MENA and South Asian constituencies. Published author of 12+ op-eds in national newspapers on political economy and) Tj T* ET
+BT 1 0 0 1 50.4 679.2 Tm (international affairs. Multilingual communicator pursuing a career in geopolitical risk analysis, AI governance, and policy research.) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 50.4 662.7 Tm (EDUCATION) Tj T* ET
+.75 w
+n 50.4 658.2 m 561.6 658.2 l S
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 648.4 Tm (B.A. in Political Science) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 146.7205 648.4 Tm ( | Minor in Technology Management \227  University of California, Davis) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 509.35 648.4 Tm (Class of ) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 542.6 648.4 Tm (2026) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 638.7 Tm (International Baccalaureate Diploma) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 201.336 638.7 Tm ( \227  Learning Alliance School, Lahore, Pakistan) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 514.1 638.7 Tm (2019 \226 2021) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 50.4 622.2 Tm (EXPERIENCE) Tj T* ET
+.75 w
+n 50.4 617.7 m 561.6 617.7 l S
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 607.9 Tm (\(Visitor\) Economic Analyst Intern ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 191.304 607.9 Tm (\227 International Monetary Fund, Washington DC) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 489.818 607.9 Tm (08/2024 \226 09/2024) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 598.2 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 598.2 Tm (Conducted macroeconomic and financial policy analysis for the OEDMD constituency \(Algeria, Ghana, Iran, Libya, Morocco,) Tj T* ET
+BT 1 0 0 1 58.4 588.5 Tm (Pakistan, Tunisia\), producing impact assessment briefs to assist IMF Executive Board deliberations across 7 member countries) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 578.8 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 578.8 Tm (Delivered quantitative research, stakeholder briefings, and policy recommendations to the Executive Director and Senior Advisor,) Tj T* ET
+BT 1 0 0 1 58.4 569.1 Tm (synthesizing data from IMF surveillance reports and member country datasets) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 559.1 Tm (Policy Research Intern ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 145.647 559.1 Tm (\227 The World Bank Group, Washington DC) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 489.818 559.1 Tm (07/2024 \226 08/2024) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 549.4 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 549.4 Tm (Assisted the Executive Director\222s office by analyzing policy reports and drafting strategic content for work programs spanning 8) Tj T* ET
+BT 1 0 0 1 58.4 539.7 Tm (MENA countries; contributed to cross-functional stakeholder engagement across government and multilateral partners) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 530 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 530 Tm (Produced country fact sheets and sectoral strategy input for MENA programs; conducted targeted research and data analysis for the) Tj T* ET
+BT 1 0 0 1 58.4 520.3 Tm (Pakistan Country Strategy Framework 2024) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 510.3 Tm (International Student Representative ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 203.711 510.3 Tm (\227 ASUCD, UC Davis, CA) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 489.818 510.3 Tm (05/2024 \226 05/2025) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 500.6 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 500.6 Tm (Elected to represent 4,000+ international students; secured funding for multiple student organizations through structured advocacy) Tj T* ET
+BT 1 0 0 1 58.4 490.9 Tm (and stakeholder negotiation with university administration) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 481.2 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 481.2 Tm (Organized 10+ cross-cultural panels, workshops, and events; facilitated direct dialogue between students and administration to) Tj T* ET
+BT 1 0 0 1 58.4 471.5 Tm (advance policy changes for the international student community) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 461.5 Tm (MENASA Resources Community Organizer ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 232.458 461.5 Tm (\227 UC Davis, CA) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 489.818 461.5 Tm (10/2023 \226 07/2024) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 451.8 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 451.8 Tm (Planned and executed 15+ community events \(speaker series, cultural nights, workshops\), averaging 50+ attendees per event; grew) Tj T* ET
+BT 1 0 0 1 58.4 442.1 Tm (program reach by establishing 5+ organizational partnerships) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 432.4 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 432.4 Tm (Built a digital outreach and strategic communications plan to strengthen MENASA community infrastructure across campus) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 422.4 Tm (Business & Economics Research Intern ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 212.1565 422.4 Tm (\227 SouthAsia Magazine, Lahore, Pakistan) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 489.818 422.4 Tm (12/2023 \226 01/2024) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 412.7 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 412.7 Tm (Researched and reported on international business, financial trends, and political-economic developments across South and) Tj T* ET
+BT 1 0 0 1 58.4 403 Tm (Southeast Asia; translated complex macroeconomic and trade data into accessible editorial content) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 393.3 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 393.3 Tm (Maintained editorial accuracy through rigorous fact-checking and copyediting across print and digital formats) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 383.3 Tm (Policy Intern ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 105.8135 383.3 Tm (\227 CoRe Alliance \(Pakistan\222s first packaging recycling alliance\), Washington DC) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 489.818 383.3 Tm (07/2023 \226 09/2023) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 373.6 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 373.6 Tm (Prepared policy briefs on circular economy frameworks, EPR and emerging UN global plastic treaty; identified partnership) Tj T* ET
+BT 1 0 0 1 58.4 363.9 Tm (opportunities across 10+ multilateral organizations) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 354.2 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 354.2 Tm (Drafted a legal and regulatory roadmap for establishing the Alliance\222s first international office in Washington D.C.) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 344.2 Tm (Founder ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 87.6115 344.2 Tm (\227 Water4Pakistan, Lahore, Pakistan) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 514.1 344.2 Tm (2019 \226 2022) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 334.5 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 334.5 Tm (Founded a multi-platform social media advocacy initiative on water conservation and pollution across Facebook, Instagram, and) Tj T* ET
+BT 1 0 0 1 58.4 324.8 Tm (Twitter; crowdfunded $5,000 to fund clean drinking water access for school-going children in rural Punjab) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 50.4 308.3 Tm (SELECTED RESEARCH) Tj T* ET
+.75 w
+n 50.4 303.8 m 561.6 303.8 l S
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 294 Tm (MENASA Sovereign Risk Monitor ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 193.4225 294 Tm (\227 Live Analytical Platform) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 542.6 294 Tm (2026) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 284.3 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 284.3 Tm (Built a live sovereign-risk platform scoring 34 MENA, South Asia, and Horn of Africa economies on 11 World Bank) Tj T* ET
+BT 1 0 0 1 58.4 274.6 Tm (macroeconomic and governance indicators) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 264.9 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 264.9 Tm (Backtested against six historical crises since 2010; correctly flagged 4 of 6 in the same year they began, incl. Sri Lanka\222s 2022) Tj T* ET
+BT 1 0 0 1 58.4 255.2 Tm (default and Afghanistan\222s 2021 collapse) Tj T* ET
+BT /F2 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 245.2 Tm (Gulf States Vision 2030 & AI Investment Tracker ) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 254.1085 245.2 Tm (\227 Live Analytical Platform) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 542.6 245.2 Tm (2026) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 235.5 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 235.5 Tm (Built a comparative dashboard scoring 17 Gulf and regional economies on a Net Alignment Score, tracking US Integration Depth) Tj T* ET
+BT 1 0 0 1 58.4 225.8 Tm (against China Exposure Depth) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 216.1 Tm (\177) Tj T* ET
+BT 1 0 0 1 58.4 216.1 Tm (Found AI governance maturity moderately-to-strongly correlated with a country\222s US export-control tier \(Pearson r = 0.68\) across) Tj T* ET
+BT 1 0 0 1 58.4 206.4 Tm (all 17 tracked economies) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 50.4 189.9 Tm (SELECTED WRITING \267 OP-EDS & FEATURES) Tj T* ET
+.75 w
+n 50.4 185.4 m 561.6 185.4 l S
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 175.6 Tm (Published 12+ op-eds in The News International, The Express Tribune, and Dawn on political economy, international affairs, and) Tj T* ET
+BT 1 0 0 1 50.4 165.9 Tm (social policy \(2018\226present\).) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 153.7 Tm (\177 \223) Tj T* ET
+BT 1 0 0 1 60.318 153.7 Tm (The Last Barrel) Tj T* ET
+BT 1 0 0 1 119.94 153.7 Tm (,\224  ) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 131.283 153.7 Tm (The News International) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 144 Tm (\177 \223) Tj T* ET
+BT 1 0 0 1 60.318 144 Tm (Governing AI) Tj T* ET
+BT 1 0 0 1 113.347 144 Tm (,\224  ) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 124.69 144 Tm (The News International) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 134.3 Tm (\177 \223) Tj T* ET
+BT 1 0 0 1 60.318 134.3 Tm (Economic Agenda) Tj T* ET
+BT 1 0 0 1 130.7605 134.3 Tm (,\224  ) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 142.1035 134.3 Tm (The News International) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 124.6 Tm (\177 \223) Tj T* ET
+BT 1 0 0 1 60.318 124.6 Tm (Ukraine: Global Food Security) Tj T* ET
+BT 1 0 0 1 177.738 124.6 Tm (,\224  ) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 189.081 124.6 Tm (The News International) Tj T* ET
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 114.9 Tm (\177 \223) Tj T* ET
+BT 1 0 0 1 60.318 114.9 Tm (Genocides\222 Unseen Epidemics) Tj T* ET
+BT 1 0 0 1 176.9305 114.9 Tm (,\224  ) Tj T* ET
+BT /F4 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 188.2735 114.9 Tm (The Express Tribune) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 50.4 98.4 Tm (SKILLS) Tj T* ET
+.75 w
+n 50.4 93.9 m 561.6 93.9 l S
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 84.1 Tm (Policy Analysis \267 Macroeconomic Research \267 Stakeholder Engagement \267 Report Writing \267 Data Analysis \267 Strategic Communications) Tj T* ET
+BT 1 0 0 1 50.4 74.4 Tm (Statistical Analysis \(R\)  \267  Stata  \267  Python  \267  SQL  \267  Tableau  \267  Power BI) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+BT 1 0 0 1 50.4 57.9 Tm (LANGUAGES) Tj T* ET
+.75 w
+n 50.4 53.4 m 561.6 53.4 l S
+BT /F3 9.5 Tf 11.4 TL ET
+BT 1 0 0 1 50.4 43.6 Tm (English, Urdu, Punjabi, Hindi \(Native\) \227  French, Persian \(Basic\)) Tj T* ET
+ 
+
+endstream
 endobj
 6 0 obj
 <<
-/Contents 10 0 R /MediaBox [ 0 0 612 792 ] /Parent 9 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
 >>
 endobj
 7 0 obj
 <<
-/PageMode /UseNone /Pages 9 0 R /Type /Catalog
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 8 0 obj
 <<
-/Author (anonymous) /CreationDate (D:20260908093933+00'00') /Creator (anonymous) /Keywords () /ModDate (D:20260908093933+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (unspecified) /Title (untitled) /Trapped /False
+/BaseFont /Times-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 9 0 obj
 <<
-/Count 1 /Kids [ 6 0 R ] /Type /Pages
+/BaseFont /Times-Roman
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 10 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 4567
+/BaseFont /Times-Italic
+/Encoding /WinAnsiEncoding
+/Name /F4
+/Subtype /Type1
+/Type /Font
 >>
-stream
-Gau0FCNJ5iQMo[T![";J3YRq+2lTMGe]>&_G-10*=Rp"3b$SNhU+iGM%3KaM[6K,d"eUYoOYkbVl6MT:i8WP43>\@-9`/Pf5GL)GV[N4Q\]$+h/XFV$%@8ZLfPL)9rnM*d8>"Y&iV/sKbnRVN)Q)c'^`OL:>HHM]f@>b^f0!YhI*&ka/,q!C5I&0lf](65S.=#CZ'[CRXI[j]/AhsF(:_)Mnr,fV@`5,Wp0dau94dfB@[S*r>5oqUhf;oaL"<6<s(nrq?TlGWpr%P94E9b->^t-3Zq]$JCU3(XV+GjTlaQ#oMU5jaiu=":A9WWhP\5i8aDt9D)H%%238(7C>cLc'mro6u9tbQDosR!s?j*oTe@V=0?XHUsrb!p;&U<[(Q`M'<KndRtbk&q2oi'#qHN@AI@"uq7DII7dAN]#;[OBf:G/REDMi/761%B**E[e:b0OD&*-.q>P3QB)*X3/nYSau-(?0&$>!-K?bUj*Y0`o3+l`ATh3AL'4IPaG)qfmP3>7:+&UMl4%8f@KcXYeabj;n5kQ-96[W=NN*C1"C-DP+8]t5)i[L&Wt#)J)Mn)1UcFCY!f'@[?_EJ73QmsXY?p=:L^0K=QE.d#uAKCAE?AN-0?L<M0%=8Z-<gi=aXaj(`Hn$,Re58Z^ZfCCp#613%6-!(sFC#=]PN!MS`c1eRL(e'd2KQKO6/8L<iP1:./?Kq3f6[V^rK7`J+KnJuRHR5`*hQXc\2)8%&S2_q)9<X;#q=.pjp>b[JV9Q'N&nPZ7Dl=g5%a9OGZ49pHM0J]V'5EridY<[(L]68"1o%\OE'>d?a\dio'])UJ],(4G6$7.>WZ#djQ:ZhrutEV[Z"H`>qM+h$+%6N,E1K"XZ(phiX[@BEI<@aK"2]<0@'*W1\Y0\85bg[k\KZi=Ug1/f+8Knrct8l`0.f7:,d6kh(3@(R;nqWK"U>mJ,'`-pC%4_hdbE/+'\;dL0FjIRlD'=h)IqKZo+p0W/n%js>Fj7(6_J3E!+r4o@<n5?JH\Ok>?+6X3hZjb"F#AZ/(?QhHd$M?uZ8r?sMH_j\&@TOQ&M."'Z:D/p;3trG!W&7Zf((^l,5&@L+_m9BN:hTCd^Mdb/Qa<1Gm+lcf!\E'%K75j4*R(0*CCe2Z>p9n]%PF<['m7so7.$jQiUWbf(rI*Nc6D>+?(YK)9U%ZsZL]Q(8&Mof2EfD!DE'O@8=4ih1].\GE,0BZA,UB)-8\EQ3,F!5?j4A.V)[6J3)s*d74"u6/kJpZ>Y6K<+L:GBL_70/nbt7)]07/haqg4'8JCSLWl"ug)h2/U4@Ab`a"8@8<N`&eNBT*-**+T!2UY*3!@e(r&\2e""cG7EXuAHm)2a(q$=0hVTaR.i.i!I\.3bDnB&?!UPpg)-<:LsP.T6'jEp_P3dB6>X&>!?j:U-<;.l#;LZF6)%K$XetE^2SQ%+_)__?'\<GQo"q2YCpLT_F5D(Z/(.Oep.YAkUc?3N(d/RD]Zr;6:!i-LoDRN7+j!%ikZWD.t5QD2&pd>0r?d@EVoX27c5A57<mV\l@dCFCq5uftha1IoV<q's.;.^ZW"Z1rAab60HmZG<NifK>G2]ith^_HO9Lh;S?GY%#1`&*hV`c\7)ig79VWhU/OBOiO=C@(>6X79*n*P2T`*BhM#,$g_d.^8`(7/&kO@I(oRK^jWN*.(R73^U66WO+GY6>.4tJ=:1r>nP?+ek)Lg'IkOPn+VCSP8ojh3:;,`q@<mbbnf.sT0KVD@[9UM>K=[Oj(6.m7>!6<k&rasfbY$0IDRh&.A?'*m:6+#!6d+cs(DP>32<=PiqUkM_LdaW(e;Bk<HD7Sk6LKCn[,9(L+mCSg=bGL8ao@B:M/1n55hhp("P1XMNfk&`[=iKHm40bJbA5*(e=ALqH?s/+^F@o?kpX?G\]:ZC3ANr),]897#R)8^94">hUZY:h;'LU]l=Xp-m%It8ek)W3br60>RWhMrtd=T06LgH/t0dS!^K?f'C.b\<)jU'8o^KL\QH=_aRi_9B@a3Q6pdImYuh6GYs)'.%UXNX),8m-An\sKVsNe5;e$#VD35!B0@2mi9W4oN/\lKr%f(6GRI8d%hf\gh577As%i(Fun-aAtFTGTq.TU`rG$lWDb6r5I&D<@F?2HkC&E>P.S!GBX>MI:Qep2;/:cCJ&H$DZhYWLgGA?l0Yon0"8kHW9^p.;n\SpLh0SO7p'ofcHBDPnq.V*Ymo:m#HR%kr<\nFcY/`2N)#S)_9q?/HIdO#Xrhlr!L-HQ:o%cBV;Uo.pF^.]#QhQh#inI8bTqcZYqGT&RB4P>jH8<\a:t4Bk'Dh`?@l]t!M=1amV'`r/BPlS7ol?+Y16%[+XeBO>QL!(85js7UZ_Zi;[3L0\WWGW8CAf^mfd5\n?e?-W#@[]+N[NYWj9(A/h4QgBTIpj`S(<@WeqVn$%N0#=;/V9r\@^?]IR]u5)Au[;]V],?+[SVO;W?Up)dR9>5YuNe[FBmch@Xek_.>RH$#4iY'ImXcc!SH1=.=F[ut;5'?N:!Of\8tlpq'D#.C`n\Q"J^4J6`_f"B$-o[0=--1Am,k"$S]STISCN-n4IAmLbcgAginkkc`og,cQPIQ^^SL@e@.(G*V5,1TA;0E[qrH_ZM=TNK^4$l_HE)PNl@ne(4=@QMVmqQs1Zk@62h`_NRZ5/t)SGg0Y'reK=C$*Xe+#ZT9YIkDBklW'XTl3TQc4m=3DN-;hddP(97NT2@PNPo]j(K@g)a#/6>kj7./*80MC*Wk*d#4q(!R]8HsT<CD"ZF=_&Q845N2`uDdb:Y2l)l7k]btk8hs,=Cj2le8UB6XL=*#/m5Z_+,]#MpZD3(^bPBf'HNfN0>>:_V0eoDN7T"<bZq[s'^_X[TC$]"_ZFWZI!S;PXSmT*feQrPBgo'=j@77SbES)<X)@P#NAmJ#_C6au7a?ZgIC)46lJefK=@B$/#hOUCNZK'MCk]l(a/:!kaUjBU0BD+5^bF[R7>GhV-<q`nPBNCYE`qmDPDIIH/mfO57@KdH>3/ikr0.(`9tuH%Urq)LWq,h>WN(V]8P-C[<$;gIJg)EEfR@"1NFUCP9d23l4W'b9[lY<[c3HCQq!=F[L,0e;XnU<pFN-&:GNJo&j3D2b]H:ohumHk<'B<8j//1f)QLVZI'12aKaPjBeIau@@8du[_0Q%g>"o<e-(p9U(:@j$L"0#-!?T$g9-lhF@6o@9&V$moPLsuBaj!sBZmdn]reSinAg0b"J"oZG!<O,9c(,lFuPo:-?mqrhn'bFd'e_cbs;5Ld*7)(G)%ZmS5+Ea9JUc](P:6g,C2HL7_g`$L:hDI*U["iAUW**ho"8.TlJTL<'0\UG>nBl[N2sVZ$npA<Ru9KN,WZb3mfmaI@*N$!sf7SeH1%R\2pd(eaG!>fB/9.%MTgrT]1q"[]I=@ksmW8DF6Ukj\gSFMg13Hqqn/`]'[,sFj:L/l3<i3o1Pe'8>3.3Eg%7/)dB#)WEf<_!a=5,PUGfbJMQIH/uM'e'_Id`,f+D)_T/QrU1.J[1YEP4QC^@F?jkIV9TU0/SkE&-m"s=fn@Hp4)X;TBBoL#o=(s7q-Hfr=Z[mS!lTA:7VL2=T\g?2`VqcHdM^i#<3Lt:,N:,N[A(u*!oJr+.e?3FlV,(,.&<9OVS-a^?/Mm#'/,hbD=uZ3'\`S/6d7?L+br'5DG[;%O$mpJR2c+@S=TQtW2qjt&rgf#-lpdZ&8<Khhk]rsA[NrMnkaH:$S2=kOB4=fB4u1LY)A[&IHO=c/g$IH_("<r40u9Fu=ak^_ncOi^JXU=thpapgK\i5fosK\AMGBu%P>[sECKFYj'[t0)G?jteOgjN<Fm&o;nVn7CM7tfCkQiKO&df`V<ren`rIpYo+$P'e\G.:A9ttCtU&2r5)Kk>5=q;XtO;<NLGaBSghH_`dD_C>L_>^r-R@VTb?K\Z:iZ@1V*cG5ULHf#"XIfuKf?+H5<r[C4s6RJm6apJ_ihb;@#Tr<W&MH.YM$;_YABbK?BDa'&o=^e/Hh2r`O!KcEdJ"Q`)XZ'3-kE*^6P>-u$2DE9=0d'(#Wua=3'g0cH.s7p1`UUQrHNqPMN.^43JHMJ^ToEcHFV*'/%FrmQW`s]LS==qlE;4L'EYFaaSq[V(HPjp.k6nSD&n&,)g&hSEp&Osrj\HY-Z7ZVC8X3QhMq!]3(`>FrLMb+V@iU#2u)3k!789YkmSs9M'1I=i1s`k&A%E+:H=sdr?o4Ug\l2ikcKG-([cJi#m)>jL6EU6#jS<*>(_*L+s>H50CAj32uZ-S-r@/sLkODD\j&#MZOK*lKAcJ8nVse@6./JK/0pot#L7:_2_+I99Jp]pSt#c3jjhnn4>`pfR[/^#_a,gf]"@ER9\N-Tc%ah3bs?QFY.pG:XqtaLV8*#t:7iE1YBbO]WBWJ>o@Mg_kM9^dFQYF<"%ipU()=EW/o$^<BDqK5\tYd$X(L3Pght:MR'HVTDcc<j(]4lIHI\!R0A+V8jh^BUg/lD!-8ub8PDf1#")+JH%f5-,O1FY_+[@F.0Ojd%>`G0s"$'i*;qD4%DRAU2*qa<.kIJ[tD5LOKp>m.rSFT!9&"a&LZ=!SAK00`3~>endstream
+endobj
+11 0 obj
+<<
+>>
 endobj
 xref
-0 11
+0 12
 0000000000 65535 f 
-0000000061 00000 n 
-0000000122 00000 n 
-0000000229 00000 n 
-0000000337 00000 n 
-0000000446 00000 n 
-0000000556 00000 n 
-0000000750 00000 n 
-0000000818 00000 n 
-0000001079 00000 n 
-0000001138 00000 n 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000179 00000 n 
+0000000368 00000 n 
+0000012717 00000 n 
+0000012779 00000 n 
+0000012886 00000 n 
+0000012994 00000 n 
+0000013103 00000 n 
+0000013214 00000 n 
 trailer
 <<
-/ID 
-[<7b2fac55922ed67838608d2f2030584a><7b2fac55922ed67838608d2f2030584a>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 8 0 R
-/Root 7 0 R
-/Size 11
+/Size 12
+/Root 3 0 R
+/Info 1 0 R
 >>
 startxref
-5797
+13236
 %%EOF
