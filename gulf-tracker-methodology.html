@@ -624,7 +624,7 @@
 
       <section class="m-section" id="features">
         <h2 class="m-h2">8. Additional Features</h2>
-        <p class="m-p">Beyond the composite score, the dashboard is 13 pages designed to keep the alignment score grounded in checkable events and transparent reasoning rather than standing alone as an unexplained number:</p>
+        <p class="m-p">Beyond the composite score, the dashboard is 14 pages designed to keep the alignment score grounded in checkable events and transparent reasoning rather than standing alone as an unexplained number:</p>
         <ul class="m-list">
           <li><strong>Executive Key Findings</strong> — a Bottom Line / Key Judgment / Confidence / Why It Matters card at the top of the Overview, computed from the live data every time, plus an interactive map with optional AI/compute-hub and major-city marker layers.</li>
           <li><strong>Policy-event tracker</strong> — a chronological, sourced feed of chip-policy events (the AI Diffusion Rule's issuance and rescission, the Chip Security Act, the late-2025 Saudi/UAE chip authorizations, smuggling indictments, the UAE's Country Group upgrade), filterable by country, date, and category, each tagged Loosening/Tightening and linked to how it connects to the scoring model.</li>
@@ -636,6 +636,7 @@
           <li><strong>Sanctions &amp; Entity List Exposure</strong> — a 0–100 Sanctions Exposure Score per country, a weighted average of six factors (BIS Entity List count, BIS Country Group tier, OFAC active programs, CAATSA status, secondary-sanctions risk, evasion risk) renormalized over whichever factors have verified data, never scored as zero for a gap. Rendered as a country-by-factor severity heatmap and a Sanctions Exposure vs. Net Alignment positioning scatter, with a one-click PDF brief.</li>
           <li><strong>Sovereign AI Investment Flow Tracker</strong> — tracks Gulf-state sovereign-fund and government-directed AI/tech capital flows deal-by-deal and computes a per-country Capital Alignment Ratio (US-bound ÷ (US-bound + China-bound), over confirmed-value cross-border deals only). Same-country sovereign-launch buildouts (e.g. Saudi Arabia's own HUMAIN initiative) are tracked but excluded from the cross-border ratio as a deliberate, documented modeling choice — folding domestic capital deployment into a "flow direction" metric would be a category error. Rendered as a Sankey capital-flow diagram, quarterly and sector breakdowns, and a one-click PDF brief.</li>
           <li><strong>Economic Analysis</strong> — the tracker's one serious empirical finding: AI governance maturity is moderately-to-strongly associated with US export-control tier (Pearson r=0.68, full 17-country sample), reported as correlation rather than a fitted regression, with an explicit association-not-causation discussion.</li>
+          <li><strong>Chokepoint Exposure Map</strong> — geodesic proximity analysis between the tracker's 14 verified AI infrastructure sites and three physical chokepoints (Strait of Hormuz, Bab-el-Mandeb, Suez Canal) plus real submarine cable landing stations, rendered on a real QGIS map render (<code>QgsMapSettings</code>) rather than a raw vector outline. Both the basemap and the 250/500/1000km buffer rings are genuine PyQGIS output (<code>QgsDistanceArea</code>, <code>QgsGeometry.buffer()</code> in a per-chokepoint azimuthal-equidistant projection) generated offline and checked into the repo, cross-checked in tests against an independently-implemented pyproj calculation.</li>
           <li><strong>Sources &amp; Data</strong> — a research data catalog covering every dataset the tracker uses, with coverage, observation counts, and missingness computed live from the actual files, plus a CSV download button per dataset.</li>
         </ul>
       </section>
@@ -735,6 +736,9 @@
           <span class="m-pill">Capital Flow Analysis</span>
           <span class="m-pill">Federal Register &amp; OFAC API Integration</span>
           <span class="m-pill">Human-in-the-Loop Review Workflow</span>
+          <span class="m-pill">QGIS / PyQGIS Geoprocessing</span>
+          <span class="m-pill">Geodesic Buffer &amp; Distance Analysis</span>
+          <span class="m-pill">OSINT Research</span>
         </div>
       </section>
 
@@ -742,6 +746,7 @@
         <h2 class="m-h2">13. Version and Updates</h2>
         <p class="m-meta">
           <strong>Data pipeline:</strong> World Bank layer automated and refreshed weekly via GitHub Actions; export-control tier, Chinese telecom penetration, Chinese AI/cloud/digital ties, AI governance maturity, and deal-level investment/compute figures are manually curated and sourced as new information is disclosed<br>
+          <strong>Also added:</strong> Chokepoint Exposure Map — real PyQGIS-generated geodesic distances/buffer rings and a QGIS-rendered basemap (<code>QgsMapSettings</code>, <code>QgsDistanceArea</code>, <code>QgsGeometry.buffer()</code>) between the tracker's 14 verified AI infrastructure sites and three maritime chokepoints (September 2026)<br>
           <strong>Companion analysis:</strong> Gulf AI Ambitions and Geopolitical Risk (analytic brief, linked from the Research section)<br>
           <strong>Project owner:</strong> Muhammad Rafay Waqar
         </p>
