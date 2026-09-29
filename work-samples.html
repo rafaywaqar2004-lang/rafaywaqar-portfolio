@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Samples — Decision Memos</title>
+  <meta name="description" content="Two decision memos written from real, already-sourced project data -- an export-compliance read for the Gulf AI Tracker and an investor read for the EM Macro Engine's forecast track record.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d1b2a'/><text x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-size='11' font-weight='600' fill='%23c9a84c'>MRW</text></svg>">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP9RPS41KJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QP9RPS41KJ');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #152335;
+      --navy-light:  #1e3048;
+      --gold:        #c9a84c;
+      --gold-light:  #dfc078;
+      --cream:       #f7f4ee;
+      --cream-dark:  #ede9e0;
+      --cream-mid:   #e4dfd4;
+      --white:       #ffffff;
+      --text-dark:   #1a2332;
+      --text-mid:    #4a5568;
+      --text-light:  #718096;
+      --border:      #d4c9b0;
+      --border-light:#e8e2d6;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      letter-spacing: -0.008em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+    .nav-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 600; color: var(--cream); text-decoration: none; letter-spacing: 0.06em; }
+    .nav-logo span { color: var(--gold); }
+    .nav-back { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247, 244, 238, 0.65); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+
+    .m-hero { background: var(--navy); padding: 4rem 0 3rem; }
+    .m-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+    .m-title { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 500; color: var(--cream); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1rem; }
+    .m-subtitle { font-size: 1rem; font-style: italic; font-weight: 300; color: rgba(247, 244, 238, 0.7); max-width: 680px; line-height: 1.7; border-left: 2px solid var(--gold); padding-left: 1.2rem; margin-bottom: 2.25rem; }
+    .m-btns { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .m-hero-summary { font-size: 0.95rem; color: rgba(247, 244, 238, 0.68); line-height: 1.85; max-width: 680px; margin-bottom: 1.75rem; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1.05rem; font-family: 'Times New Roman', Times, serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; border-radius: 2px; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
+    .btn-gold { background: var(--gold); color: var(--navy); border-color: var(--gold); font-weight: 600; }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-ghost { background: transparent; color: rgba(247, 244, 238, 0.58); border-color: rgba(247, 244, 238, 0.16); }
+    .btn-ghost:hover { border-color: rgba(201, 168, 76, 0.55); color: var(--gold); }
+
+    .m-body { padding: 3.5rem 0; }
+    .m-section { margin-bottom: 3.5rem; }
+
+    .memo-head {
+      display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
+      border-bottom: 2px solid var(--navy); padding-bottom: 0.9rem; margin-bottom: 1.5rem;
+    }
+    .memo-eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); }
+    .memo-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--cream-dark); border: 1px solid var(--border); padding: 0.25rem 0.65rem; }
+
+    .m-h2 { font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; letter-spacing: -0.005em; }
+    .memo-meta-table { font-size: 0.88rem; color: var(--text-mid); line-height: 2; margin-bottom: 1.5rem; }
+    .memo-meta-table strong { color: var(--text-dark); display: inline-block; min-width: 5.5rem; }
+
+    .m-p { font-size: 0.96rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 1rem; }
+    .m-list { list-style: none; margin: 1rem 0 1.5rem; }
+    .m-list li { position: relative; padding-left: 1.15rem; font-size: 0.94rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 0.85rem; }
+    .m-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+    .m-list li em { color: var(--text-light); font-style: italic; }
+
+    .m-comment { font-size: 0.78rem; color: var(--text-light); font-style: italic; background: var(--cream-dark); border-left: 3px solid var(--gold); padding: 0.65rem 1rem; margin: 1.25rem 0 1rem; }
+
+    .m-key-finding { background: rgba(247, 244, 238, 0.05); border-left: 3px solid var(--gold); padding: 1.1rem 1.4rem; margin-bottom: 1.75rem; max-width: 680px; }
+    .m-key-finding-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .m-key-finding p { font-size: 0.88rem; color: rgba(247, 244, 238, 0.72); line-height: 1.7; }
+
+    /* light-background BLUF variant used within the cream body section */
+    .memo-bluf { background: var(--navy); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; margin-bottom: 2rem; }
+    .memo-bluf-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .memo-bluf p { font-size: 0.92rem; color: rgba(247, 244, 238, 0.85); line-height: 1.8; }
+
+    code { font-family: 'Courier New', Courier, monospace; font-size: 0.88em; background: rgba(13, 27, 42, 0.06); padding: 0.1rem 0.4rem; border-radius: 2px; }
+
+    .m-pill-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .m-pill { font-size: 0.78rem; font-weight: 500; color: var(--text-dark); background: var(--white); border: 1px solid var(--border); padding: 0.32rem 0.8rem; border-radius: 1px; letter-spacing: 0.005em; }
+
+    .memo-recommendation { border: 1px solid var(--border); background: var(--white); padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+    .memo-recommendation-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.6rem; }
+    .memo-recommendation p { font-size: 0.94rem; color: var(--text-mid); line-height: 1.85; }
+
+    .m-footer-cta { background: var(--navy); padding: 3rem 0; }
+    .m-footer-cta .m-btns { justify-content: flex-start; }
+
+    footer { background: #060e18; padding: 1.6rem 2rem; text-align: center; }
+    footer p { font-size: 0.7rem; color: rgba(247, 244, 238, 0.2); letter-spacing: 0.06em; }
+
+    hr.memo-divider { border: none; border-top: 1px solid var(--border); margin: 3.5rem 0; }
+
+    @media (max-width: 640px) {
+      .m-hero { padding: 3rem 0 2.5rem; }
+      .m-body { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== NAVIGATION =============== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./index.html" class="nav-logo">MRW<span>.</span></a>
+      <a href="./index.html" class="nav-back">← Return to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- =============== HERO =============== -->
+  <section class="m-hero">
+    <div class="container">
+      <div class="m-eyebrow">Work Samples</div>
+      <h1 class="m-title">Decision Memos</h1>
+      <blockquote class="m-subtitle">
+        Two short memos, each written to a specific decision-maker rather than a general audience — built entirely from data already sourced and cited inside the live tools below, not new research.
+      </blockquote>
+      <p class="m-hero-summary">
+        Dashboards and briefs answer "what is happening." These answer "what should you do about it" — the format strategy, risk-consulting, and business-intelligence work actually takes. Each memo names the underlying dataset it draws from so the recommendation can be checked against the same source data the live tool itself uses.
+      </p>
+      <div class="m-btns">
+        <a href="./index.html#research" class="btn btn-gold">Back to Research Projects</a>
+        <a href="./gulf-tracker-methodology.html" class="btn btn-ghost">Gulf Tracker Methodology</a>
+        <a href="./em-macro-methodology.html" class="btn btn-ghost">EM Macro Methodology</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== BODY =============== -->
+  <main class="m-body">
+    <div class="container">
+
+      <!-- MEMO 1: EXPORT COMPLIANCE -->
+      <section class="m-section" id="memo-export-compliance">
+        <div class="memo-head">
+          <span class="memo-eyebrow">Memo 01 — Export Compliance &amp; Trade Controls</span>
+          <span class="memo-tag">Gulf AI Tracker</span>
+        </div>
+        <h2 class="m-h2">Diversion &amp; Re-Export Risk of a Proposed HUMAIN-Adjacent Compute Deployment</h2>
+        <div class="memo-meta-table">
+          <div><strong>To</strong> Head of Export Compliance &amp; Trade Controls, [US AI Hardware/Cloud Infrastructure Firm]</div>
+          <div><strong>From</strong> Muhammad Rafay Waqar</div>
+          <div><strong>Date</strong> September 2026</div>
+        </div>
+
+        <div class="memo-bluf">
+          <div class="memo-bluf-label">Bottom Line Up Front</div>
+          <p>A proposed compute or partnership deal with HUMAIN or a HUMAIN-adjacent Saudi entity carries <strong>moderate, not high, diversion risk</strong> — but the compliance posture required to keep it that way is narrower than it looks. Saudi Arabia's chip access runs through a single, named, capped authorization (HUMAIN, ≤35,000 GB300-class-accelerator equivalents, security and reporting conditions attached), not a country-wide rule like the UAE's July 2026 upgrade. The one live item worth flagging before signature is Saudi-linked connectivity infrastructure now extending into Syria, a jurisdiction that remains license-required for advanced-computing items regardless of the broader 2025 sanctions relief there.</p>
+        </div>
+
+        <p class="m-p"><strong>Key Judgments</strong></p>
+        <ul class="m-list">
+          <li><strong>Saudi Arabia's chip authorization is real but structurally narrower than the UAE's.</strong> On 19 Nov 2025, Commerce authorized HUMAIN to purchase up to the equivalent of 35,000 Nvidia GB300-class accelerators, subject to security and reporting conditions — an entity-specific carve-out, not a Country Group upgrade. Saudi Arabia sits at this project's tier 3 of 5; the UAE was separately upgraded to tier 4 in July 2026 via a named Country Group change covering G42, Core42, and eight named US firms. <em>(High confidence — both primary-sourced to BIS/Commerce actions.)</em></li>
+          <li><strong>A deal's compliance exposure is concentrated in one counterparty, which cuts both ways.</strong> Because the authorization is entity-specific to HUMAIN rather than country-wide, due diligence should center on HUMAIN's own reporting and security-condition compliance record — Saudi Arabia's general trade-control status (Country Group D:3/D:4, standard licensing) hasn't changed and isn't the operative constraint. <em>(High confidence on the mechanism.)</em></li>
+          <li><strong>No active sanctions-evasion or secondary-sanctions signal is on file for Saudi Arabia specifically.</strong> The only listed OFAC action (Global Magnitsky designations tied to the 2018 Khashoggi killing) targets individuals on human-rights grounds, not export-control evasion. <em>(Medium confidence — re-verify against OFAC's SDN list before signature.)</em></li>
+          <li><strong>The one live watch item: Saudi capital is funding connectivity infrastructure into Syria</strong>, a jurisdiction still license-required for chips. In Feb 2026, Saudi Telecom Company and Syria's Sovereign Fund signed a ~$800m joint venture ("SilkLink") building a 4,500km fiber network and a Mediterranean cable landing station at Tartus — explicitly framed by Saudi officials as extending HUMAIN's AI-hub connectivity toward Europe. Syria remains Country Group D:5 for advanced-computing items specifically, even after its broader 2025 sanctions relief. <em>(Moderate confidence — worth a deal-specific contractual carve-out.)</em></li>
+        </ul>
+
+        <div class="memo-recommendation">
+          <div class="memo-recommendation-label">Recommendation</div>
+          <p>Proceed with standard entity-level due diligence on HUMAIN directly — its BIS reporting-condition compliance history, not Saudi Arabia's country status, is the actual risk driver. Add one deal-specific term: written confirmation that no compute capacity under this agreement is routed to, or accessible from, Syria-based infrastructure. Re-screen HUMAIN and named counterparties against OFAC's SDN list immediately before signature rather than relying on this September 2026 research pass.</p>
+        </div>
+
+        <p class="m-comment">Built entirely from this project's own already-cited, sourced data: <code>data/curated/export_control_tier.csv</code>, <code>sanctions_data.csv</code>, and <code>ai_investment_deals.csv</code> in the <a href="https://github.com/rafaywaqar2004-lang/oaqjp-final-project-emb-ai" target="_blank" rel="noopener noreferrer">Gulf AI &amp; Tech-Bloc Alignment Tracker</a>. A portfolio work sample — not commissioned by, or representative of, any actual client relationship.</p>
+
+        <div class="m-pill-group">
+          <span class="m-pill">Export Control Analysis</span>
+          <span class="m-pill">Sanctions Screening</span>
+          <span class="m-pill">Client Memo Writing</span>
+          <span class="m-pill">Structured Analytic Techniques</span>
+        </div>
+      </section>
+
+      <hr class="memo-divider">
+
+      <!-- MEMO 2: INVESTOR / PM -->
+      <section class="m-section" id="memo-investor">
+        <div class="memo-head">
+          <span class="memo-eyebrow">Memo 02 — EM Sovereign Debt / Macro Strategy</span>
+          <span class="memo-tag">EM Macro Engine</span>
+        </div>
+        <h2 class="m-h2">Should This Desk's Process Incorporate the EM Macro Engine's Panel AR(1) Forecasts?</h2>
+        <div class="memo-meta-table">
+          <div><strong>To</strong> Portfolio Manager, EM Sovereign Debt / Macro Strategy Desk</div>
+          <div><strong>From</strong> Muhammad Rafay Waqar</div>
+          <div><strong>Date</strong> September 2026</div>
+        </div>
+
+        <div class="memo-bluf">
+          <div class="memo-bluf-label">Bottom Line Up Front</div>
+          <p><strong>Yes for growth, as one input among several — no for inflation, as currently specified.</strong> A panel AR(1) model refit annually on an expanding window and tested out-of-sample across 10 real years (2016–2025) modestly beats a naive "assume no change" baseline on GDP growth (4.36 vs. 4.91 MAE, pooled across 307 country-years) but only wins in 5 of those 10 individual years. On inflation, the same framework <strong>loses</strong> to the naive baseline pooled (9.74 vs. 11.05 MAE) despite a statistically significant persistence coefficient (0.574, p&lt;0.0001) — real, just not enough to beat "nothing changed."</p>
+        </div>
+
+        <p class="m-p"><strong>Key Judgments</strong></p>
+        <ul class="m-list">
+          <li><strong>The growth signal is real but modest — treat it as a tilt, not a forecast.</strong> A 0.55 MAE improvement pooled over 307 country-years is genuine and walk-forward-validated, but winning only 5 of 10 individual years means no single year's forecast should be trusted in isolation. <em>(High confidence in the numbers; moderate confidence in how much would survive live trading costs, which this backtest doesn't model.)</em></li>
+          <li><strong>The inflation output should not be used as a forecast in its current form.</strong> The model loses to a naive random walk on pooled MAE — the single most decision-relevant fact for a desk evaluating adoption, disclosed prominently rather than buried. <em>(High confidence.)</em></li>
+          <li><strong>A single-year backtest would have told the opposite, wrong story on both variables.</strong> The original 2024-only snapshot showed a 25% model win on inflation (10.63 vs. 14.12 MAE) — the 10-year walk-forward result reverses that. A textbook illustration of why single-period backtests overstate confidence in EM macro forecasting. <em>(High confidence — a disclosed, documented correction within the project itself.)</em></li>
+          <li><strong>Adding global macro drivers (oil, US rates, VIX, DXY) improves in-sample fit but doesn't close the out-of-sample gap for growth.</strong> In-sample R² roughly doubles (0.06→0.12), but the driver-augmented specification still loses to naive out-of-sample (3.29 MAE). The current specification looks closer to its useful ceiling than a driver-engineering exercise would fix. <em>(Moderate confidence — one specification test, not an exhaustive search.)</em></li>
+        </ul>
+
+        <div class="memo-recommendation">
+          <div class="memo-recommendation-label">Recommendation</div>
+          <p>Incorporate the growth forecast as one directional input into a broader EM growth view — never standalone, given the 5-of-10-years win rate. Do not incorporate the inflation forecast as-is; if inflation forecasting from this framework matters, the next step is a genuinely different specification, not re-tuning the current one. Hold any third-party EM forecasting tool to the same walk-forward standard before adopting it — refit-and-test on an expanding window across many real years, never one split.</p>
+        </div>
+
+        <p class="m-comment">Built entirely from this project's own already-computed, disclosed backtest output: <code>forecast-module/rolling_backtest.py</code> and <code>rolling_backtest_results.csv</code> (307/298 country-year observations, 2016–2025) in the <a href="https://github.com/rafaywaqar2004-lang/sovereign-distress-model" target="_blank" rel="noopener noreferrer">EM Macro &amp; Geopolitical Risk Engine</a>. A portfolio work sample — not commissioned by, or representative of, any actual client or fund relationship.</p>
+
+        <div class="m-pill-group">
+          <span class="m-pill">Walk-Forward Backtesting</span>
+          <span class="m-pill">Forecast Evaluation</span>
+          <span class="m-pill">Investor Memo Writing</span>
+          <span class="m-pill">Honest Disclosure of Negative Results</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =============== FOOTER CTA =============== -->
+  <section class="m-footer-cta">
+    <div class="container">
+      <div class="m-btns">
+        <a href="./index.html#research" class="btn btn-gold">Back to Research Projects</a>
+        <a href="./index.html" class="btn btn-ghost">Return to Portfolio</a>
+        <a href="https://github.com/rafaywaqar2004-lang" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Muhammad Rafay Waqar &nbsp;·&nbsp; Political Economy &amp; Geopolitical Risk</p>
+  </footer>
+
+</body>
+</html>
